@@ -3,7 +3,7 @@
 	$this->set('title_for_layout', 'Species Detail');
 ?>
 <div data-role="content">
-	<ul data-role="listview" data-divider-theme="{$pageTheme}">
+	<ul data-role="listview" data-divider-theme="a">
 		<li data-role="list-divider"><?php echo $bird['aou_list']['common_name']; ?></li>
 	</ul>
 	<br />
@@ -25,7 +25,7 @@
 	</div><!-- /grid-a -->
 	<br />
 	<div id="chartSpeciesByMonth_container">
-		<ul data-role="listview" data-divider-theme="{$pageTheme}">
+		<ul data-role="listview" data-divider-theme="a">
 			<li data-role="list-divider">Sightings By Month</li>
 		</ul>
 		<figure>				
