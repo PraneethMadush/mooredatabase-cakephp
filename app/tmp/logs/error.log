@@ -1,0 +1,299 @@
+2014-04-03 11:56:18 Error: Fatal Error (64): Cannot redeclare class ReportModel in [/Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php, line 11]
+2014-04-03 11:56:18 Error: [FatalErrorException] Cannot redeclare class ReportModel
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/Users/smoore/S...', 11)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/Users/smoore/S...', 11, Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/Users/smoore/S...', 11, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-03 11:58:12 Error: [MissingViewException] View file "/Users/smoore/Sites/mooredatabase-cakephp/app/View/Reports/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/smoore/Sites/mooredatabase-cakephp/app/View/Reports/index.ctp',
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(11): Controller->render(NULL)
+#3 [internal function]: ReportsController->index()
+#4 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#7 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-03 11:59:38 Error: [MissingViewException] View file "/Users/smoore/Sites/mooredatabase-cakephp/app/View/Reports/.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/smoore/Sites/mooredatabase-cakephp/app/View/Reports/.ctp',
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/View/View.php(463): View->_getViewFileName('')
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(952): View->render('', NULL)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(12): Controller->render('')
+#3 [internal function]: ReportsController->index()
+#4 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#7 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-03 12:00:48 Error: [MissingViewException] View file "/Users/smoore/Sites/mooredatabase-cakephp/app/View/Reports/.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/smoore/Sites/mooredatabase-cakephp/app/View/Reports/.ctp',
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/View/View.php(463): View->_getViewFileName('')
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(952): View->render('', NULL)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(12): Controller->render('')
+#3 [internal function]: ReportsController->index()
+#4 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#7 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-03 12:02:03 Error: [MissingViewException] View file "/Users/smoore/Sites/mooredatabase-cakephp/app/View/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/smoore/Sites/mooredatabase-cakephp/app/View/index.ctp',
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/View/View.php(463): View->_getViewFileName('/index')
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(952): View->render('/index', NULL)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(12): Controller->render('/index')
+#3 [internal function]: ReportsController->index()
+#4 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#7 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-03 12:03:24 Error: Fatal Error (64): Cannot redeclare class ReportModel in [/Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php, line 11]
+2014-04-03 12:03:24 Error: [FatalErrorException] Cannot redeclare class ReportModel
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/Users/smoore/S...', 11)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/Users/smoore/S...', 11, Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/Users/smoore/S...', 11, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-03 12:04:26 Error: Fatal Error (1): Call to a member function getLocations() on a non-object in [/Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php, line 8]
+2014-04-03 12:04:26 Error: [FatalErrorException] Call to a member function getLocations() on a non-object
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/smoore/S...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/smoore/S...', 8, Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/smoore/S...', 8, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-03 12:04:45 Error: Fatal Error (64): Cannot redeclare class ReportModel in [/Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php, line 11]
+2014-04-03 12:04:45 Error: [FatalErrorException] Cannot redeclare class ReportModel
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/Users/smoore/S...', 11)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/Users/smoore/S...', 11, Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/Users/smoore/S...', 11, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-03 12:07:24 Error: Fatal Error (1): Call to a member function getLocations() on a non-object in [/Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php, line 10]
+2014-04-03 12:07:24 Error: [FatalErrorException] Call to a member function getLocations() on a non-object
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/smoore/S...', 10)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/smoore/S...', 10, Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/smoore/S...', 10, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-03 12:08:24 Error: Fatal Error (64): Cannot redeclare class ReportModel in [/Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php, line 11]
+2014-04-03 12:08:24 Error: [FatalErrorException] Cannot redeclare class ReportModel
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/Users/smoore/S...', 11)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/Users/smoore/S...', 11, Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/Users/smoore/S...', 11, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-03 12:12:10 Error: Fatal Error (1): Call to a member function getLocations() on a non-object in [/Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php, line 10]
+2014-04-03 12:12:10 Error: [FatalErrorException] Call to a member function getLocations() on a non-object
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/smoore/S...', 10)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/smoore/S...', 10, Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/smoore/S...', 10, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-03 12:12:30 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Connection refused',
+  'enabled' => true,
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3476): ConnectionManager::getDataSource('default')
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3498): Model->setSource('reports')
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3305): Model->getDataSource()
+#6 /Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php(8): Model->query('SELECT * FROM l...')
+#7 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(10): Report->getLocations()
+#8 [internal function]: ReportsController->index()
+#9 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#10 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#12 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-03 12:13:01 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Connection refused',
+  'enabled' => true,
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3476): ConnectionManager::getDataSource('default')
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3498): Model->setSource('reports')
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3305): Model->getDataSource()
+#6 /Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php(8): Model->query('SELECT * FROM l...')
+#7 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(10): Report->getLocations()
+#8 [internal function]: ReportsController->index()
+#9 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#10 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#12 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-03 12:13:25 Error: [MissingTableException] Table reports for model Report was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'reports',
+  'class' => 'Report',
+  'ds' => 'default',
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3498): Model->setSource('reports')
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3305): Model->getDataSource()
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php(8): Model->query('SELECT * FROM l...')
+#3 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(10): Report->getLocations()
+#4 [internal function]: ReportsController->index()
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#8 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-03 12:17:25 Error: [MissingTableException] Table locations for model Report was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'locations',
+  'class' => 'Report',
+  'ds' => 'default',
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3498): Model->setSource('locations')
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3305): Model->getDataSource()
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php(8): Model->query('SELECT * FROM l...')
+#3 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(10): Report->getLocations()
+#4 [internal function]: ReportsController->index()
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#8 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-03 12:17:48 Error: [MissingTableException] Table locations for model Report was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'locations',
+  'class' => 'Report',
+  'ds' => 'default',
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3498): Model->setSource('locations')
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3305): Model->getDataSource()
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php(8): Model->query('SELECT * FROM l...')
+#3 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(10): Report->getLocations()
+#4 [internal function]: ReportsController->index()
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#8 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-03 12:17:50 Error: [MissingTableException] Table locations for model Report was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'locations',
+  'class' => 'Report',
+  'ds' => 'default',
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3498): Model->setSource('locations')
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3305): Model->getDataSource()
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php(8): Model->query('SELECT * FROM l...')
+#3 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(10): Report->getLocations()
+#4 [internal function]: ReportsController->index()
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#8 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-03 12:17:56 Error: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'birding.locations' doesn't exist
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT * FROM l...', Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT * FROM l...', Array, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('SELECT * FROM l...')
+#4 [internal function]: DboSource->query('SELECT * FROM l...')
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3306): call_user_func_array(Array, Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php(8): Model->query('SELECT * FROM l...')
+#7 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(10): Report->getLocations()
+#8 [internal function]: ReportsController->index()
+#9 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#10 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#12 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-03 12:18:10 Error: [MissingTableException] Table locations for model Report was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'locations',
+  'class' => 'Report',
+  'ds' => 'default',
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3498): Model->setSource('locations')
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3305): Model->getDataSource()
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php(8): Model->query('SELECT * FROM l...')
+#3 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(10): Report->getLocations()
+#4 [internal function]: ReportsController->index()
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#8 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-03 12:18:20 Error: [MissingTableException] Table locations for model Report was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'locations',
+  'class' => 'Report',
+  'ds' => 'default',
+)
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3498): Model->setSource('locations')
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(3305): Model->getDataSource()
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/Model/Report.php(8): Model->query('SELECT * FROM l...')
+#3 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(10): Report->getLocations()
+#4 [internal function]: ReportsController->index()
+#5 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#8 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
