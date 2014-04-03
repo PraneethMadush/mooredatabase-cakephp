@@ -297,3 +297,208 @@ Stack Trace:
 #7 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
 #8 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #9 {main}
+2014-04-03 15:05:30 Error: Fatal Error (4): parse error in [/Users/smoore/Sites/mooredatabase-cakephp/app/View/Reports/index.ctp, line 8]
+2014-04-03 15:05:30 Error: [FatalErrorException] parse error
+Request URL: /reports/
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'parse error', '/Users/smoore/S...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error', '/Users/smoore/S...', 8, Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error', '/Users/smoore/S...', 8, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-03 15:25:44 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'listSpeciesAll' at line 1
+Request URL: /reports/species_all
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('listSpeciesAll', Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('listSpeciesAll', Array, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('listSpeciesAll', Array, Array)
+#4 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(800): DboSource->query('listSpeciesAll', Array, Object(Report))
+#5 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(29): Model->__call('listSpeciesAll', Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(29): Report->listSpeciesAll()
+#7 [internal function]: ReportsController->species_all()
+#8 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#9 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-04-03 15:27:35 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'listSpeciesAll' at line 1
+Request URL: /reports/species_all
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('listSpeciesAll', Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('listSpeciesAll', Array, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('listSpeciesAll', Array, Array)
+#4 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(800): DboSource->query('listSpeciesAll', Array, Object(Report))
+#5 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(29): Model->__call('listSpeciesAll', Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(29): Report->listSpeciesAll()
+#7 [internal function]: ReportsController->species_all()
+#8 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#9 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-04-03 15:27:48 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'listSpeciesAll' at line 1
+Request URL: /reports/species_all
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('listSpeciesAll', Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('listSpeciesAll', Array, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('listSpeciesAll', Array, Array)
+#4 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(800): DboSource->query('listSpeciesAll', Array, Object(Report))
+#5 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(29): Model->__call('listSpeciesAll', Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(29): Report->listSpeciesAll()
+#7 [internal function]: ReportsController->species_all()
+#8 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#9 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-04-03 15:27:51 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'listSpeciesAll' at line 1
+Request URL: /reports/species_all
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('listSpeciesAll', Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('listSpeciesAll', Array, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('listSpeciesAll', Array, Array)
+#4 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Model/Model.php(800): DboSource->query('listSpeciesAll', Array, Object(Report))
+#5 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(29): Model->__call('listSpeciesAll', Array)
+#6 /Users/smoore/Sites/mooredatabase-cakephp/app/Controller/ReportsController.php(29): Report->listSpeciesAll()
+#7 [internal function]: ReportsController->species_all()
+#8 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#9 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-04-03 15:33:48 Error: Fatal Error (4): parse error in [/Users/smoore/Sites/mooredatabase-cakephp/app/View/Reports/species_all.ctp, line 14]
+2014-04-03 15:33:48 Error: [FatalErrorException] parse error
+Request URL: /reports/species_all
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'parse error', '/Users/smoore/S...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'parse error', '/Users/smoore/S...', 14, Array)
+#2 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'parse error', '/Users/smoore/S...', 14, Array)
+#3 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-03 15:46:17 Error: [MissingActionException] Action ReportsController::species_dialog() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'species_dialog',
+)
+Request URL: /reports/species_dialog?id=%7B%24bird-%3Eid%7D
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-03 16:27:03 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-03 16:27:03 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-03 16:27:03 Error: [MissingActionException] Action ReportsController::sightings_by_month.php() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'sightings_by_month.php',
+)
+Request URL: /reports/sightings_by_month.php?id=36
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-03 16:27:35 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-03 16:27:35 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-03 16:27:35 Error: [MissingActionException] Action ReportsController::sightings_by_month.php() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'sightings_by_month.php',
+)
+Request URL: /reports/sightings_by_month.php?id=36
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-03 16:28:00 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-03 16:28:00 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-03 16:28:00 Error: [MissingActionException] Action ReportsController::sightings_by_month.php() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'sightings_by_month.php',
+)
+Request URL: /reports/sightings_by_month.php?id=36
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-03 16:29:32 Error: [MissingActionException] Action ReportsController::sightings_by_month.php() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'sightings_by_month.php',
+)
+Request URL: /reports/sightings_by_month.php?id=36
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
