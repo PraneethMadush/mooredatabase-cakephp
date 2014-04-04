@@ -4,11 +4,6 @@ class Report extends Model {
 
     public $name = 'user'; // just need something here that is in database (users)
 
-    public function getLocations() {
-        return $this->query("SELECT * 
-        	                 FROM location;");
-    }
-
 	public function listSpeciesAll() {
 		$sql = "SELECT
 		          aou_list.id,
@@ -69,7 +64,7 @@ class Report extends Model {
                   INNER JOIN aou_order
                     ON aou_list.order = aou_order.order_name
                   WHERE
-                  aou_list.id = {$id}                 
+                  aou_list.id = {$id}                
                   GROUP BY
                   aou_list.id,
                   aou_order.order_name,
@@ -79,7 +74,77 @@ class Report extends Model {
                   aou_list.order,
                   aou_list.family,
                   aou_list.subfamily;";	
-		return $this->query($sql);
+		return array_pop($this->query($sql));
+	}
+
+	public function listMonthsForSpecies($id) {
+	  	$sql = "SELECT
+				MONTH(t.trip_date) AS monthNumber,
+				MONTHNAME(t.trip_date) AS monthName,
+				COUNT(DISTINCT s.id) AS sightingCount
+				FROM
+				sighting s
+				INNER JOIN trip t
+					ON s.trip_id = t.id
+				WHERE
+				s.aou_list_id = {$id}
+				GROUP BY
+				MONTH(t.trip_date)
+				ORDER BY 1";
+		return $this->query($sql);	
+	}
+
+	public function listLocations() {
+		$sql = "SELECT
+                location.* ,
+				(SELECT COUNT(*) 
+				 FROM trip
+				 WHERE trip.location_id = location.id) AS trip_count,
+				(SELECT COUNT(DISTINCT sighting.aou_list_id) 
+				 FROM
+				 trip
+				 INNER JOIN sighting
+				 	ON trip.id = sighting.trip_id
+				 INNER JOIN aou_list
+				 	ON sighting.aou_list_id = aou_list.id
+				 WHERE
+				 trip.location_id = location.id) AS species_count
+				FROM location
+				ORDER BY location_name ASC";		
+		return $this->query($sql);				
+	}	
+
+	public function getLocation($id) {
+		$sql = "SELECT * FROM location WHERE id = {$id};";
+		return array_pop($this->query($sql));
+	}
+
+	public function listSightingsForLocation($id) {
+		$sql = "SELECT
+		          aou_list.id,
+				  aou_list.common_name,
+				  aou_list.scientific_name,
+				  aou_list.order,
+				  aou_list.family,
+				  aou_list.subfamily,
+				  COUNT(DISTINCT sighting.id) AS sightings,
+				  MAX(trip.trip_date) AS last_seen
+				  FROM
+				  trip
+				  INNER JOIN sighting
+				  	ON trip.id = sighting.trip_id
+				  INNER JOIN aou_list
+				  	ON sighting.aou_list_id = aou_list.id
+				  WHERE
+				  trip.location_id = {$id}
+				  GROUP BY
+				  aou_list.common_name,
+				  aou_list.scientific_name,
+				  aou_list.order,
+				  aou_list.family,
+				  aou_list.subfamily				  
+				  ORDER BY aou_list.common_name ASC";
+		  return $this->query($sql);
 	}
 
 }

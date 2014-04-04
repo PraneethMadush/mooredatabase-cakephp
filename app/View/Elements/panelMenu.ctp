@@ -28,7 +28,7 @@
 				<h2>Birding Database</h2>
 				<ul data-role="listview">
 					<li><a href="/reports/species_all">All Species</a></li>
-					<li><a href="birding_locations.html">Birding Locations</a></li>
+					<li><a href="/reports/birding_locations">Birding Locations</a></li>
 					<li><a href="species_by_month.html">Species By Month</a></li>
 					<li><a href="species_by_order.html">Species By Order</a></li>		
 				</ul>

@@ -21,6 +21,7 @@
 				<li>Node.js / Heroku</li>
 				<li>Apache, Nginx</li>
 				<li>PHP / Zend Framework / Zend Studio</li>
+				<li>CakePHP</li>
 				<li>Smarty 3 templates</li>
 				<li>Ubuntu Linux 10.x/11.x/12.x</li>
 				<li>Nagios</li>

@@ -24,11 +24,8 @@
 			<ul>	
 				<li>Amazon EC2 (Ubuntu Server 12.04 LTS)</li>
 				<li>Amazon RDS (MySQL 5.6)</li>
-				<li>Amazon S3</li>
 				<li>Nginx / PHP-FPM</li>
-				<li>PHP 5.3 / Zend Framework 1.12</li>
-				<li>Smarty templates</li>
-				<li>Wordpress</li>
+				<li>CakePHP 2.4.6 / PHP 5.3</li>
 			</ul>
 			<?php echo $this->Html->image('Powered-by-Amazon-Web-Services.jpg', array('alt' => 'AWS Logo','class' => 'logo')); ?>
 	    </div>

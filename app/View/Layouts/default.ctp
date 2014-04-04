@@ -51,14 +51,20 @@
 		echo $this->Html->script('//code.jquery.com/jquery-1.9.1.min.js')."\n";
 		echo $this->Html->script('//code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js')."\n";
 		echo $this->Html->script('mooredatabase.min')."\n";
-		echo $this->Html->script('pageinit')."\n";
 
 		// JS includes that must follow the includes above
 		echo $this->Html->script('mooredatabase_canvas_demo.min')."\n";		
+		echo $this->Html->script('mooredatabase_jqplot.min')."\n";	
 		echo $this->Html->script('//maps.google.com/maps/api/js?sensor=false')."\n";
 		echo $this->Html->script('geo-min')."\n";
 		echo $this->Html->script('/js/photoswipe/klass.min')."\n";
-		echo $this->Html->script('/js/photoswipe/code.photoswipe-3.0.4.min')."\n";
+		echo $this->Html->script('/js/jqplot/jquery.jqplot.min')."\n";
+		echo $this->Html->script('/js/jqplot/plugins/jqplot.categoryAxisRenderer.min')."\n";
+		echo $this->Html->script('/js/jqplot/plugins/jqplot.pieRenderer.min')."\n";
+		echo $this->Html->script('/js/jqplot/plugins/jqplot.pointLabels.min')."\n";	
+		echo $this->Html->script('mooredatabase_googlemaps.min')."\n";		
+
+		echo $this->Html->script('pageinit')."\n";								
 	
 		// enable page-specific includes of meta tags, CSS and JS
 		echo $this->fetch('meta');

@@ -118,7 +118,7 @@
       speciesId = $('#speciesId').val();
       $.ajax({
         type: 'POST',
-        url: 'sightings_by_month.php?id=' + speciesId,
+        url: '/reports/sightings_by_month?id=' + speciesId,
         dataType: 'json',
         success: function(data) {
           return mooredatabase.drawChartSpeciesByMonth(data);
