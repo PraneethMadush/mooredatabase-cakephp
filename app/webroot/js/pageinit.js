@@ -102,7 +102,7 @@
     if (Modernizr.canvas) {
       $.ajax({
         type: 'POST',
-        url: 'species_by_month.php',
+        url: '/reports/species_by_month_json',
         dataType: 'json',
         success: function(data) {
           return mooredatabase.drawChartSpeciesByMonth(data);
@@ -132,7 +132,7 @@
     if (Modernizr.canvas) {
       $.ajax({
         type: 'POST',
-        url: 'species_by_order.php',
+        url: '/reports/species_by_order_json',
         dataType: 'json',
         success: function(data) {
           return mooredatabase.drawChartSpeciesByOrder(data);

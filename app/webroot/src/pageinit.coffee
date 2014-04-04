@@ -77,7 +77,7 @@ $(document).on "pageshow", "#speciesByMonth", ->
 	if Modernizr.canvas
 		$.ajax
 			type : 'POST'
-			url : 'species_by_month.php'
+			url : '/reports/species_by_month_json'
 			dataType : 'json'
 			success : (data) ->
 				mooredatabase.drawChartSpeciesByMonth(data)
@@ -100,7 +100,7 @@ $(document).on "pageshow", "#speciesByOrder", ->
 	if Modernizr.canvas
 		$.ajax
 			type : 'POST'
-			url : 'species_by_order.php'
+			url : '/reports/species_by_order_json'
 			dataType : 'json'
 			success : (data) ->
 				mooredatabase.drawChartSpeciesByOrder(data)

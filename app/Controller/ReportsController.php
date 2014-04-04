@@ -59,6 +59,7 @@ class ReportsController extends AppController {
   
     }
 
+
     public function birding_locations() {
 
         $this->loadModel("Report");
@@ -77,6 +78,112 @@ class ReportsController extends AppController {
         $sighting_set = $this->Report->listSightingsForLocation($id);
         $this->set('sighting_set',$sighting_set);
         $this->render('/Reports/location_detail');
+
+    }
+
+    public function species_by_month() {
+
+        $this->loadModel("Report");
+        $month_set = $this->Report->listSpeciesByMonth();
+        $this->set('month_set',$month_set);
+        $this->render('/Reports/species_by_month');
+
+    }
+
+    public function species_by_month_json() {
+
+        // disable layout
+        $this->layout = null;
+
+        // perform the search
+        $this->loadModel("Report");
+        $monthSet = $this->Report->listSpeciesByMonth();
+             
+        // Retrieve and store in array the results of the query
+        // jQuery is looking for 'value' key
+        $return_arr = array();
+        foreach($monthSet as $month) {
+            $row_array = array(substr($month[0]['monthName'],0,1),$month[0]['speciesCount']);
+            array_push($return_arr,$row_array);
+        }
+
+        // render view/JSON
+        $this->set('results',$return_arr);
+        $this->render('/Reports/species_by_month_json');
+
+    }   
+
+    public function species_by_order() {
+
+        $this->loadModel("Report");
+        $order_set = $this->Report->listSpeciesByOrder();
+        $this->set('order_set',$order_set);              
+        $this->render('/Reports/species_by_order');
+
+    }
+
+    public function species_by_order_json() {
+
+        // disable layout
+        $this->layout = null;
+
+        // perform the search
+        $this->loadModel("Report");
+        $orderSet = $this->Report->listSpeciesByOrder();
+             
+        // Retrieve and store in array the results of the query
+        // jQuery is looking for 'value' key
+        $return_arr = array();
+        foreach($orderSet as $order) {
+            $row_array = array($order['aou_order']['order_name'],$order[0]['speciesCount']);
+            array_push($return_arr,$row_array);
+        }
+
+        // render view/JSON
+        $this->set('results',$return_arr);
+        $this->render('/Reports/species_by_order_json');
+
+    }
+
+    public function species_by_order_list() {      
+
+        // parse URL parameter to get id
+        $id = (int)$this->params['url']['id'];  
+
+        // get the data
+        $this->loadModel("Report");
+        $sighting_set = $this->Report->listSpeciesForOrder($id);
+
+        // pass some data to view and render it
+        $count = count($sighting_set);
+        $this->set('count',$count);
+        foreach($sighting_set as $bird) {
+            $order_name = $bird['aou_order']['order_name'];
+            break;
+        }
+        $this->set('order_name',$order_name);
+        $this->set('title_for_layout','Order '.$order_name);
+        $this->set('sighting_set',$sighting_set);
+        $this->render('/Reports/species_by_order_list');
+    }
+
+    public function species_by_month_list() {
+
+        // parse URL parameter to get month number and name
+        $monthNumber = (int)$this->params['url']['monthNumber']; 
+        $timestamp = mktime(0, 0, 0, $monthNumber, 1, 2005);
+        $monthName = date("F", $timestamp);   
+
+        // get the data
+        $this->loadModel("Report");
+        $sighting_set = $this->Report->listSpeciesForMonth($monthNumber);
+
+        // pass some data to the view and render the view
+        $this->set('sighting_set',$sighting_set);   
+        $this->set('monthName',$monthName);  
+        $this->set('monthNumber',$monthNumber);
+        $this->set('title_for_layout',$monthName);                     
+        $this->render('/Reports/species_by_month_list');
 
     }
 

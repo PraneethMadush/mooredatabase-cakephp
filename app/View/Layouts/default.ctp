@@ -45,6 +45,7 @@
 		echo $this->Html->css('//code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css')."\n";
 		echo $this->Html->css('css/main')."\n";
 		echo $this->Html->css('/js/photoswipe/photoswipe')."\n";
+		echo $this->Html->css('/js/jqplot/jquery.jqplot.min.css')."\n";
 
 		// JS includes
 		echo $this->Html->script('//www.google.com/jsapi?key=ABQIAAAAnQwHWIIOdfuy6mmnAPWMrxRz7CDf8eoRpZ9uxznpbqB6UwVVhhQRKXh9O02BW9yOPT-IoRtEsBIL8A')."\n";
