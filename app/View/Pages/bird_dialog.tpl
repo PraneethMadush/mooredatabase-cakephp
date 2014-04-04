@@ -1,1 +1,0 @@
-<li data-icon="info"><a href="species_dialog.html?id={$bird->id}">{$bird->common_name}</a></li>
