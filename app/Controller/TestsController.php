@@ -1,3 +1,0 @@
-class TestsController extends AppController {
-
-}

@@ -1676,3 +1676,80 @@ Stack Trace:
 #1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
 #2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2014-04-04 17:26:30 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-04 17:26:41 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-04 17:26:46 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-04 17:26:46 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-04 17:27:10 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-04 17:27:15 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-04 17:27:16 Error: [MissingActionException] Action ReportsController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReportsController',
+  'action' => 'images',
+)
+Request URL: /reports/images/loaderb32.gif
+Stack Trace:
+#0 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/smoore/Sites/mooredatabase-cakephp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/smoore/Sites/mooredatabase-cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
