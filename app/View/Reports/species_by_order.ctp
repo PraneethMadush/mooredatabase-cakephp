@@ -8,7 +8,7 @@
 	</ul>
 	<figure>				
 		<div id="chartSpeciesByOrder">
-			<img src="/img/loaderb32.gif" class="loader" alt="Loading" />
+			<?php echo $this->Html->image('loaderb32.gif', array('alt' => 'loading','class' => 'loader')); ?>
 		</div>
 	</figure>
 	<ul data-role="listview" data-divider-theme="a">
