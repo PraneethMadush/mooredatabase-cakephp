@@ -57,12 +57,12 @@
 		echo $this->Html->script('mooredatabase_jqplot.min')."\n";	
 		echo $this->Html->script('//maps.google.com/maps/api/js?sensor=false')."\n";
 		echo $this->Html->script('geo-min')."\n";
-		echo $this->Html->script('/js/photoswipe/klass.min')."\n";
-		echo $this->Html->script('/js/photoswipe/code.photoswipe-3.0.4.min')."\n";
-		echo $this->Html->script('/js/jqplot/jquery.jqplot.min')."\n";
-		echo $this->Html->script('/js/jqplot/plugins/jqplot.categoryAxisRenderer.min')."\n";
-		echo $this->Html->script('/js/jqplot/plugins/jqplot.pieRenderer.min')."\n";
-		echo $this->Html->script('/js/jqplot/plugins/jqplot.pointLabels.min')."\n";	
+		echo $this->Html->script('photoswipe/klass.min')."\n";
+		echo $this->Html->script('photoswipe/code.photoswipe-3.0.4.min')."\n";
+		echo $this->Html->script('jqplot/jquery.jqplot.min')."\n";
+		echo $this->Html->script('jqplot/plugins/jqplot.categoryAxisRenderer.min')."\n";
+		echo $this->Html->script('jqplot/plugins/jqplot.pieRenderer.min')."\n";
+		echo $this->Html->script('jqplot/plugins/jqplot.pointLabels.min')."\n";	
 		echo $this->Html->script('mooredatabase_googlemaps.min')."\n";		
 
 		echo $this->Html->script('pageinit')."\n";								

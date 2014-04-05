@@ -33,5 +33,5 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 
 	// added by SRM; so all controllers have access to these helpers
-	public $helpers = array('Html', 'Form');
+	public $helpers = array('Html');
 }

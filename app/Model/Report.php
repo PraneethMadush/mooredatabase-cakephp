@@ -2,7 +2,10 @@
 App::uses('AppModel', 'Model');
 class Report extends Model {
 
-    public $name = 'user'; // just need something here that is in database (users)
+	// add these because we're bypassing the CakePHP model machinery and 
+	// executing SQL directly using PDO
+	public $name = 'NoTableModel';
+    public $useTable = false;
 
 	public function listSpeciesAll() {
 		$sql = "SELECT

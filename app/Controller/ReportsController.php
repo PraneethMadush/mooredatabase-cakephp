@@ -8,7 +8,6 @@ class ReportsController extends AppController {
     public function species_all() {
 
     	// default action for the reports controller
-        $this->loadModel("Report");
         $sighting_set = $this->Report->listSpeciesAll();
         $this->set('sighting_set',$sighting_set);
 		$this->render('/Reports/species_all');
@@ -18,7 +17,6 @@ class ReportsController extends AppController {
     public function species_dialog() {
 
     	$id = (int)$this->params['url']['id'];
-        $this->loadModel("Report");
         $bird = $this->Report->getSpecies($id);
         $this->set('bird',$bird);
 		$this->render('/Reports/species_dialog');
@@ -32,7 +30,6 @@ class ReportsController extends AppController {
 
         // perform the search
         $species_id = (int)$this->params['url']['id'];
-        $this->loadModel("Report");
         $monthSet = $this->Report->listMonthsForSpecies($species_id);
  
         // add all 12 months with sightings 0 to array first; so
@@ -62,7 +59,6 @@ class ReportsController extends AppController {
 
     public function birding_locations() {
 
-        $this->loadModel("Report");
         $location_set = $this->Report->listLocations();
         $this->set('location_set',$location_set);
         $this->render('/Reports/birding_locations');
@@ -72,7 +68,6 @@ class ReportsController extends AppController {
     public function location_detail() {
 
         $id = (int)$this->params['url']['id'];
-        $this->loadModel("Report");
         $location = $this->Report->getLocation($id);
         $this->set('location',$location);
         $sighting_set = $this->Report->listSightingsForLocation($id);
@@ -83,7 +78,6 @@ class ReportsController extends AppController {
 
     public function species_by_month() {
 
-        $this->loadModel("Report");
         $month_set = $this->Report->listSpeciesByMonth();
         $this->set('month_set',$month_set);
         $this->render('/Reports/species_by_month');
@@ -96,7 +90,6 @@ class ReportsController extends AppController {
         $this->layout = null;
 
         // perform the search
-        $this->loadModel("Report");
         $monthSet = $this->Report->listSpeciesByMonth();
              
         // Retrieve and store in array the results of the query
@@ -115,7 +108,6 @@ class ReportsController extends AppController {
 
     public function species_by_order() {
 
-        $this->loadModel("Report");
         $order_set = $this->Report->listSpeciesByOrder();
         $this->set('order_set',$order_set);              
         $this->render('/Reports/species_by_order');
@@ -128,7 +120,6 @@ class ReportsController extends AppController {
         $this->layout = null;
 
         // perform the search
-        $this->loadModel("Report");
         $orderSet = $this->Report->listSpeciesByOrder();
              
         // Retrieve and store in array the results of the query
@@ -151,7 +142,6 @@ class ReportsController extends AppController {
         $id = (int)$this->params['url']['id'];  
 
         // get the data
-        $this->loadModel("Report");
         $sighting_set = $this->Report->listSpeciesForOrder($id);
 
         // pass some data to view and render it
@@ -175,7 +165,6 @@ class ReportsController extends AppController {
         $monthName = date("F", $timestamp);   
 
         // get the data
-        $this->loadModel("Report");
         $sighting_set = $this->Report->listSpeciesForMonth($monthNumber);
 
         // pass some data to the view and render the view
