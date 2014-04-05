@@ -73,8 +73,10 @@ class Report extends Model {
                   aou_list.scientific_name,
                   aou_list.order,
                   aou_list.family,
-                  aou_list.subfamily;";	
-		return array_pop($this->query($sql));
+                  aou_list.subfamily";
+        // must put results in temp variable before calling array_pop()
+        $results = $this->query($sql);
+		return array_pop($results);
 	}
 
 	public function listMonthsForSpecies($id) {
@@ -116,7 +118,8 @@ class Report extends Model {
 
 	public function getLocation($id) {
 		$sql = "SELECT * FROM location WHERE id = {$id};";
-		return array_pop($this->query($sql));
+		$result = $this->query($sql);
+		return array_pop($result);
 	}
 
 	public function listSightingsForLocation($id) {

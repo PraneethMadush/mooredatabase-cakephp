@@ -20,7 +20,7 @@
 			<h3>What's New</h3>
 			<ul>
 				<li>Completed Statistics and R programming courses offered by Coursera</li>
-				<li>Migrated mobile site to Nginx</li>
+				<li>Migrated mobile site to CakePHP and Nginx</li>
 				<li>Upgraded mobile site front end to jQuery Mobile 1.4.0</li>
 				<li>Upgraded RDS instance to MySQL 5.6.14</li>
 				<li>Upgraded Zend Framework components to 2.2.4</li>
@@ -31,6 +31,7 @@
 				<li>Training on
 					<ul>
 						<li>MySQL</li>
+						<li>CakePHP</li>
 						<li>Statistics, R / R Studio</li>
 						<li>Excel</li>
 						<li>Bash Shell Scripting</li>
