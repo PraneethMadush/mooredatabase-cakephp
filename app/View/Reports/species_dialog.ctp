@@ -14,8 +14,12 @@
 		<div class="ui-block-b"><?php echo $bird['aou_order']['order_name']; ?></div>
 		<div class="ui-block-a"><strong>Family:</strong></div>
 		<div class="ui-block-b"><?php echo $bird['aou_list']['family']; ?></div>
-		<div class="ui-block-a"><strong>Subfamily:</strong></div>
-		<div class="ui-block-b"><?php echo $bird['aou_list']['subfamily']; ?></div>
+		<?php
+			if ($bird['aou_list']['subfamily'] != '') { 
+				echo '<div class="ui-block-a"><strong>Subfamily:</strong></div>';
+				echo '<div class="ui-block-b">'.$bird['aou_list']['subfamily'].'</div>';
+			}
+		?>
 		<div class="ui-block-a"><strong>Last Seen:</strong></div>
 		<div class="ui-block-b"><?php echo $bird[0]['last_seen']; ?></div>		
 		<div class="ui-block-a"><strong>Earliest / Latest:</strong></div>

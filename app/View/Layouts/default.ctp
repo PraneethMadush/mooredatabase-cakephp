@@ -26,7 +26,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-	<title><?php echo "MOORE+DATABASE - ".$title_for_layout; ?></title>
+<title><?php echo "MOORE+DATABASE - ".$title_for_layout; ?></title>
 	<?php
 
 		// meta tags		
@@ -42,15 +42,14 @@
 		echo $this->Html->meta('icon',$this->Html->url('/favicon.ico'))."\n";
 		echo $this->Html->css('css/themes/mooredatabase.min.css')."\n";		
 		echo $this->Html->css('css/themes/jquery.mobile.icons.min')."\n";
-		echo $this->Html->css('//code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css')."\n";
+		echo $this->Html->css('//code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css')."\n";
 		echo $this->Html->css('css/main')."\n";
 		echo $this->Html->css('/js/photoswipe/photoswipe')."\n";
 		echo $this->Html->css('/js/jqplot/jquery.jqplot.min.css')."\n";
 
 		// JS includes
-		echo $this->Html->script('//www.google.com/jsapi?key=ABQIAAAAnQwHWIIOdfuy6mmnAPWMrxRz7CDf8eoRpZ9uxznpbqB6UwVVhhQRKXh9O02BW9yOPT-IoRtEsBIL8A')."\n";
 		echo $this->Html->script('//code.jquery.com/jquery-1.9.1.min.js')."\n";
-		echo $this->Html->script('//code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js')."\n";
+		echo $this->Html->script('//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js')."\n";
 		echo $this->Html->script('mooredatabase.min')."\n";
 
 		// JS includes that must follow the includes above

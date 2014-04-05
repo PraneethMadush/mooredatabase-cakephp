@@ -39,7 +39,7 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily				  
 				  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC;";
-		return $this->query($sql);
+		return $this->getDataSource()->fetchAll($sql);
 	}    
 
 	public function getSpecies($id) {
@@ -74,8 +74,9 @@ class Report extends Model {
                   aou_list.order,
                   aou_list.family,
                   aou_list.subfamily";
-        // must put results in temp variable before calling array_pop()
-        $results = $this->query($sql);
+        // must put results in temp variable before calling array_pop() or an
+        // E_STRICT error occurs
+        $results = $this->getDataSource()->fetchAll($sql);
 		return array_pop($results);
 	}
 
@@ -93,7 +94,7 @@ class Report extends Model {
 				GROUP BY
 				MONTH(t.trip_date)
 				ORDER BY 1";
-		return $this->query($sql);	
+		return $this->getDataSource()->fetchAll($sql);
 	}
 
 	public function listLocations() {
@@ -113,12 +114,12 @@ class Report extends Model {
 				 trip.location_id = location.id) AS species_count
 				FROM location
 				ORDER BY location_name ASC";		
-		return $this->query($sql);				
+		return $this->getDataSource()->fetchAll($sql);			
 	}	
 
 	public function getLocation($id) {
 		$sql = "SELECT * FROM location WHERE id = {$id};";
-		$result = $this->query($sql);
+		$result = $this->getDataSource()->fetchAll($sql);
 		return array_pop($result);
 	}
 
@@ -147,7 +148,7 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily				  
 				  ORDER BY aou_list.common_name ASC";
-		  return $this->query($sql);
+		  return $this->getDataSource()->fetchAll($sql);
 	}
 
 	public function listSpeciesByMonth() {
@@ -165,7 +166,7 @@ class Report extends Model {
 				GROUP BY
 				MONTH(t.trip_date)
 				ORDER BY 1";
-		return $this->query($sql);
+		return $this->getDataSource()->fetchAll($sql);
 	}
 
 	public function listSpeciesForMonth($monthNumber) {
@@ -209,7 +210,7 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily	
 				  ORDER BY aou_list.common_name ASC";		
-		return $this->query($sql);
+		return $this->getDataSource()->fetchAll($sql);
 	}
 
 	public function listSpeciesByOrder() {
@@ -233,7 +234,7 @@ class Report extends Model {
 				  aou_order.order_name,
 				  aou_order.notes				  
 				  ORDER BY COUNT(DISTINCT aou_list.id) DESC";
-		return $this->query($sql);
+		return $this->getDataSource()->fetchAll($sql);
 	}
 
 	public function listSpeciesForOrder($id) {
@@ -274,6 +275,6 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily				  
 				  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC";	
-		return $this->query($sql);	
+		return $this->getDataSource()->fetchAll($sql);	
 	}
 }
