@@ -64,13 +64,9 @@
 		echo $this->Html->script('jqplot/plugins/jqplot.pieRenderer.min')."\n";
 		echo $this->Html->script('jqplot/plugins/jqplot.pointLabels.min')."\n";	
 		echo $this->Html->script('mooredatabase_googlemaps.min')."\n";		
-
-		echo $this->Html->script('pageinit')."\n";								
-	
-		// enable page-specific includes of meta tags, CSS and JS
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
+		
+		// load page init last so that we can assume all CSS and JS is loaded
+		echo $this->Html->script('pageinit')."\n";		
 	?>
 </head>
 <body class="ui-body-a">

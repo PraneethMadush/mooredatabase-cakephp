@@ -77,7 +77,7 @@ class Report extends Model {
                   INNER JOIN aou_order
                     ON aou_list.order = aou_order.order_name
                   WHERE
-                  aou_list.id = {$id}                
+                  aou_list.id = :id                
                   GROUP BY
                   aou_list.id,
                   aou_order.order_name,
@@ -89,7 +89,7 @@ class Report extends Model {
                   aou_list.subfamily";
 		// must put results in temp variable before calling array_pop() or an
 		// E_STRICT error occurs
-		$results = $this -> getDataSource() -> fetchAll($sql);
+		$results = $this -> getDataSource() -> fetchAll($sql,array('id' => $id));		
 		return array_pop($results);
 	}
 
@@ -109,11 +109,11 @@ class Report extends Model {
 				INNER JOIN trip t
 					ON s.trip_id = t.id
 				WHERE
-				s.aou_list_id = {$id}
+				s.aou_list_id = :id
 				GROUP BY
 				MONTH(t.trip_date)
 				ORDER BY 1";
-		return $this -> getDataSource() -> fetchAll($sql);
+		return $this -> getDataSource() -> fetchAll($sql,array('id' => $id));
 	}
 
 	/**
@@ -148,8 +148,8 @@ class Report extends Model {
 	 * @return array of results
 	 */
 	public function getLocation($id) {
-		$sql = "SELECT * FROM location WHERE id = {$id};";
-		$result = $this -> getDataSource() -> fetchAll($sql);
+		$sql = "SELECT * FROM location WHERE id = :id;";
+		$result = $this -> getDataSource() -> fetchAll($sql,array('id' => $id));
 		return array_pop($result);
 	}
 
@@ -176,7 +176,7 @@ class Report extends Model {
 				  INNER JOIN aou_list
 				  	ON sighting.aou_list_id = aou_list.id
 				  WHERE
-				  trip.location_id = {$id}
+				  trip.location_id = :id
 				  GROUP BY
 				  aou_list.common_name,
 				  aou_list.scientific_name,
@@ -184,7 +184,7 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily				  
 				  ORDER BY aou_list.common_name ASC";
-		return $this -> getDataSource() -> fetchAll($sql);
+		return $this -> getDataSource() -> fetchAll($sql,array('id' => $id));
 	}
 
 	/**
@@ -249,7 +249,7 @@ class Report extends Model {
 				  INNER JOIN aou_order
 				  	ON aou_list.order = aou_order.order_name
 				  WHERE
-				  MONTH(trip.trip_date) = {$monthNumber}				  	
+				  MONTH(trip.trip_date) = :monthNumber				  	
 				  GROUP BY
 				  aou_list.common_name,
 				  aou_list.scientific_name,
@@ -257,7 +257,7 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily	
 				  ORDER BY aou_list.common_name ASC";
-		return $this -> getDataSource() -> fetchAll($sql);
+		return $this -> getDataSource() -> fetchAll($sql,array('monthNumber' => $monthNumber));
 	}
 
 	/**
@@ -324,7 +324,7 @@ class Report extends Model {
 				  INNER JOIN aou_order
 				  	ON aou_list.order = aou_order.order_name
 				  WHERE
-				  aou_order.id = {$id}				  	
+				  aou_order.id = :id				  	
 				  GROUP BY
 				  aou_list.id,
 				  aou_list.common_name,
@@ -333,7 +333,7 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily				  
 				  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC";
-		return $this -> getDataSource() -> fetchAll($sql);
+		return $this -> getDataSource() -> fetchAll($sql,array('id' => $id));
 	}
 
 }
