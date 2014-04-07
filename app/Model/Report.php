@@ -2,11 +2,15 @@
 App::uses('AppModel', 'Model');
 class Report extends Model {
 
-	// add these because we're bypassing the CakePHP model machinery and 
+	// add these because we're bypassing the CakePHP model machinery and
 	// executing SQL directly using PDO
 	public $name = 'NoTableModel';
-    public $useTable = false;
-
+	public $useTable = false;
+	/**
+	 * Query for All Species page.
+	 *
+	 * @return array of results
+	 */
 	public function listSpeciesAll() {
 		$sql = "SELECT
 		          aou_list.id,
@@ -42,11 +46,17 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily				  
 				  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC;";
-		return $this->getDataSource()->fetchAll($sql);
-	}    
+		return $this -> getDataSource() -> fetchAll($sql);
+	}
 
+	/**
+	 * Query for species dialog / detail page.
+	 *
+	 * @param int $id
+	 * @return array of results
+	 */
 	public function getSpecies($id) {
-	     $sql = "SELECT
+		$sql = "SELECT
         		  aou_list.id,
                   aou_order.order_name,
                   aou_order.notes AS order_notes,       
@@ -77,14 +87,20 @@ class Report extends Model {
                   aou_list.order,
                   aou_list.family,
                   aou_list.subfamily";
-        // must put results in temp variable before calling array_pop() or an
-        // E_STRICT error occurs
-        $results = $this->getDataSource()->fetchAll($sql);
+		// must put results in temp variable before calling array_pop() or an
+		// E_STRICT error occurs
+		$results = $this -> getDataSource() -> fetchAll($sql);
 		return array_pop($results);
 	}
 
+	/**
+	 * Query to list species' sightings by month.
+	 * Used on species dialog page.
+	 *
+	 * @param int $id
+	 */
 	public function listMonthsForSpecies($id) {
-	  	$sql = "SELECT
+		$sql = "SELECT
 				MONTH(t.trip_date) AS monthNumber,
 				MONTHNAME(t.trip_date) AS monthName,
 				COUNT(DISTINCT s.id) AS sightingCount
@@ -97,9 +113,14 @@ class Report extends Model {
 				GROUP BY
 				MONTH(t.trip_date)
 				ORDER BY 1";
-		return $this->getDataSource()->fetchAll($sql);
+		return $this -> getDataSource() -> fetchAll($sql);
 	}
 
+	/**
+	 * Query for list on Birding Locations page.
+	 *
+	 * @return array of results
+	 */
 	public function listLocations() {
 		$sql = "SELECT
                 location.* ,
@@ -116,16 +137,28 @@ class Report extends Model {
 				 WHERE
 				 trip.location_id = location.id) AS species_count
 				FROM location
-				ORDER BY location_name ASC";		
-		return $this->getDataSource()->fetchAll($sql);			
-	}	
+				ORDER BY location_name ASC";
+		return $this -> getDataSource() -> fetchAll($sql);
+	}
 
+	/**
+	 * Query to obtain location detail.
+	 *
+	 * @param int $id
+	 * @return array of results
+	 */
 	public function getLocation($id) {
 		$sql = "SELECT * FROM location WHERE id = {$id};";
-		$result = $this->getDataSource()->fetchAll($sql);
+		$result = $this -> getDataSource() -> fetchAll($sql);
 		return array_pop($result);
 	}
 
+	/**
+	 * Query for list of species sighted at location on location detail page.
+	 *
+	 * @param int $id
+	 * @return array of results
+	 */
 	public function listSightingsForLocation($id) {
 		$sql = "SELECT
 		          aou_list.id,
@@ -151,9 +184,14 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily				  
 				  ORDER BY aou_list.common_name ASC";
-		  return $this->getDataSource()->fetchAll($sql);
+		return $this -> getDataSource() -> fetchAll($sql);
 	}
 
+	/**
+	 * Query for list of species by month.
+	 *
+	 * @return array of results
+	 */
 	public function listSpeciesByMonth() {
 		$sql = "SELECT
 				MONTH(t.trip_date) AS monthNumber,
@@ -169,9 +207,15 @@ class Report extends Model {
 				GROUP BY
 				MONTH(t.trip_date)
 				ORDER BY 1";
-		return $this->getDataSource()->fetchAll($sql);
+		return $this -> getDataSource() -> fetchAll($sql);
 	}
 
+	/**
+	 * Query to list species for a month.
+	 *
+	 * @param int $monthNumber
+	 * @return array of results
+	 */
 	public function listSpeciesForMonth($monthNumber) {
 		$sql = "SELECT
 		          aou_list.id,
@@ -212,10 +256,15 @@ class Report extends Model {
 				  aou_list.order,
 				  aou_list.family,
 				  aou_list.subfamily	
-				  ORDER BY aou_list.common_name ASC";		
-		return $this->getDataSource()->fetchAll($sql);
+				  ORDER BY aou_list.common_name ASC";
+		return $this -> getDataSource() -> fetchAll($sql);
 	}
 
+	/**
+	 * Query to list species by order.
+	 *
+	 * @return array of results
+	 */
 	public function listSpeciesByOrder() {
 		$sql = "SELECT
 				  aou_order.id,
@@ -237,9 +286,15 @@ class Report extends Model {
 				  aou_order.order_name,
 				  aou_order.notes				  
 				  ORDER BY COUNT(DISTINCT aou_list.id) DESC";
-		return $this->getDataSource()->fetchAll($sql);
+		return $this -> getDataSource() -> fetchAll($sql);
 	}
 
+	/**
+	 * Query to list species sighted for an order.
+	 *
+	 * @param int $id
+	 * @return array of results
+	 */
 	public function listSpeciesForOrder($id) {
 		$sql = "SELECT
 		          aou_list.id,
@@ -277,7 +332,8 @@ class Report extends Model {
 				  aou_list.order,
 				  aou_list.family,
 				  aou_list.subfamily				  
-				  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC";	
-		return $this->getDataSource()->fetchAll($sql);	
+				  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC";
+		return $this -> getDataSource() -> fetchAll($sql);
 	}
+
 }

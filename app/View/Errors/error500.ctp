@@ -15,6 +15,8 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+$this->set('pageId', 'error500');
+$this->set('title_for_layout', 'Error');
 ?>
 <h2><?php echo $name; ?></h2>
 <p class="error">
