@@ -12,20 +12,20 @@ class ReportsController extends AppController {
 		$this -> render('/Reports/species_all');
 	}
 
-	public function species_dialog() {
-		$id = ( int )$this -> params['url']['id'];
+	public function species_dialog($id) {
+		$id = ( int )$id;
 		$bird = $this -> Report -> getSpecies($id);
 		$this -> set('bird', $bird);
 		$this -> render('/Reports/species_dialog');
 	}
 
-	public function sightings_by_month() {
+	public function sightings_by_month($id) {
 
 		// disable layout
 		$this -> layout = null;
 
 		// perform the search
-		$species_id = ( int )$this -> params['url']['id'];
+		$species_id = ( int )$id;
 		$monthSet = $this -> Report -> listMonthsForSpecies($species_id);
 
 		// add all 12 months with sightings 0 to array first; so
@@ -55,8 +55,8 @@ class ReportsController extends AppController {
 		$this -> render('/Reports/birding_locations');
 	}
 
-	public function location_detail() {
-		$id = ( int )$this -> params['url']['id'];
+	public function location_detail($location_id) {
+		$id = ( int )$location_id;
 		$location = $this -> Report -> getLocation($id);
 		$this -> set('location', $location);
 		$sighting_set = $this -> Report -> listSightingsForLocation($id);
@@ -118,10 +118,10 @@ class ReportsController extends AppController {
 		$this -> render('/Reports/species_by_order_json');
 	}
 
-	public function species_by_order_list() {
+	public function species_by_order_list($order_id) {
 
-		// parse URL parameter to get id
-		$id = ( int )$this -> params['url']['id'];
+		// sanitize parameter
+		$id = ( int )$order_id;
 
 		// get the data
 		$sighting_set = $this -> Report -> listSpeciesForOrder($id);
@@ -139,10 +139,10 @@ class ReportsController extends AppController {
 		$this -> render('/Reports/species_by_order_list');
 	}
 
-	public function species_by_month_list() {
+	public function species_by_month_list($monthNumber) {
 
-		// parse URL parameter to get month number and name
-		$monthNumber = ( int )$this -> params['url']['monthNumber'];
+		// sanitize parameter and parse to get month number and name
+		$monthNumber = ( int )$monthNumber;
 		$timestamp = mktime(0, 0, 0, $monthNumber, 1, 2005);
 		$monthName = date("F", $timestamp);
 

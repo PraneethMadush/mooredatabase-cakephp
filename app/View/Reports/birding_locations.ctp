@@ -7,7 +7,7 @@
 	<?php
 		foreach($location_set as $location) {
 			echo "<li>";
-			echo '<a href="/reports/location_detail?id='.$location['location']['id'].'">';
+			echo '<a href="/reports/location_detail/'.$location['location']['id'].'">';
 			echo '<p><strong>'.$location['location']['location_name'].'</strong></p>';
 			echo '<p>'.$location['location']['county_name'].' County, '.$location['location']['state_code'].'</p>';
 			echo '<p>Coordinates: '.$location['location']['latitude'].' '.$location['location']['longitude'].'</p>';

@@ -19,7 +19,7 @@
 	<ul data-role="listview" data-count-theme="a">
 	<?php
 		foreach($order_set as $order) {
-			echo '<li><a href="species_by_order_list?id='.$order['aou_order']['id'].'">';
+			echo '<li><a href="species_by_order_list/'.$order['aou_order']['id'].'">';
 			echo '<p><strong>'.$order['aou_order']['order_name'].'</strong></p>';
 			echo '<p>'.$order['aou_order']['order_notes'].'</p>';
 			echo '<p>'.$order[0]['order_species_count_all'].' species in N. America</p>';

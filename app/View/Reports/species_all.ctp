@@ -20,7 +20,7 @@
 				     '<p></p><p>'.$bird['aou_order']['order_notes'].'</p><span class="ui-li-count">'.
 				     $bird[0]['order_species_count'].' species</span></li>';
 			}			
-			echo '<li data-icon="info"><a href="/reports/species_dialog?id='.$bird['aou_list']['id'].'">'.$bird['aou_list']['common_name'].'</a></li>';
+			echo '<li data-icon="info"><a href="/reports/species_dialog/'.$bird['aou_list']['id'].'">'.$bird['aou_list']['common_name'].'</a></li>';
 		}
 	?>
 	</ul>		

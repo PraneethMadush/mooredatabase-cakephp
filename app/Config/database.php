@@ -17,4 +17,21 @@ class DATABASE_CONFIG {
 		'password' => 'dY78vNqP37sS94U',
 		'database' => 'birding',
 	);
+	// public $default = array(
+		// 'datasource' => 'Database/Mysql',
+		// 'persistent' => false,
+		// 'host' => '127.0.0.1',
+		// 'login' => 'root',
+		// 'password' => 'gsnyder56',
+		// 'database' => 'birding',
+	// );
+	// public $test = array(
+		// 'datasource' => 'Database/Mysql',
+		// 'persistent' => false,
+		// 'host' => '127.0.0.1',
+		// 'login' => 'root',
+		// 'password' => 'gsnyder56',
+		// 'database' => 'birding',
+	// );	
+		
 }

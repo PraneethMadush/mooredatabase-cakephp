@@ -89,7 +89,7 @@ $(document).on "pageshow", "#speciesDialog", ->
 		speciesId = $('#speciesId').val()
 		$.ajax
 			type : 'POST'
-			url : '/reports/sightings_by_month?id=' + speciesId
+			url : '/reports/sightings_by_month/' + speciesId
 			dataType : 'json'
 			success : (data) ->
 				mooredatabase.drawChartSpeciesByMonth(data)
