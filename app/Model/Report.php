@@ -89,7 +89,7 @@ class Report extends Model {
                   aou_list.subfamily";
 		// must put results in temp variable before calling array_pop() or an
 		// E_STRICT error occurs
-		$results = $this -> getDataSource() -> fetchAll($sql,array('id' => $id));		
+		$results = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
 		return array_pop($results);
 	}
 
@@ -113,7 +113,7 @@ class Report extends Model {
 				GROUP BY
 				MONTH(t.trip_date)
 				ORDER BY 1";
-		return $this -> getDataSource() -> fetchAll($sql,array('id' => $id));
+		return $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
 	}
 
 	/**
@@ -149,7 +149,7 @@ class Report extends Model {
 	 */
 	public function getLocation($id) {
 		$sql = "SELECT * FROM location WHERE id = :id;";
-		$result = $this -> getDataSource() -> fetchAll($sql,array('id' => $id));
+		$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
 		return array_pop($result);
 	}
 
@@ -184,7 +184,7 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily				  
 				  ORDER BY aou_list.common_name ASC";
-		return $this -> getDataSource() -> fetchAll($sql,array('id' => $id));
+		return $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
 	}
 
 	/**
@@ -257,7 +257,7 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily	
 				  ORDER BY aou_list.common_name ASC";
-		return $this -> getDataSource() -> fetchAll($sql,array('monthNumber' => $monthNumber));
+		return $this -> getDataSource() -> fetchAll($sql, array('monthNumber' => $monthNumber));
 	}
 
 	/**
@@ -333,7 +333,7 @@ class Report extends Model {
 				  aou_list.family,
 				  aou_list.subfamily				  
 				  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC";
-		return $this -> getDataSource() -> fetchAll($sql,array('id' => $id));
+		return $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
 	}
 
 }
