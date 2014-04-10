@@ -42,7 +42,6 @@
 		</div>
 		<?php echo $this->element('panelMenu'); ?>
 	</div>
-	<?php echo $this->element('googleAnalytics'); 
-	?>
+	<?php echo $this->element('googleAnalytics'); ?>
 </body>
 </html>
