@@ -1,39 +1,3 @@
-$(document).on "pageshow", "#blogrecent", ->
-	$.getJSON 'http://wordpress.moore-database.com/?json=recentstories&callback=?', (data) ->
-		mooredatabase.listWordpressPosts(data)
-		true
-	true
-		
-$(document).on "pageshow", "#blogcategories", ->
-	$.getJSON 'http://wordpress.moore-database.com/?json=get_category_index&callback=?',(data) ->
-		mooredatabase.listWordpressCategories(data)
-		true
-	true
-		
-$(document).on "pageshow", "#tweetsold", ->
-	$.getJSON 'http://twitter.com/status/user_timeline/stephenmoore56.json?count=30&callback=?',(data) ->
-		mooredatabase.listTweets(data)
-		true
-	refreshID = setInterval(->
-		$.getJSON 'http://twitter.com/status/user_timeline/stephenmoore56.json?count=30&callback=?',(data) ->
-			mooredatabase.listTweets(data)
-			true
-		true
-	, 15000)
-	true
-	
-$(document).on "pageshow", "#tweets", ->
-  $.getJSON 'https://api.twitter.com/1/statuses/user_timeline.json?include_entities=false&include_rts=false&screen_name=stephenmoore56&count=30&callback=?',(data) ->
-    mooredatabase.listTweets(data)
-    true
-  refreshID = setInterval(->
-    $.getJSON 'https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=stephenmoore56&count=30&callback=?',(data) ->
-      mooredatabase.listTweets(data)
-      true
-    true
-  , 15000)
-  true	
-	
 $(document).on "pageshow", "#youtube", ->
 	$.getJSON 'http://gdata.youtube.com/feeds/users/893TheCurrent/uploads?alt=json-in-script&amp;max-results=30&callback=?',(data) ->
 		mooredatabase.listVideos(data)

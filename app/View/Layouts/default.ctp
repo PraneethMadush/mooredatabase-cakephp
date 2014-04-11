@@ -15,13 +15,6 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
-// debug kit
-// if (!Configure::read('debug')):
-// 	throw new NotFoundException();
-// endif;
-// App::uses('Debugger', 'Utility');
-
 ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">

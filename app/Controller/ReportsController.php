@@ -1,5 +1,10 @@
 <?php
 class ReportsController extends AppController {
+
+	// use cache for this controller
+	public $helpers = array('Cache');
+	public $cacheAction = array('species_all' => 3600, 'birding_locations' => 3600, 'species_by_month' => 3600, 'species_by_month_json' => 3600, 'species_by_order' => 3600, 'species_by_order_json' => 3600);
+
 	public function index() {
 		$this -> species_all();
 	}
@@ -9,14 +14,12 @@ class ReportsController extends AppController {
 		// default action for the reports controller
 		$sighting_set = $this -> Report -> listSpeciesAll();
 		$this -> set('sighting_set', $sighting_set);
-		$this -> render('/Reports/species_all');
 	}
 
 	public function species_dialog($id) {
 		$id = ( int )$id;
 		$bird = $this -> Report -> getSpecies($id);
 		$this -> set('bird', $bird);
-		$this -> render('/Reports/species_dialog');
 	}
 
 	public function sightings_by_month($id) {
@@ -43,16 +46,12 @@ class ReportsController extends AppController {
 		foreach ($monthSet as $month) {
 			$returnArray[$month[0]['monthNumber'] - 1] = array(substr($month[0]['monthName'], 0, 1), $month[0]['sightingCount']);
 		}
-
-		// render view/JSON
 		$this -> set('results', $returnArray);
-		$this -> render('/Reports/sightings_by_month');
 	}
 
 	public function birding_locations() {
 		$location_set = $this -> Report -> listLocations();
 		$this -> set('location_set', $location_set);
-		$this -> render('/Reports/birding_locations');
 	}
 
 	public function location_detail($location_id) {
@@ -61,13 +60,11 @@ class ReportsController extends AppController {
 		$this -> set('location', $location);
 		$sighting_set = $this -> Report -> listSightingsForLocation($id);
 		$this -> set('sighting_set', $sighting_set);
-		$this -> render('/Reports/location_detail');
 	}
 
 	public function species_by_month() {
 		$month_set = $this -> Report -> listSpeciesByMonth();
 		$this -> set('month_set', $month_set);
-		$this -> render('/Reports/species_by_month');
 	}
 
 	public function species_by_month_json() {
@@ -85,16 +82,12 @@ class ReportsController extends AppController {
 			$row_array = array(substr($month[0]['monthName'], 0, 1), $month[0]['speciesCount']);
 			array_push($return_arr, $row_array);
 		}
-
-		// render view/JSON
 		$this -> set('results', $return_arr);
-		$this -> render('/Reports/species_by_month_json');
 	}
 
 	public function species_by_order() {
 		$order_set = $this -> Report -> listSpeciesByOrder();
 		$this -> set('order_set', $order_set);
-		$this -> render('/Reports/species_by_order');
 	}
 
 	public function species_by_order_json() {
@@ -112,10 +105,7 @@ class ReportsController extends AppController {
 			$row_array = array($order['aou_order']['order_name'], $order[0]['speciesCount']);
 			array_push($return_arr, $row_array);
 		}
-
-		// render view/JSON
 		$this -> set('results', $return_arr);
-		$this -> render('/Reports/species_by_order_json');
 	}
 
 	public function species_by_order_list($order_id) {
@@ -136,7 +126,6 @@ class ReportsController extends AppController {
 		$this -> set('order_name', $order_name);
 		$this -> set('title_for_layout', 'Order ' . $order_name);
 		$this -> set('sighting_set', $sighting_set);
-		$this -> render('/Reports/species_by_order_list');
 	}
 
 	public function species_by_month_list($monthNumber) {
@@ -154,7 +143,15 @@ class ReportsController extends AppController {
 		$this -> set('monthName', $monthName);
 		$this -> set('monthNumber', $monthNumber);
 		$this -> set('title_for_layout', $monthName);
-		$this -> render('/Reports/species_by_month_list');
+	}
+	
+	public function clear_cache() {
+
+		// clear the cache; view shows success message only
+		clearCache();
+		$this->set('pageId', 'clearCache');
+		$this->set('title_for_layout', 'Cache Cleared');
+		$this -> flash("Cache cleared.","/");
 	}
 
 }

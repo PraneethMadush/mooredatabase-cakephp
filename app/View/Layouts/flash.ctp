@@ -17,21 +17,25 @@
  */
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 <head>
-<?php echo $this->Html->charset(); ?>
-<title><?php echo $page_title; ?></title>
-
+<title><?php echo "MOORE+DATABASE - ".$title_for_layout; ?></title>
 <?php if (Configure::read('debug') == 0): ?>
 <meta http-equiv="Refresh" content="<?php echo $pause; ?>;url=<?php echo $url; ?>"/>
 <?php endif; ?>
-<style><!--
-P { text-align:center; font:bold 1.1em sans-serif }
-A { color:#444; text-decoration:none }
-A:HOVER { text-decoration: underline; color:#44E }
---></style>
+<?php echo $this->element('meta'); ?>
+<?php echo $this->element('stylesheets'); ?>
+<?php echo $this->element('scripts'); ?>
 </head>
-<body>
-<p><a href="<?php echo $url; ?>"><?php echo $message; ?></a></p>
+<body class="ui-body-a">
+	<div id="<?php echo $pageId; ?>" data-role="page" data-theme="a" data-content-theme="a">
+		<div id="container">
+			<?php echo $this->element('header'); ?>
+			<div id="content">
+				<p><a href="<?php echo $url; ?>"><?php echo $message; ?></a></p>
+			</div>
+		</div>
+		<?php echo $this->element('panelMenu'); ?>
+	</div>
 </body>
 </html>
