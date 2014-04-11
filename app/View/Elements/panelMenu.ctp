@@ -48,10 +48,8 @@
 		<a href="#" data-rel="close" class="ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-icon-delete ui-corner-all">
 			Close
 		</a>
-		<?php 
-			if ($pageId != 'index') {
-				echo '<a href="/" class="ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-icon-home ui-corner-all">Home</a>';
-			}
-		?>		
+		<?php if ($pageId != 'index'): ?>
+			<a href="/" class="ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-icon-home ui-corner-all">Home</a>
+		<?php endif; ?>		
 	</div>
 </div><!-- /default panel -->
