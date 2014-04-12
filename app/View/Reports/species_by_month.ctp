@@ -17,13 +17,13 @@
 </div>
 <div data-role="content">	
 	<ul data-role="listview" data-count-theme="a">
-	<?php
-		foreach($month_set as $month) {
-			echo '<li><a href="species_by_month_list/'.$month[0]['monthNumber'].'">';
-			echo $month[0]['monthName'];
-			echo '<span class="ui-li-count">'.$month[0]['speciesCount'].' Species</span>';
-			echo '</a></li>';
-		}
-	?>
+	<?php foreach($month_set as $month): ?>
+		<li>
+			<a href="species_by_month_list/<?php echo $month[0]['monthNumber']; ?>">
+				<?php echo $month[0]['monthName']; ?>
+				<span class="ui-li-count"><?php echo $month[0]['speciesCount']; ?> Species</span>
+			</a>
+		</li>
+	<?php endforeach; ?>
 	</ul>
 </div>

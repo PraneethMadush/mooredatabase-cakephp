@@ -17,14 +17,15 @@
 </div>
 <div data-role="content">	
 	<ul data-role="listview" data-count-theme="a">
-	<?php
-		foreach($order_set as $order) {
-			echo '<li><a href="species_by_order_list/'.$order['aou_order']['id'].'">';
-			echo '<p><strong>'.$order['aou_order']['order_name'].'</strong></p>';
-			echo '<p>'.$order['aou_order']['order_notes'].'</p>';
-			echo '<p>'.$order[0]['order_species_count_all'].' species in N. America</p>';
-			echo '<span class="ui-li-count">'.$order[0]['speciesCount'].' Species</span></a></li>';
-		}
-	?>
+	<?php foreach($order_set as $order): ?>
+		<li>
+			<a href="species_by_order_list/<?php echo $order['aou_order']['id']; ?>">
+				<p><strong><?php echo $order['aou_order']['order_name']; ?></strong></p>
+				<p><?php echo $order['aou_order']['order_notes']; ?></p>
+				<p><?php $order[0]['order_species_count_all']; ?> species in N. America</p>
+				<span class="ui-li-count"><?php echo $order[0]['speciesCount']; ?> Species</span>
+			</a>
+		</li>
+	<?php endforeach; ?>
 	</ul>
 </div>
