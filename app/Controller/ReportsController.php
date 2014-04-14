@@ -1,10 +1,6 @@
 <?php
 class ReportsController extends AppController {
 
-	// use cache for this controller
-	public $helpers = array('Cache');
-	public $cacheAction = array('species_all' => 3600, 'birding_locations' => 3600, 'species_by_month' => 3600, 'species_by_month_json' => 3600, 'species_by_order' => 3600, 'species_by_order_json' => 3600);
-
 	public function index() {
 		$this -> species_all();
 	}
@@ -144,14 +140,14 @@ class ReportsController extends AppController {
 		$this -> set('monthNumber', $monthNumber);
 		$this -> set('title_for_layout', $monthName);
 	}
-	
+
 	public function clear_cache() {
 
 		// clear the cache; view shows success message only
 		clearCache();
-		$this->set('pageId', 'clearCache');
-		$this->set('title_for_layout', 'Cache Cleared');
-		$this -> flash("Cache cleared.","/");
+		$this -> set('pageId', 'clearCache');
+		$this -> set('title_for_layout', 'Cache Cleared');
+		$this -> flash("Cache cleared.", "/");
 	}
 
 }

@@ -72,5 +72,4 @@
 			</address>
 		</div>
 	</div>
-	<?php echo $this->element('banner'); ?>
 </div>

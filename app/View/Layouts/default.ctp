@@ -20,21 +20,21 @@
 <html lang="en" class="no-js">
 <head>
 <title><?php echo "MOORE+DATABASE - ".$title_for_layout; ?></title>
-<?php echo $this->element('meta'); ?>
-<?php echo $this->element('stylesheets'); ?>
-<?php echo $this->element('scripts'); ?>
+<?php echo $this->element('meta', array(), array('cache' => true)); ?>
+<?php echo $this->element('stylesheets', array(), array('cache' => true)); ?>
+<?php echo $this->element('scripts', array(), array('cache' => true)); ?>
 </head>
 <body class="ui-body-a">
-	<div id="<?php echo $pageId; ?>" data-role="page" data-theme="a" data-content-theme="a">
-		<div id="container">
-			<?php echo $this->element('header'); ?>
-			<div id="content">
-				<?php echo $this->Session->flash(); ?>
-				<?php echo $this->fetch('content'); ?>
-			</div>
+<div id="<?php echo $pageId; ?>" data-role="page" data-theme="a" data-content-theme="a">
+	<div id="container">
+        <?php echo $this->element('header')."\n"; ?>
+		<div id="content">
+			<?php echo $this->fetch('content')."\n"; ?>
+			 <?php echo $this->element('banner',array(),array('cache' => true)); ?>
 		</div>
-		<?php echo $this->element('panelMenu'); ?>
 	</div>
-	<?php echo $this->element('googleAnalytics'); ?>
+	<?php echo $this->element('panelMenu')."\n"; ?>
+</div>
+<?php echo $this->element('googleAnalytics', array(), array('cache' => true))."\n"; ?>
 </body>
 </html>

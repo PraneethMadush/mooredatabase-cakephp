@@ -17,7 +17,7 @@
 	</figure>
 	<br />
 	<ul data-role="listview" data-divider-theme="a">
-		<li data-role="list-divider"><?php //echo count($sighting_set).' species recorded</li>'; ?>
+		<li data-role="list-divider"><?php echo count($sighting_set).' species recorded</li>'; ?>
 	</ul>
 	<br />
 	<ul data-role="listview" data-autodividers="true" data-divider-theme="a" data-filter="true" data-theme="c">
