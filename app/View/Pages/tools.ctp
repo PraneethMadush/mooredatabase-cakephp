@@ -10,12 +10,14 @@
             	<li>Amazon EC2 / RDS / S3 / Data Pipeline / Redshift</li>
 				<li>Eclipse / Aptana Studio</li>
 				<li>Sublime Text</li>
-				<li>Git / GitHub</li>
+				<li>Git / GitHub / Sourcetree</li>
 				<li>Subversion / TortoiseSVN / CommitMonitor</li>
 				<li>HTML5, CSS3</li>
 				<li>Compass / SASS</li>
 				<li>SimpLESS / LESS</li>
 				<li>Javascript, jQuery, jQuery Mobile, AJAX</li>
+				<li>Coffeescript</li>
+				<li>Uglifyjs</li>
 				<li>Bootstrap</li>
 				<li>AngularJS</li>
 				<li>Node.js / Heroku</li>
