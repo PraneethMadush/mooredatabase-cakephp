@@ -12,41 +12,46 @@ class Report extends Model {
 	 * @return array of results
 	 */
 	public function listSpeciesAll() {
-		$sql = "SELECT
-		          aou_list.id,
-				  aou_order.order_name,
-				  aou_order.notes AS order_notes,		
-				  aou_list.common_name,
-				  aou_list.scientific_name,
-				  aou_list.family,
-				  aou_list.subfamily,
-				  (	SELECT COUNT(DISTINCT aou_list2.id)
-				  	FROM
-				  	sighting sighting2
-				  	INNER JOIN aou_list aou_list2
-				  		ON sighting2.aou_list_id = aou_list2.id
-				    INNER JOIN aou_order ao2
-				  		ON aou_list2.order = ao2.order_name
-				  	WHERE
-				  	aou_order.order_name = ao2.order_name) order_species_count,
-				  COUNT(*) AS sightings,
-				  MAX(trip.trip_date) AS last_seen
-				  FROM
-				  trip
-				  INNER JOIN sighting
-				  	ON trip.id = sighting.trip_id
-				  INNER JOIN aou_list
-				  	ON sighting.aou_list_id = aou_list.id
-				  INNER JOIN aou_order
-				  	ON aou_list.order = aou_order.order_name
-				  GROUP BY
-				  aou_list.common_name,
-				  aou_list.scientific_name,
-				  aou_list.order,
-				  aou_list.family,
-				  aou_list.subfamily				  
-				  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC;";
-		return $this -> getDataSource() -> fetchAll($sql);
+		$result = Cache::read('listSpeciesAll', 'default');
+		if ($result == FALSE) {
+			$sql = "SELECT
+			          aou_list.id,
+					  aou_order.order_name,
+					  aou_order.notes AS order_notes,		
+					  aou_list.common_name,
+					  aou_list.scientific_name,
+					  aou_list.family,
+					  aou_list.subfamily,
+					  (	SELECT COUNT(DISTINCT aou_list2.id)
+					  	FROM
+					  	sighting sighting2
+					  	INNER JOIN aou_list aou_list2
+					  		ON sighting2.aou_list_id = aou_list2.id
+					    INNER JOIN aou_order ao2
+					  		ON aou_list2.order = ao2.order_name
+					  	WHERE
+					  	aou_order.order_name = ao2.order_name) order_species_count,
+					  COUNT(*) AS sightings,
+					  MAX(trip.trip_date) AS last_seen
+					  FROM
+					  trip
+					  INNER JOIN sighting
+					  	ON trip.id = sighting.trip_id
+					  INNER JOIN aou_list
+					  	ON sighting.aou_list_id = aou_list.id
+					  INNER JOIN aou_order
+					  	ON aou_list.order = aou_order.order_name
+					  GROUP BY
+					  aou_list.common_name,
+					  aou_list.scientific_name,
+					  aou_list.order,
+					  aou_list.family,
+					  aou_list.subfamily				  
+					  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC;";
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write('listSpeciesAll', $result, 'default');
+		}
+		return $result;
 	}
 
 	/**
@@ -122,7 +127,9 @@ class Report extends Model {
 	 * @return array of results
 	 */
 	public function listLocations() {
-		$sql = "SELECT
+		$result = Cache::read('listLocations', 'default');
+		if ($result == FALSE) {
+			$sql = "SELECT
                 location.* ,
 				(SELECT COUNT(*) 
 				 FROM trip
@@ -138,7 +145,10 @@ class Report extends Model {
 				 trip.location_id = location.id) AS species_count
 				FROM location
 				ORDER BY location_name ASC";
-		return $this -> getDataSource() -> fetchAll($sql);
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write('listLocations', $result, 'default');
+		}
+		return $result;
 	}
 
 	/**
@@ -193,21 +203,26 @@ class Report extends Model {
 	 * @return array of results
 	 */
 	public function listSpeciesByMonth() {
-		$sql = "SELECT
-				MONTH(t.trip_date) AS monthNumber,
-				MONTHNAME(t.trip_date) AS monthName,
-				COUNT(DISTINCT l.id) AS speciesCount,
-				COUNT(DISTINCT t.id) AS tripCount
-				FROM
-				aou_list l
-				INNER JOIN sighting s
-					ON l.id = s.aou_list_id
-				INNER JOIN trip t
-					ON s.trip_id = t.id
-				GROUP BY
-				MONTH(t.trip_date)
-				ORDER BY 1";
-		return $this -> getDataSource() -> fetchAll($sql);
+		$result = Cache::read('listSpeciesByMonth', 'default');
+		if ($result == FALSE) {
+			$sql = "SELECT
+					MONTH(t.trip_date) AS monthNumber,
+					MONTHNAME(t.trip_date) AS monthName,
+					COUNT(DISTINCT l.id) AS speciesCount,
+					COUNT(DISTINCT t.id) AS tripCount
+					FROM
+					aou_list l
+					INNER JOIN sighting s
+						ON l.id = s.aou_list_id
+					INNER JOIN trip t
+						ON s.trip_id = t.id
+					GROUP BY
+					MONTH(t.trip_date)
+					ORDER BY 1";
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write('listSpeciesByMonth', $result, 'default');
+		}
+		return $result;
 	}
 
 	/**
@@ -266,27 +281,32 @@ class Report extends Model {
 	 * @return array of results
 	 */
 	public function listSpeciesByOrder() {
-		$sql = "SELECT
-				  aou_order.id,
-				  aou_order.order_name,
-				  aou_order.notes AS order_notes,
-				  ( SELECT COUNT(*)
-                    FROM
-                    aou_list aol2
-                    WHERE
-                    aol2.order = aou_order.order_name) AS order_species_count_all,		
-				  COUNT(DISTINCT aou_list.id) AS speciesCount
-				  FROM
-				  sighting
-				  INNER JOIN aou_list
-				  	ON sighting.aou_list_id = aou_list.id
-				  INNER JOIN aou_order
-				  	ON aou_list.order = aou_order.order_name
-				  GROUP BY
-				  aou_order.order_name,
-				  aou_order.notes				  
-				  ORDER BY COUNT(DISTINCT aou_list.id) DESC";
-		return $this -> getDataSource() -> fetchAll($sql);
+		$result = Cache::read('listSpeciesByOrder', 'default');
+		if ($result == FALSE) {
+			$sql = "SELECT
+					  aou_order.id,
+					  aou_order.order_name,
+					  aou_order.notes AS order_notes,
+					  ( SELECT COUNT(*)
+	                    FROM
+	                    aou_list aol2
+	                    WHERE
+	                    aol2.order = aou_order.order_name) AS order_species_count_all,		
+					  COUNT(DISTINCT aou_list.id) AS speciesCount
+					  FROM
+					  sighting
+					  INNER JOIN aou_list
+					  	ON sighting.aou_list_id = aou_list.id
+					  INNER JOIN aou_order
+					  	ON aou_list.order = aou_order.order_name
+					  GROUP BY
+					  aou_order.order_name,
+					  aou_order.notes				  
+					  ORDER BY COUNT(DISTINCT aou_list.id) DESC";
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write('listSpeciesByOrder', $result, 'default');
+		}
+		return $result;
 	}
 
 	/**

@@ -144,7 +144,7 @@ class ReportsController extends AppController {
 	public function clear_cache() {
 
 		// clear the cache; view shows success message only
-		clearCache();
+		Cache::clear(false);
 		$this -> set('pageId', 'clearCache');
 		$this -> set('title_for_layout', 'Cache Cleared');
 		$this -> flash("Cache cleared.", "/");
