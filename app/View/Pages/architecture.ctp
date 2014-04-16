@@ -26,12 +26,14 @@
 				<li>Amazon RDS (MySQL 5.6)</li>
 				<li>Nginx / PHP-FPM</li>
 				<li>CakePHP 2.4.6 / PHP 5.3</li>
+				<li>Memcached</li>
 			</ul>
 			<?php echo $this->Html->image('Powered-by-Amazon-Web-Services.jpg', array('alt' => 'AWS Logo','class' => 'logo')); ?>
 	    </div>
 	    <div data-role="collapsible">
 			<h3>Development</h3>
 			<ul>
+				<li>Aptana Studio</li>
 				<li>Sublime Text</li>
 				<li>Ubuntu Linux</li>
 				<li>Mac OS X</li>

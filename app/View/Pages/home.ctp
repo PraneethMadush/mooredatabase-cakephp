@@ -21,30 +21,9 @@
 			<ul>
 				<li>Completed Statistics and R programming courses offered by Coursera</li>
 				<li>Migrated mobile site to CakePHP and Nginx</li>
+				<li>Implemented caching with memcached</li>
 				<li>Upgraded mobile site front end to jQuery Mobile 1.4.0</li>
 				<li>Upgraded RDS instance to MySQL 5.6.14</li>
-				<li>Upgraded Zend Framework components to 2.2.4</li>
-				<li>New Node.js site on Heroku</li>
-				<li>NoSQL (Redis / MongoDB)</li>
-				<li>SASS / Compass</li>
-				<li>CoffeeScript</li>
-				<li>Training on
-					<ul>
-						<li>MySQL</li>
-						<li>CakePHP</li>
-						<li>Statistics, R / R Studio</li>
-						<li>Excel</li>
-						<li>Bash Shell Scripting</li>
-						<li>PHP / Zend Framework</li>
-						<li>Ruby / Rails / Heroku</li>
-						<li>git / GitHub</li>
-						<li>SASS / Compass</li>
-						<li>CoffeeScript</li>
-						<li>Node.js / Heroku</li>
-						<li>jQuery Mobile</li>
-						<li>Mac OS X</li>					
-					</ul>
-				</li>
 			</ul>
 			<?php echo $this->Html->image('mcitp.png', array('alt' => 'MCITP Logo','class' => 'logo')); ?>
 		</div>
