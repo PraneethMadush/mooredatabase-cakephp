@@ -9,13 +9,13 @@ class ReportsController extends AppController {
 
 		// default action for the reports controller
 		$sighting_set = $this -> Report -> listSpeciesAll();
-		$this -> set('sighting_set', $sighting_set);
+		$this -> set(compact('sighting_set'));
 	}
 
 	public function species_dialog($id) {
 		$id = ( int )$id;
 		$bird = $this -> Report -> getSpecies($id);
-		$this -> set('bird', $bird);
+		$this -> set(compact('bird'));
 	}
 
 	public function sightings_by_month($id) {
@@ -30,37 +30,36 @@ class ReportsController extends AppController {
 		// add all 12 months with sightings 0 to array first; so
 		// we get a chart showing all 12 months with no gaps
 		$monthArray = array('J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D');
-		$returnArray = array();
+		$results = array();
 		for ($i = 0; $i < 12; $i++) {
 			$rowArray = array($monthArray[$i], 0);
-			array_push($returnArray, $rowArray);
+			array_push($results, $rowArray);
 		}
 
 		// update array elements with counts from database; take
 		// first three letters of month so horizontal legends aren't
 		// tilted or truncated
 		foreach ($monthSet as $month) {
-			$returnArray[$month[0]['monthNumber'] - 1] = array(substr($month[0]['monthName'], 0, 1), $month[0]['sightingCount']);
+			$results[$month[0]['monthNumber'] - 1] = array(substr($month[0]['monthName'], 0, 1), $month[0]['sightingCount']);
 		}
-		$this -> set('results', $returnArray);
+		$this -> set(compact('results'));		
 	}
 
 	public function birding_locations() {
 		$location_set = $this -> Report -> listLocations();
-		$this -> set('location_set', $location_set);
+		$this -> set(compact('location_set'));
 	}
 
 	public function location_detail($location_id) {
 		$id = ( int )$location_id;
 		$location = $this -> Report -> getLocation($id);
-		$this -> set('location', $location);
 		$sighting_set = $this -> Report -> listSightingsForLocation($id);
-		$this -> set('sighting_set', $sighting_set);
+		$this -> set(compact('location','sighting_set'));
 	}
 
 	public function species_by_month() {
 		$month_set = $this -> Report -> listSpeciesByMonth();
-		$this -> set('month_set', $month_set);
+		$this -> set(compact('month_set'));		
 	}
 
 	public function species_by_month_json() {
@@ -73,17 +72,17 @@ class ReportsController extends AppController {
 
 		// Retrieve and store in array the results of the query
 		// jQuery is looking for 'value' key
-		$return_arr = array();
+		$results = array();
 		foreach ($monthSet as $month) {
 			$row_array = array(substr($month[0]['monthName'], 0, 1), $month[0]['speciesCount']);
-			array_push($return_arr, $row_array);
+			array_push($results, $row_array);
 		}
-		$this -> set('results', $return_arr);
+		$this -> set(compact('results'));
 	}
 
 	public function species_by_order() {
 		$order_set = $this -> Report -> listSpeciesByOrder();
-		$this -> set('order_set', $order_set);
+		$this -> set(compact('order_set'));
 	}
 
 	public function species_by_order_json() {
@@ -96,12 +95,12 @@ class ReportsController extends AppController {
 
 		// Retrieve and store in array the results of the query
 		// jQuery is looking for 'value' key
-		$return_arr = array();
+		$results = array();
 		foreach ($orderSet as $order) {
 			$row_array = array($order['aou_order']['order_name'], $order[0]['speciesCount']);
-			array_push($return_arr, $row_array);
+			array_push($results, $row_array);
 		}
-		$this -> set('results', $return_arr);
+		$this -> set(compact('results'));		
 	}
 
 	public function species_by_order_list($order_id) {
@@ -119,9 +118,8 @@ class ReportsController extends AppController {
 			$order_name = $bird['aou_order']['order_name'];
 			break;
 		}
-		$this -> set('order_name', $order_name);
-		$this -> set('title_for_layout', 'Order ' . $order_name);
-		$this -> set('sighting_set', $sighting_set);
+		$title_for_layout = 'Order ' . $order_name;
+		$this -> set(compact('order_name','title_for_layout','sighting_set'));
 	}
 
 	public function species_by_month_list($monthNumber) {
@@ -135,10 +133,8 @@ class ReportsController extends AppController {
 		$sighting_set = $this -> Report -> listSpeciesForMonth($monthNumber);
 
 		// pass some data to the view and render the view
-		$this -> set('sighting_set', $sighting_set);
-		$this -> set('monthName', $monthName);
-		$this -> set('monthNumber', $monthNumber);
-		$this -> set('title_for_layout', $monthName);
+		$title_for_layout = $monthName;
+		$this -> set(compact('sighting_set','monthName','monthNumber','title_for_layout'));
 	}
 
 	public function clear_cache() {
