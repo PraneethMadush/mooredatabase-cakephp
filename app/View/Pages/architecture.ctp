@@ -13,7 +13,7 @@
 				<li>jQuery / AJAX / CoffeeScript</li>
 				<li>jqPlot</li>
 				<li>Modernizr</li>
-				<li>Wordpress, Flickr, Twitter and YouTube API's</li>
+				<li>Wordpress, Flickr and YouTube API's</li>
 				<li>Photoswipe jQuery plugin</li>				
 				<li>Google Maps API</li>
 			</ul>
@@ -26,7 +26,7 @@
 				<li>Amazon RDS (MySQL 5.6)</li>
 				<li>Nginx / PHP-FPM</li>
 				<li>CakePHP 2.4.6 / PHP 5.3</li>
-				<li>Memcached</li>
+				<li>Memcached / APC</li>
 			</ul>
 			<?php echo $this->Html->image('Powered-by-Amazon-Web-Services.jpg', array('alt' => 'AWS Logo','class' => 'logo')); ?>
 	    </div>

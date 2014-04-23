@@ -21,7 +21,7 @@
 					<li><a href="/pages/slideshow1">Slideshow</a></li>		
 					<li><a href="/pages/flickrsets">Flickr</a></li>
 					<li><a href="/pages/youtube">YouTube</a></li>						
-					<li><a href="/pages/geolocation_demo">Geolocation</a></li>					
+					<li><a href="/pages/geolocation">Geolocation</a></li>					
 				</ul>
 			</div>	
 			<div data-role="collapsible">

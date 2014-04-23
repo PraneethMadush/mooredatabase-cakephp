@@ -29,7 +29,7 @@ Router::connect('/aboutme', array('controller' => 'pages', 'action' => 'display'
 Router::connect('/architecture', array('controller' => 'pages', 'action' => 'display', 'architecture'));
 Router::connect('/canvas', array('controller' => 'pages', 'action' => 'display', 'canvas'));
 Router::connect('/education', array('controller' => 'pages', 'action' => 'display', 'education'));
-Router::connect('/geolocation', array('controller' => 'pages', 'action' => 'display', 'geolocation_demo'));
+Router::connect('/geolocation', array('controller' => 'pages', 'action' => 'display', 'geolocation'));
 Router::connect('/home', array('controller' => 'pages', 'action' => 'display', 'home'));
 Router::connect('/settings', array('controller' => 'pages', 'action' => 'display', 'settings'));
 Router::connect('/tools', array('controller' => 'pages', 'action' => 'display', 'tools'));
