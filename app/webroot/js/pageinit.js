@@ -37,15 +37,6 @@
     });
   });
 
-  $(document).on('change mousedown', "input:radio[name='theme']", function(event) {
-    var pageTheme;
-    pageTheme = $("input:radio[name='theme']:checked").val();
-    $.cookie("theme", pageTheme, {
-      expires: 365
-    });
-    return true;
-  });
-
   $(document).on("pageshow", "#speciesByMonth", function() {
     if (Modernizr.canvas) {
       $.ajax({

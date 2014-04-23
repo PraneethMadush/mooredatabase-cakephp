@@ -30,11 +30,6 @@ $(document).on "pageshow", "#settings", ->
 		else
 			$(this).html('<img src="/img/Red-Circle-32.png" alt="Feature not supported" height="20px" style="vertical-align:middle" />&nbsp;' + $(this).text())
   true
-  
-$(document).on 'change mousedown', "input:radio[name='theme']", (event) ->
-	pageTheme = $("input:radio[name='theme']:checked").val()
-	$.cookie "theme", pageTheme, { expires : 365 }
-	true
 	
 # draw jqPlot chart when Species By Month page loads
 $(document).on "pageshow", "#speciesByMonth", ->

@@ -42,7 +42,7 @@ class ReportsController extends AppController {
 		foreach ($monthSet as $month) {
 			$results[$month[0]['monthNumber'] - 1] = array(substr($month[0]['monthName'], 0, 1), $month[0]['sightingCount']);
 		}
-		$this -> set(compact('results'));		
+		$this -> set(compact('results'));
 	}
 
 	public function birding_locations() {
@@ -54,12 +54,12 @@ class ReportsController extends AppController {
 		$id = ( int )$location_id;
 		$location = $this -> Report -> getLocation($id);
 		$sighting_set = $this -> Report -> listSightingsForLocation($id);
-		$this -> set(compact('location','sighting_set'));
+		$this -> set(compact('location', 'sighting_set'));
 	}
 
 	public function species_by_month() {
 		$month_set = $this -> Report -> listSpeciesByMonth();
-		$this -> set(compact('month_set'));		
+		$this -> set(compact('month_set'));
 	}
 
 	public function species_by_month_json() {
@@ -100,7 +100,7 @@ class ReportsController extends AppController {
 			$row_array = array($order['aou_order']['order_name'], $order[0]['speciesCount']);
 			array_push($results, $row_array);
 		}
-		$this -> set(compact('results'));		
+		$this -> set(compact('results'));
 	}
 
 	public function species_by_order_list($order_id) {
@@ -119,7 +119,7 @@ class ReportsController extends AppController {
 			break;
 		}
 		$title_for_layout = 'Order ' . $order_name;
-		$this -> set(compact('order_name','title_for_layout','sighting_set'));
+		$this -> set(compact('order_name', 'title_for_layout', 'sighting_set'));
 	}
 
 	public function species_by_month_list($monthNumber) {
@@ -134,7 +134,7 @@ class ReportsController extends AppController {
 
 		// pass some data to the view and render the view
 		$title_for_layout = $monthName;
-		$this -> set(compact('sighting_set','monthName','monthNumber','title_for_layout'));
+		$this -> set(compact('sighting_set', 'monthName', 'monthNumber', 'title_for_layout'));
 	}
 
 	public function clear_cache() {
