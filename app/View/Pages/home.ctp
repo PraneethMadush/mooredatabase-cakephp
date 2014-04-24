@@ -4,7 +4,7 @@
 ?>
 <div data-role="content">
 	<div data-role="collapsible-set">
-		<div data-role="collapsible">
+		<div data-role="collapsible" data-collapsed="false">
 			<h3>Welcome</h3>
 			<p>Welcome to Steve Moore's mobile-optimized site in the Amazon cloud. I live and work in the Minneapolis area.</p>
 			<ul>
@@ -14,7 +14,7 @@
 				<li>Linux / Open Source Enthusiast</li>
 				<li>MCSD and MCITP, with 7 certifications in SQL Server development / administration</li>
 			</ul>
-			<?php echo $this->Html->image('Powered-by-Amazon-Web-Services.jpg', array('alt' => 'AWS Logo','class' => 'logo')); ?>
+			<?php echo $this->Html->image('mcitp.png', array('alt' => 'MCITP Logo','class' => 'logo')); ?>
 		</div>
 		<div data-role="collapsible">
 			<h3>What's New</h3>
@@ -25,7 +25,6 @@
 				<li>Upgraded mobile site front end to jQuery Mobile 1.4.0</li>
 				<li>Upgraded RDS instance to MySQL 5.6.14</li>
 			</ul>
-			<?php echo $this->Html->image('mcitp.png', array('alt' => 'MCITP Logo','class' => 'logo')); ?>
 		</div>
 		<div data-role="collapsible">
 			<h3>Project Experience</h3>

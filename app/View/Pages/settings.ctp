@@ -5,7 +5,7 @@
 	$userAgent = $_SERVER['HTTP_USER_AGENT'];
 ?>
 <div data-role="content">
-	<div data-role="collapsible-set">
+	<div data-role="collapsible-set" data-collapsed="false">
 		<div data-role="collapsible">
 			<h3>Client</h3>
 			<div id="clientInfo" class="ui-grid-a">

@@ -4,7 +4,7 @@
 ?>
 <div data-role="content">
 	<div data-role="collapsible-set">
-		<div data-role="collapsible">
+		<div data-role="collapsible" data-collapsed="false">
 			<h3>College</h3>
 			<p>
 				<strong>University of Minnesota, Minneapolis, MN</strong> <br />

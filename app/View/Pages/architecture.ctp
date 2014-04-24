@@ -4,7 +4,7 @@
 ?>
 <div data-role="content">
 	<div data-role="collapsible-set">
-	    <div data-role="collapsible">
+	    <div data-role="collapsible" data-collapsed="false">
 			<h3>Front End</h3>
 			<ul>
 				<li>jQuery Mobile</li>
