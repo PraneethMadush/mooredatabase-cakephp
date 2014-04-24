@@ -80,6 +80,24 @@ class ReportsController extends AppController {
 		$this -> set(compact('results'));
 	}
 
+	public function species_by_month_2_orders_json() {
+
+		// disable layout
+		$this -> layout = null;
+
+		// perform the search
+		$monthSet = $this -> Report -> listSpeciesByMonth2Orders();
+
+		// Retrieve and store in array the results of the query
+		// jQuery is looking for 'value' key
+		$results = array();
+		foreach ($monthSet as $month) {
+			$row_array = array($month['l']['orderName'], substr($month[0]['monthName'], 0, 1), $month[0]['speciesCount']);
+			array_push($results, $row_array);
+		}
+		$this -> set(compact('results'));
+	}
+
 	public function species_by_order() {
 		$order_set = $this -> Report -> listSpeciesByOrder();
 		$this -> set(compact('order_set'));
