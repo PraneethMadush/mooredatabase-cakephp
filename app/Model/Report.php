@@ -13,8 +13,8 @@ class Report extends Model {
      * @return array of results
      */
     public function listSpeciesAll() {
-        $key = "listSpeciesAll";
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__;
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT
 			          aou_list.id,
@@ -51,7 +51,7 @@ class Report extends Model {
 					  aou_list.subfamily				  
 					  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC;";
             $result = $this -> getDataSource() -> fetchAll($sql);
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return $result;
     }
@@ -63,8 +63,8 @@ class Report extends Model {
      * @return array of results
      */
     public function getSpecies($id) {
-        $key = "getSpecies" . strval($id);
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__ . strval($id);
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT
             		  aou_list.id,
@@ -98,7 +98,7 @@ class Report extends Model {
                       aou_list.family,
                       aou_list.subfamily";
             $result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return array_pop($result);
     }
@@ -110,8 +110,8 @@ class Report extends Model {
      * @param int $id
      */
     public function listMonthsForSpecies($id) {
-        $key = "listMonthsForSpecies" . strval($id);
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__ . strval($id);
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT
                     MONTH(t.trip_date) AS monthNumber,
@@ -127,7 +127,7 @@ class Report extends Model {
                     MONTH(t.trip_date)
                     ORDER BY 1";
             $result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return $result;
     }
@@ -138,8 +138,8 @@ class Report extends Model {
      * @return array of results
      */
     public function listLocations() {
-        $key = "listLocations";
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__;
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT
                 location.* ,
@@ -158,7 +158,7 @@ class Report extends Model {
 				FROM location
 				ORDER BY location_name ASC";
             $result = $this -> getDataSource() -> fetchAll($sql);
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return $result;
     }
@@ -170,12 +170,12 @@ class Report extends Model {
      * @return array of results
      */
     public function getLocation($id) {
-        $key = "getLocation" . strval($id);
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__ . strval($id);
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT * FROM location WHERE id = :id;";
             $result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return array_pop($result);
     }
@@ -187,8 +187,8 @@ class Report extends Model {
      * @return array of results
      */
     public function listSightingsForLocation($id) {
-        $key = "listSightingsForLocation_" . strval($id);
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__ . strval($id);
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT
                       aou_list.id,
@@ -215,7 +215,7 @@ class Report extends Model {
                       aou_list.subfamily                  
                       ORDER BY aou_list.common_name ASC";
             $result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return $result;
     }
@@ -226,8 +226,8 @@ class Report extends Model {
      * @return array of results
      */
     public function listSpeciesByMonth() {
-        $key = "listSpeciesByMonth";
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__;
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT
 					MONTH(t.trip_date) AS monthNumber,
@@ -244,7 +244,7 @@ class Report extends Model {
 					MONTH(t.trip_date)
 					ORDER BY 1";
             $result = $this -> getDataSource() -> fetchAll($sql);
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return $result;
     }
@@ -255,8 +255,8 @@ class Report extends Model {
      * @return array of results
      */
     public function listSpeciesByMonth2Orders() {
-        $key = "listSpeciesByMonth2Orders";
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__;
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT
             		l.order AS orderName,
@@ -279,7 +279,7 @@ class Report extends Model {
 					MONTH(t.trip_date)
 					ORDER BY 2, 1;";
             $result = $this -> getDataSource() -> fetchAll($sql);
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return $result;
     }    
@@ -291,8 +291,8 @@ class Report extends Model {
      * @return array of results
      */
     public function listSpeciesForMonth($monthNumber) {
-        $key = "listSpeciesForMonth_" . strval($monthNumber);
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__ . strval($monthNumber);
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT
                       aou_list.id,
@@ -335,7 +335,7 @@ class Report extends Model {
                       aou_list.subfamily    
                       ORDER BY aou_list.common_name ASC";
             $result = $this -> getDataSource() -> fetchAll($sql, array('monthNumber' => $monthNumber));
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return $result;
     }
@@ -346,8 +346,8 @@ class Report extends Model {
      * @return array of results
      */
     public function listSpeciesByOrder() {
-        $key = "listSpeciesByOrder";
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__;
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT
 					  aou_order.id,
@@ -370,7 +370,7 @@ class Report extends Model {
 					  aou_order.notes				  
 					  ORDER BY COUNT(DISTINCT aou_list.id) DESC";
             $result = $this -> getDataSource() -> fetchAll($sql);
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return $result;
     }
@@ -382,8 +382,8 @@ class Report extends Model {
      * @return array of results
      */
     public function listSpeciesForOrder($id) {
-        $key = "listSpeciesForOrder_" . strval($id);
-        $result = Cache::read($key, 'default');
+        $key = __METHOD__ . strval($id);
+        $result = Cache::read($key);
         if ($result == FALSE) {
             $sql = "SELECT
                       aou_list.id,
@@ -423,7 +423,7 @@ class Report extends Model {
                       aou_list.subfamily                  
                       ORDER BY aou_order.order_name ASC, aou_list.common_name ASC";
             $result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
-            Cache::write($key, $result, 'default');
+            Cache::write($key, $result);
         }
         return $result;
     }
