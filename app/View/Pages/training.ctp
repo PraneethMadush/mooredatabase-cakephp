@@ -138,6 +138,7 @@
 				<li>Up and Running with NoSQL Databases, Lynda.com</li>
 				<li>Statistics One, Princeton University/Coursera</li>
 				<li>Computing for Data Analysis, Johns Hopkins University/Coursera</li>
+				<li>Data Analysis &amp; Statistical Inference, Duke University/Coursera</li>
 				<li>Try R, codeschool.com</li>
 				<li>Up and Running with R, Lynda.com</li>
 				<li>R Statistics Essential Training, Lynda.com</li>
