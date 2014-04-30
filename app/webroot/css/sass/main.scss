@@ -47,6 +47,10 @@
 	margin: 0 auto;
 	height: 50px;
 }
+.logo75 {
+  @extend .logo;
+  height: 75px;
+}
 .loader {
 	display: block;
 	margin: 0 auto;
