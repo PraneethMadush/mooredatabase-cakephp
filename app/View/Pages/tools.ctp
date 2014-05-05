@@ -25,7 +25,7 @@
 				<li>PHP / Zend Framework / Zend Studio</li>
 				<li>CakePHP</li>
 				<li>Smarty 3 templates</li>
-				<li>Ubuntu Linux 10.x/11.x/12.x</li>
+				<li>Ubuntu Linux</li>
 				<li>Nagios</li>
 				<li>Ruby / Ruby on Rails 3</li>
 				<li>XML / XSLT</li>

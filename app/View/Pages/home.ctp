@@ -20,9 +20,9 @@
 			<h3>What's New</h3>
 			<ul>
 				<li>Completed Statistics and R programming courses offered by Coursera</li>
-				<li>Migrated mobile site to CakePHP and Nginx</li>
+				<li>Migrated mobile site to CakePHP, Nginx and Ubuntu Server 14.04 LTS</li>
 				<li>Implemented caching with memcached</li>
-				<li>Upgraded mobile site front end to jQuery Mobile 1.4.0</li>
+				<li>Upgraded mobile site front end to jQuery Mobile 1.4.2</li>
 				<li>Upgraded RDS instance to MySQL 5.6.14</li>
 				<?php echo $this->Html->image('cakephp_logo_125_trans.png', array('alt' => 'CakePHP Logo','class' => 'logo75',)); ?>
 			</ul>

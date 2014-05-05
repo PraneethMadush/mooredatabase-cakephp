@@ -22,10 +22,10 @@
 	    <div data-role="collapsible">
 			<h3>Back End</h3>
 			<ul>	
-				<li>Amazon EC2 (Ubuntu Server 12.04 LTS)</li>
+				<li>Amazon EC2 (Ubuntu Server 14.04 LTS)</li>
 				<li>Amazon RDS (MySQL 5.6)</li>
 				<li>Nginx / PHP-FPM</li>
-				<li>CakePHP 2.4.6 / PHP 5.3</li>
+				<li>CakePHP 2.4.6 / PHP 5.5</li>
 				<li>Memcached / APC</li>
 			</ul>
 			<?php echo $this->Html->image('Powered-by-Amazon-Web-Services.jpg', array('alt' => 'AWS Logo','class' => 'logo')); ?>
