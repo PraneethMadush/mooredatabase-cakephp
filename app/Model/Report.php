@@ -232,6 +232,7 @@ class Report extends Model {
             $sql = "SELECT
 					MONTH(t.trip_date) AS monthNumber,
 					MONTHNAME(t.trip_date) AS monthName,
+					LEFT(MONTHNAME(t.trip_date),1) AS monthLetter,
 					COUNT(DISTINCT l.id) AS speciesCount,
 					COUNT(DISTINCT t.id) AS tripCount
 					FROM

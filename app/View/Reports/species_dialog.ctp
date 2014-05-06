@@ -31,9 +31,10 @@
 			<li data-role="list-divider">Sightings By Month</li>
 		</ul>
 		<figure>				
-			<div id="chartSpeciesByMonth">
+			<div id="chartdiv" style="height: 300px; margin-top: 5px;">
 				<?php echo $this->Html->image('loaderb32.gif', array('alt' => 'Loading','class' => 'loader')); ?>	
 			</div>
+			<div id="legenddiv"></div>
 		</figure>
 		<form>
 			<input id="speciesId" type="hidden" value=<?php echo $bird['aou_list']['id']; ?> />

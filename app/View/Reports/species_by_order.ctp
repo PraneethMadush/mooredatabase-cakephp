@@ -7,7 +7,7 @@
 		<li data-role="list-divider">Species By Order</li>
 	</ul>
 	<figure>				
-		<div id="chartSpeciesByOrder">
+		<div id="chartdiv" style="height: 300px;">
 			<?php echo $this->Html->image('loaderb32.gif', array('alt' => 'loading','class' => 'loader')); ?>
 		</div>
 	</figure>

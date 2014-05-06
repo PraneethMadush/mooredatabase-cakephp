@@ -41,10 +41,10 @@
     if (Modernizr.canvas) {
       $.ajax({
         type: 'POST',
-        url: '/reports/species_by_month_json',
+        url: '/reports/species_by_month_json_new',
         dataType: 'json',
         success: function(data) {
-          return mooredatabase.drawChartSpeciesByMonth(data);
+          return mooredatabase.drawChartSpeciesByMonthNew(data);
         }
       });
       return true;
@@ -60,7 +60,7 @@
         url: '/reports/sightings_by_month/' + speciesId,
         dataType: 'json',
         success: function(data) {
-          return mooredatabase.drawChartSpeciesByMonth(data);
+          return mooredatabase.drawChartSpeciesSightingsByMonth(data);
         }
       });
       return true;
@@ -74,7 +74,7 @@
         url: '/reports/species_by_order_json',
         dataType: 'json',
         success: function(data) {
-          return mooredatabase.drawChartSpeciesByOrder(data);
+          return mooredatabase.drawChartSpeciesByOrderNew(data);
         }
       });
       return true;

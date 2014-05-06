@@ -4,13 +4,12 @@
 ?>
 <div id="chartSpeciesByMonth_container">
 	<ul data-role="listview" data-divider-theme="a">
-		<li data-role="list-divider">Species and Trips By Month</li>
+		<li data-role="list-divider">Species By Month</li>
 	</ul>
 	<figure>				
-		<div id="chartdiv" style="height: 300px;">
+		<div id="chartSpeciesByMonth">
 			<?php echo $this->Html->image('loaderb32.gif', array('alt' => 'loading','class' => 'loader')); ?>		
 		</div>
-		<div id="legenddiv"></div>
 	</figure>
 	<ul data-role="listview" data-divider-theme="a">
 		<li data-role="list-divider">Month Lists</li>
@@ -22,7 +21,7 @@
 		<li>
 			<a href="species_by_month_list/<?php echo $month[0]['monthNumber']; ?>">
 				<?php echo $month[0]['monthName']; ?>
-				<span class="ui-li-count"><?php echo $month[0]['speciesCount']; ?> Species / <?php echo $month[0]['tripCount']; ?> Trips</span>
+				<span class="ui-li-count"><?php echo $month[0]['speciesCount']; ?> Species</span>
 			</a>
 		</li>
 	<?php endforeach; ?>
