@@ -11,7 +11,7 @@
 				<li>HTML5 / CSS3</li>
 				<li>SASS / Compass</li>
 				<li>jQuery / AJAX / CoffeeScript</li>
-				<li>jqPlot</li>
+				<li>amCharts</li>
 				<li>Modernizr</li>
 				<li>Wordpress, Flickr and YouTube API's</li>
 				<li>Photoswipe jQuery plugin</li>				
