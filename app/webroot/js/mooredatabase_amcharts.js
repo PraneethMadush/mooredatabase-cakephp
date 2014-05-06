@@ -4,7 +4,7 @@ drawChartSpeciesByMonthNew = function(chartData) {
 	var chart = new AmCharts.AmSerialChart();
 	chart.dataProvider = chartData;
 	chart.categoryField = "monthLetter";
-	chart.fontFamily = "sans serif";
+	chart.fontFamily = "Helvetica, Arial, sans serif";
 	
 	// add species graph to chart
 	var graphSpecies = new AmCharts.AmGraph();
@@ -56,7 +56,7 @@ drawChartSpeciesSightingsByMonth = function(chartData) {
 	var chart = new AmCharts.AmSerialChart();
 	chart.dataProvider = chartData;
 	chart.categoryField = "monthLetter";
-	chart.fontFamily = "sans serif";
+	chart.fontFamily = "Helvetica, Arial, sans serif";
 	
 	// add species graph to chart
 	var graphSpecies = new AmCharts.AmGraph();
@@ -88,7 +88,7 @@ drawChartSpeciesByOrderNew = function(chartData) {
 	chart.valueField = "speciesCount";
 	chart.titleField = "orderName";
 	chart.dataProvider = chartData;
-	chart.fontFamily = "sans serif";
+	chart.fontFamily = "Helvetica, Arial, sans serif";
 	chart.marginTop = 10;
 	chart.groupPercent = 3;
 	
