@@ -31,7 +31,7 @@ $(document).on "pageshow", "#settings", ->
 			$(this).html('<img src="/img/Red-Circle-32.png" alt="Feature not supported" height="20px" style="vertical-align:middle" />&nbsp;' + $(this).text())
   true
 	
-# draw jqPlot chart when Species By Month page loads
+# draw chart when Species By Month page loads
 $(document).on "pageshow", "#speciesByMonth", ->
 	if Modernizr.canvas
 		$.ajax
@@ -42,7 +42,7 @@ $(document).on "pageshow", "#speciesByMonth", ->
 				mooredatabase.drawChartSpeciesByMonth(data)
   true
 				
-# draw jqPlot chart when Sightings By Month page loads
+# draw chart when Sightings By Month page loads
 $(document).on "pageshow", "#speciesDialog", ->
 	if Modernizr.canvas
 		speciesId = $('#speciesId').val()
@@ -54,7 +54,7 @@ $(document).on "pageshow", "#speciesDialog", ->
 				mooredatabase.drawChartSpeciesSightingsByMonth(data)
   true
   				
-# draw jqPlot chart when Species By Order page loads
+# draw chart when Species By Order page loads
 $(document).on "pageshow", "#speciesByOrder", ->
 	if Modernizr.canvas
 		$.ajax

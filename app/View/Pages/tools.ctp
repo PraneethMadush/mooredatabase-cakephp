@@ -34,6 +34,7 @@
 				<li>Google Chart Tools API</li>
 				<li>Google Gears API</li>
 				<li>Google Web Fonts</li>
+				<li>amCharts JavaScript Charts</li>
 				<li>Raphael Javascript Library</li>
 				<li>jqPlot Plotting Plugin</li>
 				<li>Flickr API</li>
