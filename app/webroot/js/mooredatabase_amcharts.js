@@ -9,6 +9,8 @@
 			"categoryField" : "monthLetter",
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
+			"startDuration" : 0.5,
+			"startEffect" : "easeInSine",
 			"legend" : {
 				"data" : [{
 					"title" : "Species",
@@ -53,10 +55,13 @@
 
 		var chart = AmCharts.makeChart("chartdiv", {
 			"type" : "serial",
+			"startDuration" : 1,
 			"dataProvider" : chartData,
 			"categoryField" : "monthLetter",
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
+			"depth3D" : 20,
+			"angle" : 30,
 			"graphs" : [{
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
@@ -82,7 +87,8 @@
 			"titleField" : "orderName",
 			"groupPercent" : 3,
 			"fontFamily" : "Helvetica, Arial, sans serif",
-			"startDuration" : 0,
+			"startDuration" : 0.5,
+			"startEffect" : "easeInSine",
 			"creditsPosition" : "bottom-left"
 		});
 
