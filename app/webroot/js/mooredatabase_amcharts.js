@@ -1,4 +1,4 @@
-drawChartSpeciesByMonthNew = function(chartData) {	
+drawChartSpeciesByMonth = function(chartData) {	
 
 	// new chart
 	var chart = new AmCharts.AmSerialChart();
@@ -48,7 +48,7 @@ drawChartSpeciesByMonthNew = function(chartData) {
 	// remove the blurb added by Amcharts
 	$("div#chartdiv a").remove();
 };
-mooredatabase.drawChartSpeciesByMonthNew = drawChartSpeciesByMonthNew;
+mooredatabase.drawChartSpeciesByMonth = drawChartSpeciesByMonth;
 
 drawChartSpeciesSightingsByMonth = function(chartData) {	
 
@@ -81,7 +81,7 @@ drawChartSpeciesSightingsByMonth = function(chartData) {
 };
 mooredatabase.drawChartSpeciesSightingsByMonth = drawChartSpeciesSightingsByMonth;
 
-drawChartSpeciesByOrderNew = function(chartData) {	
+drawChartSpeciesByOrder = function(chartData) {	
 
 	// new chart
 	var chart = new AmCharts.AmPieChart();
@@ -98,4 +98,4 @@ drawChartSpeciesByOrderNew = function(chartData) {
 	// remove the blurb added by Amcharts
 	$("div#chartdiv a").remove();
 };
-mooredatabase.drawChartSpeciesByOrderNew = drawChartSpeciesByOrderNew;
+mooredatabase.drawChartSpeciesByOrder = drawChartSpeciesByOrder;

@@ -42,12 +42,12 @@ class ReportsController extends AppController {
 		foreach ($monthSet as $month) {
 			$results[$month[0]['monthNumber'] - 1] = array(substr($month[0]['monthName'], 0, 1), $month[0]['sightingCount']);
 		}
-		
+
 		// reformat as JSON
 		$jsonResults = array();
 		foreach ($results as $result) {
 			$month = array('monthLetter' => $result[0], 'sightingCount' => $result[1]);
-			array_push($jsonResults,$month);
+			array_push($jsonResults, $month);
 		}
 		$results = $jsonResults;
 		$this -> set(compact('results'));
@@ -79,25 +79,7 @@ class ReportsController extends AppController {
 		$monthSet = $this -> Report -> listSpeciesByMonth();
 
 		// Retrieve and store in array the results of the query
-		// jQuery is looking for 'value' key
-		$results = array();
-		foreach ($monthSet as $month) {
-			$row_array = array(substr($month[0]['monthName'], 0, 1), $month[0]['speciesCount']);
-			array_push($results, $row_array);
-		}
-		$this -> set(compact('results'));
-	}
-	
-	public function species_by_month_json_new() {
-
-		// disable layout
-		$this -> layout = null;
-
-		// perform the search
-		$monthSet = $this -> Report -> listSpeciesByMonth();
-
-		// Retrieve and store in array the results of the query
-		// CakePHP nests each row in an object [], so we need to 
+		// CakePHP nests each row in an object [], so we need to
 		// extract into more standard JSON format
 		$results = array();
 		foreach ($monthSet as $month) {
@@ -106,7 +88,7 @@ class ReportsController extends AppController {
 			}
 		}
 		$this -> set(compact('results'));
-	}	
+	}
 
 	public function species_by_month_2_orders_json() {
 

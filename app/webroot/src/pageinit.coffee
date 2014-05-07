@@ -51,7 +51,7 @@ $(document).on "pageshow", "#speciesDialog", ->
 			url : '/reports/sightings_by_month/' + speciesId
 			dataType : 'json'
 			success : (data) ->
-				mooredatabase.drawChartSpeciesByMonth(data)
+				mooredatabase.drawChartSpeciesSightingsByMonth(data)
   true
   				
 # draw jqPlot chart when Species By Order page loads
