@@ -17,7 +17,6 @@
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
 			"startDuration" : 0.5,
-			"startEffect" : "easeInSine",
 			"legend" : {
 				"data" : [{
 					"title" : "Species",
@@ -80,6 +79,7 @@
 				"labelText" : "[[value]]",
 				"balloonText" : "<b>Sightings: [[value]]</b>",
 				"colorField" : "color",
+				"lineColor" : "color",
 				"fillAlphas" : 0.9,
 				"lineAlpha" : 0.2,
 				"type" : "column",
@@ -113,6 +113,7 @@
 				"valueField" : "speciesCount",
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
+				"lineColor" : "color",
 				"colorField" : "color"
 			}],
 			"categoryField" : "orderName",
