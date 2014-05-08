@@ -26,27 +26,28 @@ class ReportsController extends AppController {
 		// perform the search
 		$species_id = ( int )$id;
 		$monthSet = $this -> Report -> listMonthsForSpecies($species_id);
+		
+		// color array
+		$colorArray = array("#FF0F00","#FF6600","#FF9E01","#FCD202","#F8FF01","#B0DE09","#04D215","#0D8ECF","#0D52D1","#2A0CD0","#8A0CCF","#CD0D74");			
 
 		// add all 12 months with sightings 0 to array first; so
 		// we get a chart showing all 12 months with no gaps
 		$monthArray = array('J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D');
 		$results = array();
 		for ($i = 0; $i < 12; $i++) {
-			$rowArray = array($monthArray[$i], 0);
+			$rowArray = array($monthArray[$i], 0, $colorArray[$i]);
 			array_push($results, $rowArray);
 		}
 
-		// update array elements with counts from database; take
-		// first three letters of month so horizontal legends aren't
-		// tilted or truncated
+		// update array element for count, initialized to 0, with counts from database
 		foreach ($monthSet as $month) {
-			$results[$month[0]['monthNumber'] - 1] = array(substr($month[0]['monthName'], 0, 1), $month[0]['sightingCount']);
+			$results[$month[0]['monthNumber'] - 1][1] = $month[0]['sightingCount'];
 		}
 
 		// reformat as JSON
 		$jsonResults = array();
 		foreach ($results as $result) {
-			$month = array('monthLetter' => $result[0], 'sightingCount' => $result[1]);
+			$month = array('monthLetter' => $result[0], 'sightingCount' => $result[1], 'color' => $result[2]);
 			array_push($jsonResults, $month);
 		}
 		$results = $jsonResults;
@@ -120,13 +121,21 @@ class ReportsController extends AppController {
 
 		// perform the search
 		$orderSet = $this -> Report -> listSpeciesByOrder();
+		
+		// color array
+		$colorArray = array("#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", 
+  						    "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74", "#754DEB", "#DDDDDD", "#999999", "#333333",
+ 						    "#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", 
+						    "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74", "#754DEB", "#DDDDDD", "#999999", "#333333");		
 
 		// Retrieve and store in array the results of the query
 		// jQuery is looking for 'value' key
 		$results = array();
+		$i = 0;
 		foreach ($orderSet as $order) {
-			$row_array = array('orderName' => $order['aou_order']['order_name'], 'speciesCount' => $order[0]['speciesCount']);
+			$row_array = array('orderName' => $order['aou_order']['order_name'], 'speciesCount' => $order[0]['speciesCount'], 'color' => $colorArray[$i]);
 			array_push($results, $row_array);
+			$i++;
 		}
 		$this -> set(compact('results'));
 	}
