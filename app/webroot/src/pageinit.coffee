@@ -33,38 +33,33 @@ $(document).on "pageshow", "#settings", ->
 	
 # draw chart when Species By Month page loads
 $(document).on "pageshow", "#speciesByMonth", ->
-	if Modernizr.canvas
-		$.ajax
-			type : 'POST'
-			url : '/reports/species_by_month_json'
-			dataType : 'json'
-			success : (data) ->
-				mooredatabase.drawChartSpeciesByMonth(data)
-  true
+	$.ajax
+		type : 'GET'
+		url : '/reports/species_by_month_json'
+		dataType : 'json'
+		success : (data) ->
+		  mooredatabase.drawChartSpeciesByMonth(data)
 				
 # draw chart when Sightings By Month page loads
 $(document).on "pageshow", "#speciesDialog", ->
-	if Modernizr.canvas
-		speciesId = $('#speciesId').val()
-		$.ajax
-			type : 'POST'
-			url : '/reports/sightings_by_month/' + speciesId
-			dataType : 'json'
-			success : (data) ->
-				mooredatabase.drawChartSpeciesSightingsByMonth(data)
-  true
-  				
+	speciesId = $('#speciesId').val()
+	$.ajax
+		type : 'GET'
+		url : '/reports/sightings_by_month/' + speciesId
+		dataType : 'json'
+		success : (data) ->
+		  mooredatabase.drawChartSpeciesSightingsByMonth(data)
+        				
 # draw chart when Species By Order page loads
+# $(document).on "pageshow", "#speciesByOrder", ->
 $(document).on "pageshow", "#speciesByOrder", ->
-	if Modernizr.canvas
-		$.ajax
-			type : 'POST'
-			url : '/reports/species_by_order_json'
-			dataType : 'json'
-			success : (data) ->
-				mooredatabase.drawChartSpeciesByOrder(data)
-  true
-  				
+	$.ajax
+		type : 'GET'
+		url : '/reports/species_by_order_json'
+		dataType : 'json'
+		success : (data) ->
+      mooredatabase.drawChartSpeciesByOrder(data)
+    				
 $(document).on 'pageshow', '#slideshow1', (e) ->
 	currentPage = $(e.target)
 	options = {}

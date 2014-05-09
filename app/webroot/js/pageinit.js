@@ -38,47 +38,38 @@
   });
 
   $(document).on("pageshow", "#speciesByMonth", function() {
-    if (Modernizr.canvas) {
-      $.ajax({
-        type: 'POST',
-        url: '/reports/species_by_month_json',
-        dataType: 'json',
-        success: function(data) {
-          return mooredatabase.drawChartSpeciesByMonth(data);
-        }
-      });
-      return true;
-    }
+    return $.ajax({
+      type: 'GET',
+      url: '/reports/species_by_month_json',
+      dataType: 'json',
+      success: function(data) {
+        return mooredatabase.drawChartSpeciesByMonth(data);
+      }
+    });
   });
 
   $(document).on("pageshow", "#speciesDialog", function() {
     var speciesId;
-    if (Modernizr.canvas) {
-      speciesId = $('#speciesId').val();
-      $.ajax({
-        type: 'POST',
-        url: '/reports/sightings_by_month/' + speciesId,
-        dataType: 'json',
-        success: function(data) {
-          return mooredatabase.drawChartSpeciesSightingsByMonth(data);
-        }
-      });
-      return true;
-    }
+    speciesId = $('#speciesId').val();
+    return $.ajax({
+      type: 'GET',
+      url: '/reports/sightings_by_month/' + speciesId,
+      dataType: 'json',
+      success: function(data) {
+        return mooredatabase.drawChartSpeciesSightingsByMonth(data);
+      }
+    });
   });
 
   $(document).on("pageshow", "#speciesByOrder", function() {
-    if (Modernizr.canvas) {
-      $.ajax({
-        type: 'POST',
-        url: '/reports/species_by_order_json',
-        dataType: 'json',
-        success: function(data) {
-          return mooredatabase.drawChartSpeciesByOrder(data);
-        }
-      });
-      return true;
-    }
+    return $.ajax({
+      type: 'GET',
+      url: '/reports/species_by_order_json',
+      dataType: 'json',
+      success: function(data) {
+        return mooredatabase.drawChartSpeciesByOrder(data);
+      }
+    });
   });
 
   $(document).on('pageshow', '#slideshow1', function(e) {
