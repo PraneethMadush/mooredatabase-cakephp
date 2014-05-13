@@ -1,26 +1,26 @@
 $(document).on "pageshow", "#youtube", ->
 	$.getJSON 'http://gdata.youtube.com/feeds/users/893TheCurrent/uploads?alt=json-in-script&amp;max-results=30&callback=?',(data) ->
 		mooredatabase.listVideos(data)
-		true
-	true
+		return
+	return
 		
 # run Canvas animation when graphics demo page loads, remove it when
 # page is not showing to conserve CPU, etc.
 $(document).on "pageshow", "#graphicsDemo", ->
 	if Modernizr.canvas
 		mooredatabase.initAnimation()
-	true
+	return
 		
 $(document).on "pagehide", "#graphicsDemo", ->
 	if Modernizr.canvas
 		mooredatabase.stopAnimation()
-	true
+	return
 		
 $(document).on "pageshow", "#geolocationDemo", ->
 	# use geolocation and show location on map
 	mooredatabase.geolocation_initialize_map()
 	mooredatabase.geolocation_initialize()
-	true
+	return
 
 $(document).on "pageshow", "#settings", ->
 	$('.featureMethod').each (index) ->
@@ -29,7 +29,7 @@ $(document).on "pageshow", "#settings", ->
 			$(this).html('<img src="/img/Green-Circle-32.png" alt="Feature supported" height="20px" style="vertical-align:middle" />&nbsp;' + $(this).text())
 		else
 			$(this).html('<img src="/img/Red-Circle-32.png" alt="Feature not supported" height="20px" style="vertical-align:middle" />&nbsp;' + $(this).text())
-  true
+  return
 	
 # draw chart when Species By Month page loads
 $(document).on "pageshow", "#speciesByMonth", ->
@@ -39,6 +39,7 @@ $(document).on "pageshow", "#speciesByMonth", ->
 		dataType : 'json'
 		success : (data) ->
 		  mooredatabase.drawChartSpeciesByMonth(data)
+		  return
 				
 # draw chart when Sightings By Month page loads
 $(document).on "pageshow", "#speciesDialog", ->
@@ -49,6 +50,7 @@ $(document).on "pageshow", "#speciesDialog", ->
 		dataType : 'json'
 		success : (data) ->
 		  mooredatabase.drawChartSpeciesSightingsByMonth(data)
+		  return
         				
 # draw chart when Species By Order page loads
 # $(document).on "pageshow", "#speciesByOrder", ->
@@ -59,16 +61,17 @@ $(document).on "pageshow", "#speciesByOrder", ->
 		dataType : 'json'
 		success : (data) ->
       mooredatabase.drawChartSpeciesByOrder(data)
+      return
     				
 $(document).on 'pageshow', '#slideshow1', (e) ->
 	currentPage = $(e.target)
 	options = {}
 	photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options, currentPage.attr('id'))
-	true
+	return
   
 $(document).on 'pagehide', '#slideshow1', (e) ->
 	currentPage = $(e.target)
 	photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'))
 	if photoSwipeInstance?
 		PhotoSwipe.detatch(photoSwipeInstance)
-	true
+	return

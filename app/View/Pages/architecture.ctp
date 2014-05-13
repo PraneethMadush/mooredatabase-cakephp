@@ -13,7 +13,7 @@
 				<li>jQuery / AJAX / CoffeeScript</li>
 				<li>amCharts</li>
 				<li>Modernizr</li>
-				<li>Wordpress, Flickr and YouTube API's</li>
+				<li>Flickr and YouTube API's</li>
 				<li>Photoswipe jQuery plugin</li>				
 				<li>Google Maps API</li>
 			</ul>
@@ -37,6 +37,7 @@
 				<li>Sublime Text</li>
 				<li>Ubuntu Linux</li>
 				<li>Mac OS X</li>
+				<li>Virtual Box</li>
 				<li>git / GitHub</li>
 				<li>Testing on iPad, iPod Touch and Android</li>
 			</ul>

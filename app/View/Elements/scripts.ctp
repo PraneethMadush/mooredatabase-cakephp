@@ -14,7 +14,6 @@ echo $this->Html->script('photoswipe/code.photoswipe-3.0.4.min')."\n";
 echo $this->Html->script('mooredatabase_googlemaps.min')."\n";		
 echo $this->Html->script('amcharts/amcharts')."\n";	
 echo $this->Html->script('amcharts/serial')."\n";	
-echo $this->Html->script('amcharts/pie')."\n";	
 echo $this->Html->script('mooredatabase_amcharts.min')."\n";
 
 // load page init last so that we can assume all CSS and JS is loaded
