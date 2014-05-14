@@ -26,16 +26,16 @@ class ReportsController extends AppController {
 		// perform the search
 		$species_id = ( int )$id;
 		$monthSet = $this -> Report -> listMonthsForSpecies($species_id);
-		
+
 		// color array
-		$colorArray = array("#FF0F00","#FF6600","#FF9E01","#FCD202","#F8FF01","#B0DE09","#04D215","#0D8ECF","#0D52D1","#2A0CD0","#8A0CCF","#CD0D74");			
+		$colorArray = array("#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74");
 
 		// add all 12 months with sightings 0 to array first; so
 		// we get a chart showing all 12 months with no gaps
 		$monthArray = array('J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D');
 		$results = array();
 		for ($i = 0; $i < 12; $i++) {
-			$rowArray = array($monthArray[$i], 0, $colorArray[$i]);
+			$rowArray = array($monthArray[$i], 0, $colorArray[$i], $monthSet[0][0]['common_name']);
 			array_push($results, $rowArray);
 		}
 
@@ -47,7 +47,7 @@ class ReportsController extends AppController {
 		// reformat as JSON
 		$jsonResults = array();
 		foreach ($results as $result) {
-			$month = array('monthLetter' => $result[0], 'sightingCount' => $result[1], 'color' => $result[2]);
+			$month = array('monthLetter' => $result[0], 'sightingCount' => $result[1], 'color' => $result[2], 'common_name' => $result[3]);
 			array_push($jsonResults, $month);
 		}
 		$results = $jsonResults;
@@ -121,12 +121,9 @@ class ReportsController extends AppController {
 
 		// perform the search
 		$orderSet = $this -> Report -> listSpeciesByOrder();
-		
+
 		// color array
-		$colorArray = array("#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", 
-  						    "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74", "#754DEB", "#DDDDDD", "#999999", "#333333",
- 						    "#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", 
-						    "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74", "#754DEB", "#DDDDDD", "#999999", "#333333");		
+		$colorArray = array("#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74", "#754DEB", "#DDDDDD", "#999999", "#333333", "#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74", "#754DEB", "#DDDDDD", "#999999", "#333333");
 
 		// Retrieve and store in array the results of the query
 		// jQuery is looking for 'value' key

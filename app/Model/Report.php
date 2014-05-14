@@ -2,21 +2,21 @@
 App::uses('AppModel', 'Model');
 class Report extends Model {
 
-    // add these because we're bypassing the CakePHP model machinery and
-    // executing SQL directly using PDO
-    public $name = 'NoTableModel';
-    public $useTable = false;
+	// add these because we're bypassing the CakePHP model machinery and
+	// executing SQL directly using PDO
+	public $name = 'NoTableModel';
+	public $useTable = false;
 
-    /**
-     * Query for All Species page.
-     *
-     * @return array of results
-     */
-    public function listSpeciesAll() {
-        $key = __METHOD__;
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT
+	/**
+	 * Query for All Species page.
+	 *
+	 * @return array of results
+	 */
+	public function listSpeciesAll() {
+		$key = __METHOD__;
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
 			          aou_list.id,
 					  aou_order.order_name,
 					  aou_order.notes AS order_notes,		
@@ -50,23 +50,23 @@ class Report extends Model {
 					  aou_list.family,
 					  aou_list.subfamily				  
 					  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC;";
-            $result = $this -> getDataSource() -> fetchAll($sql);
-            Cache::write($key, $result);
-        }
-        return $result;
-    }
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
 
-    /**
-     * Query for species dialog / detail page.
-     *
-     * @param int $id
-     * @return array of results
-     */
-    public function getSpecies($id) {
-        $key = __METHOD__ . strval($id);
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT
+	/**
+	 * Query for species dialog / detail page.
+	 *
+	 * @param int $id
+	 * @return array of results
+	 */
+	public function getSpecies($id) {
+		$key = __METHOD__ . strval($id);
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
             		  aou_list.id,
                       aou_order.order_name,
                       aou_order.notes AS order_notes,       
@@ -97,51 +97,54 @@ class Report extends Model {
                       aou_list.order,
                       aou_list.family,
                       aou_list.subfamily";
-            $result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
-            Cache::write($key, $result);
-        }
-        return array_pop($result);
-    }
+			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
+			Cache::write($key, $result);
+		}
+		return array_pop($result);
+	}
 
-    /**
-     * Query to list species' sightings by month.
-     * Used on species dialog page.
-     *
-     * @param int $id
-     */
-    public function listMonthsForSpecies($id) {
-        $key = __METHOD__ . strval($id);
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT
-                    MONTH(t.trip_date) AS monthNumber,
-                    MONTHNAME(t.trip_date) AS monthName,
-                    COUNT(DISTINCT s.id) AS sightingCount
-                    FROM
-                    sighting s
-                    INNER JOIN trip t
-                        ON s.trip_id = t.id
-                    WHERE
-                    s.aou_list_id = :id
-                    GROUP BY
-                    MONTH(t.trip_date)
-                    ORDER BY 1";
-            $result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
-            Cache::write($key, $result);
-        }
-        return $result;
-    }
+	/**
+	 * Query to list species' sightings by month.
+	 * Used on species dialog page.
+	 *
+	 * @param int $id
+	 */
+	public function listMonthsForSpecies($id) {
+		$key = __METHOD__ . strval($id);
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
+					MIN(l.common_name) AS common_name,
+			        MONTH(t.trip_date) AS monthNumber,
+			        MONTHNAME(t.trip_date) AS monthName,
+			        COUNT(DISTINCT s.id) AS sightingCount
+			        FROM
+			        sighting s
+			        INNER JOIN trip t
+			            ON s.trip_id = t.id
+			        INNER JOIN aou_list l
+			        	ON s.aou_list_id = l.id
+			        WHERE
+			        s.aou_list_id = :id
+			        GROUP BY
+			        MONTH(t.trip_date)
+			        ORDER BY 1";
+			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
 
-    /**
-     * Query for list on Birding Locations page.
-     *
-     * @return array of results
-     */
-    public function listLocations() {
-        $key = __METHOD__;
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT
+	/**
+	 * Query for list on Birding Locations page.
+	 *
+	 * @return array of results
+	 */
+	public function listLocations() {
+		$key = __METHOD__;
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
                 location.* ,
 				(SELECT COUNT(*) 
 				 FROM trip
@@ -157,40 +160,40 @@ class Report extends Model {
 				 trip.location_id = location.id) AS species_count
 				FROM location
 				ORDER BY location_name ASC";
-            $result = $this -> getDataSource() -> fetchAll($sql);
-            Cache::write($key, $result);
-        }
-        return $result;
-    }
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
 
-    /**
-     * Query to obtain location detail.
-     *
-     * @param int $id
-     * @return array of results
-     */
-    public function getLocation($id) {
-        $key = __METHOD__ . strval($id);
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT * FROM location WHERE id = :id;";
-            $result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
-            Cache::write($key, $result);
-        }
-        return array_pop($result);
-    }
+	/**
+	 * Query to obtain location detail.
+	 *
+	 * @param int $id
+	 * @return array of results
+	 */
+	public function getLocation($id) {
+		$key = __METHOD__ . strval($id);
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT * FROM location WHERE id = :id;";
+			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
+			Cache::write($key, $result);
+		}
+		return array_pop($result);
+	}
 
-    /**
-     * Query for list of species sighted at location on location detail page.
-     *
-     * @param int $id
-     * @return array of results
-     */
-    public function listSightingsForLocation($id) {
-        $key = __METHOD__ . strval($id);
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT
+	/**
+	 * Query for list of species sighted at location on location detail page.
+	 *
+	 * @param int $id
+	 * @return array of results
+	 */
+	public function listSightingsForLocation($id) {
+		$key = __METHOD__ . strval($id);
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
                       aou_list.id,
                       aou_list.common_name,
                       aou_list.scientific_name,
@@ -214,22 +217,22 @@ class Report extends Model {
                       aou_list.family,
                       aou_list.subfamily                  
                       ORDER BY aou_list.common_name ASC";
-            $result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
-            Cache::write($key, $result);
-        }
-        return $result;
-    }
+			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
 
-    /**
-     * Query for list of species by month.
-     *
-     * @return array of results
-     */
-    public function listSpeciesByMonth() {
-        $key = __METHOD__;
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT
+	/**
+	 * Query for list of species by month.
+	 *
+	 * @return array of results
+	 */
+	public function listSpeciesByMonth() {
+		$key = __METHOD__;
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
 					MONTH(t.trip_date) AS monthNumber,
 					MONTHNAME(t.trip_date) AS monthName,
 					LEFT(MONTHNAME(t.trip_date),1) AS monthLetter,
@@ -244,22 +247,22 @@ class Report extends Model {
 					GROUP BY
 					MONTH(t.trip_date)
 					ORDER BY 1";
-            $result = $this -> getDataSource() -> fetchAll($sql);
-            Cache::write($key, $result);
-        }
-        return $result;
-    }
-    
-    /**
-     * Query for list of species by month.
-     *
-     * @return array of results
-     */
-    public function listSpeciesByMonth2Orders() {
-        $key = __METHOD__;
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
+
+	/**
+	 * Query for list of species by month.
+	 *
+	 * @return array of results
+	 */
+	public function listSpeciesByMonth2Orders() {
+		$key = __METHOD__;
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
             		l.order AS orderName,
 					MONTH(t.trip_date) AS monthNumber,
 					MONTHNAME(t.trip_date) AS monthName,
@@ -279,23 +282,23 @@ class Report extends Model {
 					l.order,
 					MONTH(t.trip_date)
 					ORDER BY 2, 1;";
-            $result = $this -> getDataSource() -> fetchAll($sql);
-            Cache::write($key, $result);
-        }
-        return $result;
-    }    
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
 
-    /**
-     * Query to list species for a month.
-     *
-     * @param int $monthNumber
-     * @return array of results
-     */
-    public function listSpeciesForMonth($monthNumber) {
-        $key = __METHOD__ . strval($monthNumber);
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT
+	/**
+	 * Query to list species for a month.
+	 *
+	 * @param int $monthNumber
+	 * @return array of results
+	 */
+	public function listSpeciesForMonth($monthNumber) {
+		$key = __METHOD__ . strval($monthNumber);
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
                       aou_list.id,
                       aou_order.order_name,
                       aou_order.notes AS order_notes,       
@@ -335,22 +338,22 @@ class Report extends Model {
                       aou_list.family,
                       aou_list.subfamily    
                       ORDER BY aou_list.common_name ASC";
-            $result = $this -> getDataSource() -> fetchAll($sql, array('monthNumber' => $monthNumber));
-            Cache::write($key, $result);
-        }
-        return $result;
-    }
+			$result = $this -> getDataSource() -> fetchAll($sql, array('monthNumber' => $monthNumber));
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
 
-    /**
-     * Query to list species by order.
-     *
-     * @return array of results
-     */
-    public function listSpeciesByOrder() {
-        $key = __METHOD__;
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT
+	/**
+	 * Query to list species by order.
+	 *
+	 * @return array of results
+	 */
+	public function listSpeciesByOrder() {
+		$key = __METHOD__;
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
 					  aou_order.id,
 					  aou_order.order_name,
 					  aou_order.notes AS order_notes,
@@ -370,23 +373,23 @@ class Report extends Model {
 					  aou_order.order_name,
 					  aou_order.notes				  
 					  ORDER BY COUNT(DISTINCT aou_list.id) DESC";
-            $result = $this -> getDataSource() -> fetchAll($sql);
-            Cache::write($key, $result);
-        }
-        return $result;
-    }
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
 
-    /**
-     * Query to list species sighted for an order.
-     *
-     * @param int $id
-     * @return array of results
-     */
-    public function listSpeciesForOrder($id) {
-        $key = __METHOD__ . strval($id);
-        $result = Cache::read($key);
-        if ($result == FALSE) {
-            $sql = "SELECT
+	/**
+	 * Query to list species sighted for an order.
+	 *
+	 * @param int $id
+	 * @return array of results
+	 */
+	public function listSpeciesForOrder($id) {
+		$key = __METHOD__ . strval($id);
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
                       aou_list.id,
                       aou_order.order_name,
                       aou_order.notes AS order_notes,       
@@ -423,10 +426,10 @@ class Report extends Model {
                       aou_list.family,
                       aou_list.subfamily                  
                       ORDER BY aou_order.order_name ASC, aou_list.common_name ASC";
-            $result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
-            Cache::write($key, $result);
-        }
-        return $result;
-    }
+			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
 
 }

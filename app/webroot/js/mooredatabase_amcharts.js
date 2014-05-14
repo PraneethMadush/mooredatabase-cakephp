@@ -12,7 +12,7 @@
 			},
 			"valueAxes" : [{
 				"position" : "left",
-				"title" : "Species"
+				"title" : "Count"
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
@@ -51,7 +51,21 @@
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
 				"balloonText" : "Trips: [[value]]"
-			}]
+			}],
+			"exportConfig" : {
+				menuTop : 'auto',
+				menuLeft : 'auto',
+				menuRight : '0px',
+				menuBottom : '0px',
+				menuItems : [{
+					icon : '/js/amcharts/images/export.png',
+					iconTitle : 'Save chart as an image',
+					format : 'png'
+				}],
+				menuItemOutput : {
+					fileName : "speciesTripsByMonth"
+				}
+			}
 		});
 
 	};
@@ -63,6 +77,9 @@
 			"type" : "serial",
 			"startDuration" : 1,
 			"dataProvider" : chartData,
+			"titles" : [{
+				"text" : chartData[0].common_name
+			}],
 			"categoryField" : "monthLetter",
 			"categoryAxis" : {
 				"title" : "Month"
@@ -84,7 +101,21 @@
 				"lineAlpha" : 0.2,
 				"type" : "column",
 				"valueField" : "sightingCount"
-			}]
+			}],
+			"exportConfig" : {
+				menuTop : 'auto',
+				menuLeft : 'auto',
+				menuRight : '0px',
+				menuBottom : '0px',
+				menuItems : [{
+					icon : '/js/amcharts/images/export.png',
+					iconTitle : 'Save chart as an image',
+					format : 'png'
+				}],
+				menuItemOutput : {
+					fileName : "signtingsByMonth"
+				}
+			}
 		});
 
 	};
@@ -119,6 +150,20 @@
 			"categoryField" : "orderName",
 			"categoryAxis" : {
 				"title" : "Order"
+			},
+			"exportConfig" : {
+				menuTop : 'auto',
+				menuLeft : 'auto',
+				menuRight : '0px',
+				menuBottom : '0px',
+				menuItems : [{
+					icon : '/js/amcharts/images/export.png',
+					iconTitle : 'Save chart as an image',
+					format : 'png'
+				}],
+				menuItemOutput : {
+					fileName : "speciesByOrder"
+				}
 			}
 		});
 
