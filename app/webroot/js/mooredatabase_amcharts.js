@@ -113,7 +113,7 @@
 					format : 'png'
 				}],
 				menuItemOutput : {
-					fileName : "signtingsByMonth"
+					fileName : "sightingsByMonth"
 				}
 			}
 		});
