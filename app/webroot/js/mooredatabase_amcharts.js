@@ -13,7 +13,7 @@
 				"position" : "left",
 				"title" : "Count"
 			}],
-			"fontFamily" : "sans serif",
+			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
 			"startDuration" : 0,
 			"legend" : {
