@@ -25,19 +25,16 @@
 		<div class="ui-block-a"><strong>Sightings:</strong></div>
 		<div class="ui-block-b"><?php echo $bird[0]['sightings']; ?></div>			
 	</div><!-- /grid-a -->
-	<br />
-	<div id="chartSpeciesByMonth_container">
-		<ul data-role="listview" data-divider-theme="a">
-			<li data-role="list-divider">Sightings By Month</li>
-		</ul>
-		<figure>				
-			<div id="chartdiv" style="height: 300px; margin-top: 5px;">
-				<?php echo $this->Html->image('loaderb32.gif', array('alt' => 'Loading','class' => 'loader')); ?>	
-			</div>
-			<div id="legenddiv"></div>
-		</figure>
-		<form>
-			<input id="speciesId" type="hidden" value=<?php echo $bird['aou_list']['id']; ?> />
-		</form>
-	</div>
+</div>	
+<div id="chartSpeciesByMonth_container">
+	<ul data-role="listview" data-divider-theme="a">
+		<li data-role="list-divider">Sightings By Month</li>
+	</ul>
+	<figure>				
+		<div id="chartdiv" style="height: 300px; background-color: #505050;">
+		</div>
+	</figure>
+	<form>
+		<input id="speciesId" type="hidden" value=<?php echo $bird['aou_list']['id']; ?> />
+	</form>
 </div>

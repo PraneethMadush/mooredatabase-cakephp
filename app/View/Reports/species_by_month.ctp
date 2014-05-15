@@ -7,10 +7,8 @@
 		<li data-role="list-divider">Species and Trips By Month</li>
 	</ul>
 	<figure>				
-		<div id="chartdiv" style="height: 300px;">
-			<?php echo $this->Html->image('loaderb32.gif', array('alt' => 'loading','class' => 'loader')); ?>		
+		<div id="chartdiv" style="height: 300px; background-color: #505050;">
 		</div>
-		<div id="legenddiv"></div>
 	</figure>
 	<ul data-role="listview" data-divider-theme="a">
 		<li data-role="list-divider">Month Lists</li>

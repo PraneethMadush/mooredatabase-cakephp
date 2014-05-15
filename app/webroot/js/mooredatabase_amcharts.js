@@ -1,12 +1,11 @@
 (function() {
 	var drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth;
-
 	drawChartSpeciesByMonth = function(chartData) {
-
 		var chart = AmCharts.makeChart("chartdiv", {
 			"type" : "serial",
 			"dataProvider" : chartData,
 			"categoryField" : "monthLetter",
+			"theme" : "dark",
 			"categoryAxis" : {
 				"title" : "Month"
 			},
@@ -16,7 +15,7 @@
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
-			"startDuration" : 0.5,
+			"startDuration" : 0,
 			"legend" : {
 				"data" : [{
 					"title" : "Species",
@@ -25,7 +24,7 @@
 					"title" : "Trips",
 					"color" : "#FF6600"
 				}],
-				"align" : "center"
+				"align" : "center",
 			},
 			"graphs" : [{
 				"type" : "smoothedLine",
@@ -51,32 +50,17 @@
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
 				"balloonText" : "Trips: [[value]]"
-			}],
-			"exportConfig" : {
-				menuTop : 'auto',
-				menuLeft : 'auto',
-				menuRight : '0px',
-				menuBottom : '0px',
-				menuItems : [{
-					icon : '/js/amcharts/images/export.png',
-					iconTitle : 'Save chart as an image',
-					format : 'png'
-				}],
-				menuItemOutput : {
-					fileName : "speciesTripsByMonth"
-				}
-			}
+			}]
 		});
-
 	};
 	mooredatabase.drawChartSpeciesByMonth = drawChartSpeciesByMonth;
 
 	drawChartSpeciesSightingsByMonth = function(chartData) {
-
 		var chart = AmCharts.makeChart("chartdiv", {
 			"type" : "serial",
 			"startDuration" : 1,
 			"dataProvider" : chartData,
+			"theme" : "dark",
 			"titles" : [{
 				"text" : chartData[0].common_name
 			}],
@@ -85,7 +69,7 @@
 				"title" : "Month"
 			},
 			"valueAxes" : [{
-				"axisAlpha" : 0,
+				"axisAlpha" : 0.2,
 				"position" : "left",
 				"title" : "Sightings"
 			}],
@@ -101,37 +85,21 @@
 				"lineAlpha" : 0.2,
 				"type" : "column",
 				"valueField" : "sightingCount"
-			}],
-			"exportConfig" : {
-				menuTop : 'auto',
-				menuLeft : 'auto',
-				menuRight : '0px',
-				menuBottom : '0px',
-				menuItems : [{
-					icon : '/js/amcharts/images/export.png',
-					iconTitle : 'Save chart as an image',
-					format : 'png'
-				}],
-				menuItemOutput : {
-					fileName : "sightingsByMonth"
-				}
-			}
+			}]
 		});
-
 	};
 	mooredatabase.drawChartSpeciesSightingsByMonth = drawChartSpeciesSightingsByMonth;
 
 	drawChartSpeciesByOrder = function(chartData) {
-
 		var chart = AmCharts.makeChart("chartdiv", {
 			"type" : "serial",
-			"theme" : "none",
+			"theme" : "dark",
 			"rotate" : true,
 			"dataProvider" : chartData,
 			"creditsPosition" : "bottom-right",
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"valueAxes" : [{
-				"axisAlpha" : 0,
+				"axisAlpha" : .2,
 				"position" : "left",
 				"title" : "Species Count"
 			}],
@@ -150,23 +118,8 @@
 			"categoryField" : "orderName",
 			"categoryAxis" : {
 				"title" : "Order"
-			},
-			"exportConfig" : {
-				menuTop : 'auto',
-				menuLeft : 'auto',
-				menuRight : '0px',
-				menuBottom : '0px',
-				menuItems : [{
-					icon : '/js/amcharts/images/export.png',
-					iconTitle : 'Save chart as an image',
-					format : 'png'
-				}],
-				menuItemOutput : {
-					fileName : "speciesByOrder"
-				}
 			}
 		});
-
 	};
 	mooredatabase.drawChartSpeciesByOrder = drawChartSpeciesByOrder;
 
