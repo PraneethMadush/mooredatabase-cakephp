@@ -152,7 +152,7 @@ class ReportsController extends AppController {
 			$order_name = $bird['aou_order']['order_name'];
 			break;
 		}
-		$title_for_layout = 'Order ' . $order_name;
+		$title_for_layout = $order_name;
 		$this -> set(compact('order_name', 'title_for_layout', 'sighting_set'));
 	}
 
