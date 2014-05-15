@@ -31,7 +31,7 @@
 		<li data-role="list-divider">Sightings By Month</li>
 	</ul>
 	<figure>				
-		<div id="chartdiv" style="height: 300px; background-color: #505050;">
+		<div id="chartdiv" style="height: 300px; background-color: #505050; text-shadow: none;">
 		</div>
 	</figure>
 	<form>
