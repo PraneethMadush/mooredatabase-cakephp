@@ -7,7 +7,7 @@
 		<li data-role="list-divider">Species By Order</li>
 	</ul>
 	<figure>				
-		<div id="chartdiv" class="chartdiv" style="height: 500px;">
+		<div id="chartdivOrders" class="chartdiv" style="height: 500px;">
 		</div>
 	</figure>
 </div>

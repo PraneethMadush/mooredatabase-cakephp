@@ -7,7 +7,7 @@
 		<li data-role="list-divider">Species and Trips By Month</li>
 	</ul>
 	<figure>				
-		<div id="chartdiv" class="chartdiv" style="height: 300px;">
+		<div id="chartdivMonths" class="chartdiv" style="height: 300px;">
 		</div>
 	</figure>
 </div>
