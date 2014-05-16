@@ -1,5 +1,60 @@
 (function() {
-	var drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth;
+	var drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth, drawChartSpeciesByYear;
+	drawChartSpeciesByYear = function(chartData) {
+		var chart = AmCharts.makeChart("chartdiv", {
+			"type" : "serial",
+			"dataProvider" : chartData,
+			"categoryField" : "yearNumber",
+			"theme" : "dark",
+			"categoryAxis" : {
+				"title" : "Year"
+			},
+			"valueAxes" : [{
+				"position" : "left",
+				"title" : "Count"
+			}],
+			"fontFamily" : "Helvetica, Arial, sans serif",
+			"creditsPosition" : "top-right",
+			"startDuration" : 0,
+			"legend" : {
+				"data" : [{
+					"title" : "Species",
+					"color" : "#45D4FF"
+				}, {
+					"title" : "Trips",
+					"color" : "#FF6600"
+				}],
+				"align" : "center",
+			},
+			"graphs" : [{
+				"type" : "smoothedLine",
+				"lineAlpha" : 1,
+				"lineColor" : "#45D4FF",
+				"lineThickness" : 1,
+				"bullet" : "round",
+				"bulletBorderThickness" : 1,
+				"bulletBorderColor" : "#FFFFFF",
+				"valueField" : "speciesCount",
+				"labelPosition" : "top",
+				"labelText" : "[[value]]",
+				"balloonText" : "Species: [[value]]"
+			}, {
+				"type" : "smoothedLine",
+				"lineAlpha" : 1,
+				"lineColor" : "#FF6600",
+				"lineThickness" : 1,
+				"bullet" : "diamond",
+				"bulletBorderThickness" : 1,
+				"bulletBorderColor" : "#FFFFFF",
+				"valueField" : "tripCount",
+				"labelPosition" : "top",
+				"labelText" : "[[value]]",
+				"balloonText" : "Trips: [[value]]"
+			}]
+		});
+	};
+	mooredatabase.drawChartSpeciesByYear = drawChartSpeciesByYear;
+
 	drawChartSpeciesByMonth = function(chartData) {
 		var chart = AmCharts.makeChart("chartdiv", {
 			"type" : "serial",

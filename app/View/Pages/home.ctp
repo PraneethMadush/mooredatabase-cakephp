@@ -11,8 +11,9 @@
 				<li>Skilled web / database developer</li>
 				<li>Experienced data architect / database administrator</li>
 				<li>Strong analysis &amp; design background</li>
-				<li>Linux / Open Source Enthusiast</li>
+				<li>Linux / Open Source developer</li>
 				<li>MCSD and MCITP, with 7 certifications in SQL Server development / administration</li>
+				<li>Birding Enthusiast</li>
 			</ul>
 			<?php echo $this->Html->image('mcitp.png', array('alt' => 'MCITP Logo','class' => 'logo')); ?>
 		</div>
@@ -52,4 +53,13 @@
 			</address>
 		</div>
 	</div>
+</div>
+<div id="chartSpeciesByYear_container">
+	<ul data-role="listview" data-divider-theme="a">
+		<li data-role="list-divider">Bird Species and Birding Trips By Year</li>
+	</ul>
+	<figure>				
+		<div id="chartdiv" class="chartdiv" style="height: 300px;">
+		</div>
+	</figure>
 </div>

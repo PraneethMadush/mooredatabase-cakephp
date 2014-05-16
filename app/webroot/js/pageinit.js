@@ -31,6 +31,17 @@
     });
   });
 
+  $(document).on("pageshow", "#index", function() {
+    return $.ajax({
+      type: 'GET',
+      url: '/reports/species_by_year_json',
+      dataType: 'json',
+      success: function(data) {
+        mooredatabase.drawChartSpeciesByYear(data);
+      }
+    });
+  });
+
   $(document).on("pageshow", "#speciesByMonth", function() {
     return $.ajax({
       type: 'GET',

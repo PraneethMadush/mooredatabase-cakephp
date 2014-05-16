@@ -30,7 +30,17 @@ $(document).on "pageshow", "#settings", ->
 		else
 			$(this).html('<img src="/img/Red-Circle-32.png" alt="Feature not supported" height="20px" style="vertical-align:middle" />&nbsp;' + $(this).text())
   return
-	
+
+# draw chart when home page loads
+$(document).on "pageshow", "#index", ->
+  $.ajax
+    type : 'GET'
+    url : '/reports/species_by_year_json'
+    dataType : 'json'
+    success : (data) ->
+      mooredatabase.drawChartSpeciesByYear(data)
+      return
+      	
 # draw chart when Species By Month page loads
 $(document).on "pageshow", "#speciesByMonth", ->
 	$.ajax

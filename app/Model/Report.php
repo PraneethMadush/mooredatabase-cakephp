@@ -254,6 +254,34 @@ class Report extends Model {
 	}
 
 	/**
+	 * Query for list of species by year.
+	 *
+	 * @return array of results
+	 */
+	public function listSpeciesByYear() {
+		$key = __METHOD__;
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
+					YEAR(t.trip_date) AS yearNumber,
+					COUNT(DISTINCT l.id) AS speciesCount,
+					COUNT(DISTINCT t.id) AS tripCount
+					FROM
+					aou_list l
+					INNER JOIN sighting s
+						ON l.id = s.aou_list_id
+					INNER JOIN trip t
+						ON s.trip_id = t.id
+					GROUP BY
+					YEAR(t.trip_date)
+					ORDER BY 1";
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
+
+	/**
 	 * Query for list of species by month.
 	 *
 	 * @return array of results
