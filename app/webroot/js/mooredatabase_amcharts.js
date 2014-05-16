@@ -19,7 +19,7 @@
 			"legend" : {
 				"data" : [{
 					"title" : "Species",
-					"color" : "blue"
+					"color" : "#45D4FF"
 				}, {
 					"title" : "Trips",
 					"color" : "#FF6600"
@@ -29,7 +29,7 @@
 			"graphs" : [{
 				"type" : "smoothedLine",
 				"lineAlpha" : 1,
-				"lineColor" : "blue",
+				"lineColor" : "#45D4FF",
 				"lineThickness" : 1,
 				"bullet" : "round",
 				"bulletBorderThickness" : 1,

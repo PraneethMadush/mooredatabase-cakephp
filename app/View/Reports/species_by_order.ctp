@@ -7,15 +7,13 @@
 		<li data-role="list-divider">Species By Order</li>
 	</ul>
 	<figure>				
-		<div id="chartdiv" style="height: 500px; background-color: #505050; text-shadow: none;">
+		<div id="chartdiv" class="chartdiv" style="height: 500px;">
 		</div>
 	</figure>
-	<ul data-role="listview" data-divider-theme="a">
-		<li data-role="list-divider">Orders</li>
-	</ul>
 </div>
 <div data-role="content">	
 	<ul data-role="listview" data-count-theme="a">
+		<li data-role="list-divider">Orders</li>
 	<?php foreach($order_set as $order): ?>
 		<li>
 			<a href="species_by_order_list/<?php echo $order['aou_order']['id']; ?>">

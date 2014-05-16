@@ -7,15 +7,13 @@
 		<li data-role="list-divider">Species and Trips By Month</li>
 	</ul>
 	<figure>				
-		<div id="chartdiv" style="height: 300px; background-color: #505050; text-shadow: none;">
+		<div id="chartdiv" class="chartdiv" style="height: 300px;">
 		</div>
 	</figure>
-	<ul data-role="listview" data-divider-theme="a">
-		<li data-role="list-divider">Month Lists</li>
-	</ul>
 </div>
 <div data-role="content">	
 	<ul data-role="listview" data-count-theme="a">
+		<li data-role="list-divider">Month Lists</li>
 	<?php foreach($month_set as $month): ?>
 		<li>
 			<a href="species_by_month_list/<?php echo $month[0]['monthNumber']; ?>">

@@ -65,19 +65,6 @@ figure {
 	padding: 0;
 }
 
-// media queries override some of these container sizes
-#chartSpeciesByMonth_container, #chartSpeciesByOrder_container {
-	background-color: #FFF;
-	padding: 0;
-	margin: 0;
-}
-#chartSpeciesByMonth, #chartSpeciesByOrder {
-	display: block;
-	height: 300px;
-	width: 600px;
-	margin: 0 auto;
-	padding: 0;
-}
 .map_canvas, #myCanvas, #myHome {
 	display: block;
 	margin: 0 auto;
@@ -88,23 +75,11 @@ figure {
 		width: 240px;
 		height: 240px;
 	}
-	#chartSpeciesByMonth {
-		height: 240px;
-		width: 240px;
-	}
-	#chartSpeciesByOrder {
-		height: 240px;
-		width: 275px;
-	}
 }
 @media all and (min-width: 281px) and (max-width: 480px) {
 	#map_canvas, #myCanvas {
 		width: 280px;
 		height: 280px;
-	}
-	#chartSpeciesByMonth, #chartSpeciesByOrder {
-		height: 280px;
-		width: 280px;
 	}
 	#header_container #header_text {
 		font-size: 1.6em;
@@ -115,10 +90,6 @@ figure {
 	#map_canvas, #myCanvas {
 		width: 480px;
 		height: 480px;
-	}
-	#chartSpeciesByMonth, #chartSpeciesByOrder {
-		height: 300px;
-		width: 480px;
 	}
 	#header_container #header_text {
 		font-size: 2.5em;
@@ -133,12 +104,6 @@ figure {
 	#header_container #header_text {
 		font-size: 3.5em;
 		letter-spacing: -4px;
-	}
-}
-@media all and (min-width: 769px) {
-	#chartSpeciesByMonth, #chartSpeciesByOrder {
-		height: 300px;
-		width: 768px;
 	}
 }
 
@@ -184,9 +149,6 @@ figure {
 #photolist {
   img {
   	width: 100px;
-  	// -webkit-border-radius: 5px;
-  	// -moz-border-radius: 5px;
-  	// border-radius: 5px;
   	@include border-radius(5px);
   }
   .ui-block-a, 
@@ -256,4 +218,9 @@ figure {
 
 .ui-collapsible-set {
 	margin: 0;
+}
+
+.chartdiv {
+   background-color: #505050;   
+   text-shadow: none;
 }
