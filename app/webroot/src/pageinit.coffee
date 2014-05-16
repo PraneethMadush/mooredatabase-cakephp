@@ -40,39 +40,43 @@ $(document).on "pageshow", "#index", ->
     success : (data) ->
       mooredatabase.drawChartSpeciesByYear(data)
       return
-      	
+  return
+        	
 # draw chart when Species By Month page loads
 $(document).on "pageshow", "#speciesByMonth", ->
-	$.ajax
-		type : 'GET'
-		url : '/reports/species_by_month_json'
-		dataType : 'json'
-		success : (data) ->
-		  mooredatabase.drawChartSpeciesByMonth(data)
-		  return
-				
+  $.ajax
+    type : 'GET'
+    url : '/reports/species_by_month_json'
+    dataType : 'json'
+    success : (data) ->
+      mooredatabase.drawChartSpeciesByMonth(data)
+      return
+  return
+  		  
 # draw chart when Sightings By Month page loads
 $(document).on "pageshow", "#speciesDialog", ->
-	speciesId = $('#speciesId').val()
-	$.ajax
-		type : 'GET'
-		url : '/reports/sightings_by_month/' + speciesId
-		dataType : 'json'
-		success : (data) ->
-		  mooredatabase.drawChartSpeciesSightingsByMonth(data)
-		  return
-        				
+  speciesId = $('#speciesId').val()
+  $.ajax
+    type : 'GET'
+    url : '/reports/sightings_by_month/' + speciesId
+    dataType : 'json'
+    success : (data) ->
+      mooredatabase.drawChartSpeciesSightingsByMonth(data)
+      return
+  return
+            				
 # draw chart when Species By Order page loads
 # $(document).on "pageshow", "#speciesByOrder", ->
 $(document).on "pageshow", "#speciesByOrder", ->
-	$.ajax
-		type : 'GET'
-		url : '/reports/species_by_order_json'
-		dataType : 'json'
-		success : (data) ->
+  $.ajax
+    type : 'GET'
+    url : '/reports/species_by_order_json'
+    dataType : 'json'
+    success : (data) ->
       mooredatabase.drawChartSpeciesByOrder(data)
       return
-    				
+  return
+      				
 $(document).on 'pageshow', '#slideshow1', (e) ->
 	currentPage = $(e.target)
 	options = {}

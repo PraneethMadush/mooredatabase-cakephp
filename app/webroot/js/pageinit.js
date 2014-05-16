@@ -32,7 +32,7 @@
   });
 
   $(document).on("pageshow", "#index", function() {
-    return $.ajax({
+    $.ajax({
       type: 'GET',
       url: '/reports/species_by_year_json',
       dataType: 'json',
@@ -43,7 +43,7 @@
   });
 
   $(document).on("pageshow", "#speciesByMonth", function() {
-    return $.ajax({
+    $.ajax({
       type: 'GET',
       url: '/reports/species_by_month_json',
       dataType: 'json',
@@ -56,7 +56,7 @@
   $(document).on("pageshow", "#speciesDialog", function() {
     var speciesId;
     speciesId = $('#speciesId').val();
-    return $.ajax({
+    $.ajax({
       type: 'GET',
       url: '/reports/sightings_by_month/' + speciesId,
       dataType: 'json',
@@ -67,7 +67,7 @@
   });
 
   $(document).on("pageshow", "#speciesByOrder", function() {
-    return $.ajax({
+    $.ajax({
       type: 'GET',
       url: '/reports/species_by_order_json',
       dataType: 'json',
