@@ -26,8 +26,8 @@
 				<li>Upgraded mobile site front end to jQuery Mobile 1.4.2</li>
 				<li>Upgraded charting components to amCharts JavaScript Charts</li>
 				<li>Upgraded RDS instance to MySQL 5.6.14</li>
-				<?php echo $this->Html->image('cakephp_logo_125_trans.png', array('alt' => 'CakePHP Logo','class' => 'logo75',)); ?>
 			</ul>
+			<?php echo $this->Html->image('cakephp_logo_125_trans.png', array('alt' => 'CakePHP Logo','class' => 'logo75',)); ?>			
 		</div>
 		<div data-role="collapsible">
 			<h3>Project Experience</h3>
