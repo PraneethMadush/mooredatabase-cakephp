@@ -92,7 +92,8 @@
 				"valueField" : "speciesCount",
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
-				"balloonText" : "Species: [[value]]"
+				"balloonText" : "Species: [[value]]",
+				"urlField" : "url"
 			}, {
 				"type" : "smoothedLine",
 				"lineAlpha" : 1,
@@ -104,7 +105,8 @@
 				"valueField" : "tripCount",
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
-				"balloonText" : "Trips: [[value]]"
+				"balloonText" : "Trips: [[value]]",
+				"urlField" : "url"
 			}]
 		});
 	};
@@ -168,7 +170,8 @@
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
 				"lineColor" : "color",
-				"colorField" : "color"
+				"colorField" : "color",
+				"urlField" : "url",
 			}],
 			"categoryField" : "orderName",
 			"categoryAxis" : {

@@ -17,10 +17,10 @@
 			<div data-role="collapsible">
 				<h2>Birding Database</h2>
 				<ul data-role="listview">
-					<li><a href="/reports/species_all">All Species</a></li>
-					<li><a href="/reports/birding_locations">Birding Locations</a></li>
+					<li><a href="/reports/species_by_order">Species By Order</a></li>	
 					<li><a href="/reports/species_by_month">Species By Month</a></li>
-					<li><a href="/reports/species_by_order">Species By Order</a></li>		
+					<li><a href="/reports/birding_locations">Birding Locations</a></li>
+					<li><a href="/reports/species_all">All Species</a></li>
 				</ul>
 			</div>
 			<div data-role="collapsible">

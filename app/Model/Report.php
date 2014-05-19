@@ -234,6 +234,7 @@ class Report extends Model {
 		if ($result == FALSE) {
 			$sql = "SELECT
 					MONTH(t.trip_date) AS monthNumber,
+					CONCAT('/reports/species_by_month_list/',MONTH(t.trip_date)) AS url,
 					MONTHNAME(t.trip_date) AS monthName,
 					LEFT(MONTHNAME(t.trip_date),1) AS monthLetter,
 					COUNT(DISTINCT l.id) AS speciesCount,

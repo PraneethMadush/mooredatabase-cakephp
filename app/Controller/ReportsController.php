@@ -150,7 +150,7 @@ class ReportsController extends AppController {
 		$results = array();
 		$i = 0;
 		foreach ($orderSet as $order) {
-			$row_array = array('orderName' => $order['aou_order']['order_name'], 'speciesCount' => $order[0]['speciesCount'], 'color' => $colorArray[$i]);
+			$row_array = array('orderName' => $order['aou_order']['order_name'], 'speciesCount' => $order[0]['speciesCount'], 'color' => $colorArray[$i], 'url' => '/reports/species_by_order_list/' . $order['aou_order']['id']);
 			array_push($results, $row_array);
 			$i++;
 		}
