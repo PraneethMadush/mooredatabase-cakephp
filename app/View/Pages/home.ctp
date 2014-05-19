@@ -20,7 +20,7 @@
 		<div data-role="collapsible">
 			<h3>What's New</h3>
 			<ul>
-				<li>Completed Statistics and R programming courses offered by Coursera</li>
+				<li>Completed Statistics, Excel and R programming courses offered by Coursera and Lynda.com</li>
 				<li>Migrated mobile site to CakePHP, Nginx and Ubuntu Server 14.04 LTS</li>
 				<li>Implemented caching with memcached</li>
 				<li>Upgraded mobile site front end to jQuery Mobile 1.4.2</li>
