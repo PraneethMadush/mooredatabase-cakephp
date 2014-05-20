@@ -220,10 +220,15 @@ figure {
 	margin: 0;
 }
 
+// reduce padding around content
 #index .ui-content {
   padding: 0.5em;
 }
-
+// restore padding in menu
+#menuPanel .ui-content {
+  padding: 1em;
+}
+// for div containing amCharts graphs
 .chartdiv {
    background-color: #333333;   
    text-shadow: none;
