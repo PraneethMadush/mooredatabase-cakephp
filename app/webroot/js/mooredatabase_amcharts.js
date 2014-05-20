@@ -7,11 +7,16 @@
 			"categoryField" : "yearNumber",
 			"theme" : "dark",
 			"categoryAxis" : {
-				"title" : "Year"
+				"gridPosition" : "start",
+				"title" : "Year",
+				"axisAlpha" : 0,
+				"tickLength" : 0
 			},
 			"valueAxes" : [{
 				"position" : "left",
-				"title" : "Count"
+				"title" : "Count",
+				"axisAlpha" : 0,
+				"tickLength" : 0
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
@@ -27,25 +32,28 @@
 				"align" : "center",
 			},
 			"graphs" : [{
-				"type" : "smoothedLine",
-				"lineAlpha" : 1,
-				"lineColor" : "#00a9ff",
-				"lineThickness" : 1,
-				"bullet" : "round",
-				"bulletBorderThickness" : 1,
-				"bulletBorderColor" : "#FFFFFF",
+				"type" : "column",
 				"valueField" : "speciesCount",
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
-				"balloonText" : "Species: [[value]]"
+				"balloonText" : "Species: [[value]]",
+				"fillColors" : "#00a9ff",
+				"lineColor" : "#00a9ff",
+				"fillAlphas" : 1,
+				"lineAlpha" : 1,
+				"type" : "column",
 			}, {
 				"type" : "smoothedLine",
+				"fillAlphas" : 0,
 				"lineAlpha" : 1,
 				"lineColor" : "#FF6600",
-				"lineThickness" : 1,
-				"bullet" : "diamond",
-				"bulletBorderThickness" : 1,
+				"lineThickness" : 2,
+				"bullet" : "round",
+				"bulletSize" : 3,
+				"bulletBorderThickness" : 3,
 				"bulletBorderColor" : "#FFFFFF",
+				"useLineColorForBulletBorder" : true,
+				"bulletBorderAlpha" : 1,
 				"valueField" : "tripCount",
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
@@ -62,11 +70,16 @@
 			"categoryField" : "monthLetter",
 			"theme" : "dark",
 			"categoryAxis" : {
-				"title" : "Month"
+				"gridPosition" : "start",
+				"title" : "Month",
+				"axisAlpha" : 0,
+				"tickLength" : 0
 			},
 			"valueAxes" : [{
 				"position" : "left",
-				"title" : "Count"
+				"title" : "Count",
+				"axisAlpha" : 0,
+				"tickLength" : 0
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
@@ -123,12 +136,16 @@
 			}],
 			"categoryField" : "monthLetter",
 			"categoryAxis" : {
-				"title" : "Month"
+				"title" : "Month",
+				"gridPosition" : "start",
+				"axisAlpha" : 0,
+				"tickLength" : 0
 			},
 			"valueAxes" : [{
-				"axisAlpha" : 0.2,
+				"axisAlpha" : 0,
 				"position" : "left",
-				"title" : "Sightings"
+				"title" : "Sightings",
+				"tickLength" : 0
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
@@ -156,7 +173,6 @@
 			"creditsPosition" : "bottom-right",
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"valueAxes" : [{
-				"axisAlpha" : .2,
 				"position" : "left",
 				"title" : "Species Count"
 			}],
@@ -175,7 +191,9 @@
 			}],
 			"categoryField" : "orderName",
 			"categoryAxis" : {
-				"title" : "Order"
+				"title" : "Order",
+				"tickLength" : 0,
+				"axisAlpha" : 0
 			}
 		});
 	};

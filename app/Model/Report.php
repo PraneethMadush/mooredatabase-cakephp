@@ -273,6 +273,8 @@ class Report extends Model {
 						ON l.id = s.aou_list_id
 					INNER JOIN trip t
 						ON s.trip_id = t.id
+					WHERE
+					YEAR(t.trip_date) >= 2010
 					GROUP BY
 					YEAR(t.trip_date)
 					ORDER BY 1";
