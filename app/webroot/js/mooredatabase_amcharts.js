@@ -183,12 +183,19 @@
 				"lineAlpha" : 0.2,
 				"type" : "column",
 				"valueField" : "speciesCount",
-				"labelPosition" : "top",
-				"labelText" : "[[value]]",
+				// "labelPosition" : "top",
+				// "labelText" : "[[value]]",
 				"lineColor" : "color",
 				"colorField" : "color",
 				"urlField" : "url",
 			}],
+			"depth3D" : 20,
+			"angle" : 30,
+			"chartCursor" : {
+				"categoryBalloonEnabled" : false,
+				"cursorAlpha" : 0,
+				"zoomable" : false
+			},
 			"categoryField" : "orderName",
 			"categoryAxis" : {
 				"title" : "Order",
