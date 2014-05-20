@@ -50,6 +50,10 @@ $(document).on "pageshow", "#speciesByMonth", ->
     dataType : 'json'
     success : (data) ->
       mooredatabase.drawChartSpeciesByMonth(data)
+      setTimeout( -> 
+        $('a:contains("amcharts")').css("display","none")
+        return
+      3000)
       return
   return
   		  
