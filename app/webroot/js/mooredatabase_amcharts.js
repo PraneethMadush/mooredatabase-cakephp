@@ -5,7 +5,6 @@
 			"type" : "serial",
 			"dataProvider" : chartData,
 			"categoryField" : "yearNumber",
-			"theme" : "dark",
 			"categoryAxis" : {
 				"gridPosition" : "start",
 				"title" : "Year",
@@ -68,7 +67,6 @@
 			"type" : "serial",
 			"dataProvider" : chartData,
 			"categoryField" : "monthLetter",
-			"theme" : "dark",
 			"categoryAxis" : {
 				"gridPosition" : "start",
 				"title" : "Month",
@@ -130,7 +128,6 @@
 			"type" : "serial",
 			"startDuration" : 1,
 			"dataProvider" : chartData,
-			"theme" : "dark",
 			"titles" : [{
 				"text" : chartData[0].common_name
 			}],
@@ -167,7 +164,6 @@
 	drawChartSpeciesByOrder = function(chartData) {
 		var chart = AmCharts.makeChart("chartdivOrders", {
 			"type" : "serial",
-			"theme" : "dark",
 			"rotate" : true,
 			"dataProvider" : chartData,
 			"creditsPosition" : "bottom-right",
@@ -183,8 +179,6 @@
 				"lineAlpha" : 0.2,
 				"type" : "column",
 				"valueField" : "speciesCount",
-				// "labelPosition" : "top",
-				// "labelText" : "[[value]]",
 				"lineColor" : "color",
 				"colorField" : "color",
 				"urlField" : "url",
