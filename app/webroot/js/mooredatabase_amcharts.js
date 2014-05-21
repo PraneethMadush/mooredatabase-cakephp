@@ -1,7 +1,8 @@
 (function() {
 	var drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth, drawChartSpeciesByYear;
 	drawChartSpeciesByYear = function(chartData) {
-		var chart = AmCharts.makeChart("chartdivYears", {
+		var chart;
+		chart = AmCharts.makeChart("chartdivYears", {
 			"type" : "serial",
 			"dataProvider" : chartData,
 			"categoryField" : "yearNumber",
@@ -63,7 +64,8 @@
 	mooredatabase.drawChartSpeciesByYear = drawChartSpeciesByYear;
 
 	drawChartSpeciesByMonth = function(chartData) {
-		var chart = AmCharts.makeChart("chartdivMonths", {
+		var chart;
+		chart = AmCharts.makeChart("chartdivMonths", {
 			"type" : "serial",
 			"dataProvider" : chartData,
 			"categoryField" : "monthLetter",
@@ -124,7 +126,8 @@
 	mooredatabase.drawChartSpeciesByMonth = drawChartSpeciesByMonth;
 
 	drawChartSpeciesSightingsByMonth = function(chartData) {
-		var chart = AmCharts.makeChart("chartdivSpecies", {
+		var chart;
+		chart = AmCharts.makeChart("chartdivSpecies", {
 			"type" : "serial",
 			"startDuration" : 1,
 			"dataProvider" : chartData,
@@ -162,7 +165,8 @@
 	mooredatabase.drawChartSpeciesSightingsByMonth = drawChartSpeciesSightingsByMonth;
 
 	drawChartSpeciesByOrder = function(chartData) {
-		var chart = AmCharts.makeChart("chartdivOrders", {
+		var chart;
+		chart = AmCharts.makeChart("chartdivOrders", {
 			"type" : "serial",
 			"rotate" : true,
 			"dataProvider" : chartData,
@@ -200,4 +204,4 @@
 	};
 	mooredatabase.drawChartSpeciesByOrder = drawChartSpeciesByOrder;
 
-}).call(this);
+}).call(this); 

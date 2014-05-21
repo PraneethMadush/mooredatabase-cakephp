@@ -38,9 +38,6 @@
       dataType: 'json',
       success: function(data) {
         mooredatabase.drawChartSpeciesByYear(data);
-        setTimeout(function() {
-          $('a:contains("JS chart")').css("display", "none");
-        }, 100);
       }
     });
   });
@@ -52,9 +49,6 @@
       dataType: 'json',
       success: function(data) {
         mooredatabase.drawChartSpeciesByMonth(data);
-        setTimeout(function() {
-          $('a:contains("JS chart")').css("display", "none");
-        }, 100);
       }
     });
   });
@@ -68,9 +62,6 @@
       dataType: 'json',
       success: function(data) {
         mooredatabase.drawChartSpeciesSightingsByMonth(data);
-        setTimeout(function() {
-          $('a:contains("JS chart")').css("display", "none");
-        }, 100);        
       }
     });
   });
@@ -82,9 +73,6 @@
       dataType: 'json',
       success: function(data) {
         mooredatabase.drawChartSpeciesByOrder(data);
-        setTimeout(function() {
-          $('a:contains("JS chart")').css("display", "none");
-        }, 100);        
       }
     });
   });
