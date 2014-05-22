@@ -106,6 +106,26 @@ class ReportsController extends AppController {
 		$this -> set(compact('results'));
 	}
 
+	public function species_by_county_json() {
+
+		// disable layout
+		$this -> layout = null;
+
+		// perform the search
+		$countySet = $this -> Report -> listSpeciesByCounty();
+
+		// Retrieve and store in array the results of the query
+		// CakePHP nests each row in an object [], so we need to
+		// extract into a format that translates to JSON correctly
+		$results = array();
+		foreach ($countySet as $county) {
+			foreach ($county as $data) {
+				array_push($results, $data);
+			}
+		}
+		$this -> set(compact('results'));
+	}
+
 	public function species_by_order() {
 		$order_set = $this -> Report -> listSpeciesByOrder();
 		$this -> set(compact('order_set'));

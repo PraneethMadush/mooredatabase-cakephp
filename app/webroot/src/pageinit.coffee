@@ -41,7 +41,18 @@ $(document).on "pageshow", "#index", ->
       mooredatabase.drawChartSpeciesByYear(data)
       return
   return
-        	
+
+# draw chart when home page loads
+$(document).on "pageshow", "#birdingLocations", ->
+  $.ajax
+    type : 'GET'
+    url : '/reports/species_by_county_json'
+    dataType : 'json'
+    success : (data) ->
+      mooredatabase.drawChartSpeciesByCounty(data)
+      return
+  return
+          	
 # draw chart when Species By Month page loads
 $(document).on "pageshow", "#speciesByMonth", ->
   $.ajax

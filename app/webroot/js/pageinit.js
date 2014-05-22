@@ -42,6 +42,17 @@
     });
   });
 
+  $(document).on("pageshow", "#birdingLocations", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/reports/species_by_county_json',
+      dataType: 'json',
+      success: function(data) {
+        mooredatabase.drawChartSpeciesByCounty(data);
+      }
+    });
+  });
+
   $(document).on("pageshow", "#speciesByMonth", function() {
     $.ajax({
       type: 'GET',

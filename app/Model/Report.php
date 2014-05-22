@@ -285,34 +285,29 @@ class Report extends Model {
 	}
 
 	/**
-	 * Query for list of species by month.
+	 * Query for list of species by county.
 	 *
 	 * @return array of results
 	 */
-	public function listSpeciesByMonth2Orders() {
+	public function listSpeciesByCounty() {
 		$key = __METHOD__;
 		$result = Cache::read($key);
 		if ($result == FALSE) {
 			$sql = "SELECT
-            		l.order AS orderName,
-					MONTH(t.trip_date) AS monthNumber,
-					MONTHNAME(t.trip_date) AS monthName,
-					COUNT(DISTINCT l.id) AS speciesCount
-					FROM
-					aou_list l
-					INNER JOIN sighting s
-						ON l.id = s.aou_list_id
-					INNER JOIN trip t
-						ON s.trip_id = t.id
-					WHERE
-					l.order IN (
-						'Passeriformes',
-						'Anseriformes'
-					)
-					GROUP BY
-					l.order,
-					MONTH(t.trip_date)
-					ORDER BY 2, 1;";
+					  MIN(location.county_name) AS countyName,
+					  COUNT(DISTINCT aou_list.id) AS speciesCount,
+					  COUNT(DISTINCT trip.id) AS tripCount
+					  FROM
+					  trip
+					  INNER JOIN location
+					  	ON trip.location_id = location.id				  
+					  INNER JOIN sighting
+					  	ON trip.id = sighting.trip_id
+					  INNER JOIN aou_list
+					  	ON sighting.aou_list_id = aou_list.id
+					  GROUP BY
+					  location.county_name				  
+					  ORDER BY 2 DESC";
 			$result = $this -> getDataSource() -> fetchAll($sql);
 			Cache::write($key, $result);
 		}
