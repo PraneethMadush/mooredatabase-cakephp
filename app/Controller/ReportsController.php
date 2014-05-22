@@ -27,30 +27,25 @@ class ReportsController extends AppController {
 		$species_id = ( int )$id;
 		$monthSet = $this -> Report -> listMonthsForSpecies($species_id);
 
-		// color array
+		// color and month arrays
 		$colorArray = array("#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74");
+		$monthArray = array('J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D');
 
 		// add all 12 months with sightings 0 to array first; so
 		// we get a chart showing all 12 months with no gaps
-		$monthArray = array('J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D');
 		$results = array();
+		$row = array();
 		for ($i = 0; $i < 12; $i++) {
-			$rowArray = array($monthArray[$i], 0, $colorArray[$i], $monthSet[0][0]['common_name']);
-			array_push($results, $rowArray);
+			$row = array('monthLetter' => $monthArray[$i], 'sightingCount' => 0, 'color' => $colorArray[$i], 'common_name' => $monthSet[0][0]['common_name']);
+			array_push($results, $row);
 		}
 
-		// update array element for count, initialized to 0, with counts from database
+		// update array element for count with counts from database
 		foreach ($monthSet as $month) {
-			$results[$month[0]['monthNumber'] - 1][1] = $month[0]['sightingCount'];
+			$results[$month[0]['monthNumber'] - 1]['sightingCount'] = $month[0]['sightingCount'];
 		}
 
-		// reformat as JSON
-		$jsonResults = array();
-		foreach ($results as $result) {
-			$month = array('monthLetter' => $result[0], 'sightingCount' => $result[1], 'color' => $result[2], 'common_name' => $result[3]);
-			array_push($jsonResults, $month);
-		}
-		$results = $jsonResults;
+		// pass data to view
 		$this -> set(compact('results'));
 	}
 
@@ -81,7 +76,7 @@ class ReportsController extends AppController {
 
 		// Retrieve and store in array the results of the query
 		// CakePHP nests each row in an object [], so we need to
-		// extract into more standard JSON format
+		// extract into a format that translates to JSON correctly
 		$results = array();
 		foreach ($monthSet as $month) {
 			foreach ($month as $data) {
@@ -101,30 +96,12 @@ class ReportsController extends AppController {
 
 		// Retrieve and store in array the results of the query
 		// CakePHP nests each row in an object [], so we need to
-		// extract into more standard JSON format
+		// extract into a format that translates to JSON correctly
 		$results = array();
 		foreach ($yearSet as $year) {
 			foreach ($year as $data) {
 				array_push($results, $data);
 			}
-		}
-		$this -> set(compact('results'));
-	}
-
-	public function species_by_month_2_orders_json() {
-
-		// disable layout
-		$this -> layout = null;
-
-		// perform the search
-		$monthSet = $this -> Report -> listSpeciesByMonth2Orders();
-
-		// Retrieve and store in array the results of the query
-		// jQuery is looking for 'value' key
-		$results = array();
-		foreach ($monthSet as $month) {
-			$row_array = array($month['l']['orderName'], substr($month[0]['monthName'], 0, 1), $month[0]['speciesCount']);
-			array_push($results, $row_array);
 		}
 		$this -> set(compact('results'));
 	}
@@ -148,10 +125,11 @@ class ReportsController extends AppController {
 		// Retrieve and store in array the results of the query
 		// jQuery is looking for 'value' key
 		$results = array();
+		$row = array();
 		$i = 0;
 		foreach ($orderSet as $order) {
-			$row_array = array('orderName' => $order['aou_order']['order_name'], 'speciesCount' => $order[0]['speciesCount'], 'color' => $colorArray[$i], 'url' => '/reports/species_by_order_list/' . $order['aou_order']['id']);
-			array_push($results, $row_array);
+			$row = array('orderName' => $order['aou_order']['order_name'], 'speciesCount' => $order[0]['speciesCount'], 'color' => $colorArray[$i], 'url' => '/reports/species_by_order_list/' . $order['aou_order']['id']);
+			array_push($results, $row);
 			$i++;
 		}
 		$this -> set(compact('results'));
