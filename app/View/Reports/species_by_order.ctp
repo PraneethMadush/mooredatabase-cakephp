@@ -19,7 +19,7 @@
 			<a href="species_by_order_list/<?php echo $order['aou_order']['id']; ?>">
 				<p><strong><?php echo $order['aou_order']['order_name']; ?></strong></p>
 				<p><?php echo $order['aou_order']['order_notes']; ?></p>
-				<p><?php $order[0]['order_species_count_all']; ?> species in N. America</p>
+				<p><?php echo $order[0]['order_species_count_all']; ?> species in N. America</p>
 				<span class="ui-li-count"><?php echo $order[0]['speciesCount']; ?> Species</span>
 			</a>
 		</li>
