@@ -22,12 +22,12 @@
 			"legend" : {
 				"data" : [{
 					"title" : "Species",
-					"color" : "#00a9ff"
+					"color" : "#FF6600"
 				}, {
 					"title" : "Trips",
-					"color" : "#FF6600"
+					"color" : "#FCD202"
 				}],
-				"align" : "center",
+				"align" : "center"
 			},
 			"graphs" : [{
 				"type" : "column",
@@ -35,23 +35,21 @@
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
 				"balloonText" : "Species: [[value]]",
-				"fillColors" : "#00a9ff",
-				"lineColor" : "#00a9ff",
 				"fillAlphas" : 1,
 				"lineAlpha" : 1,
 				"type" : "column",
 			}, {
-				"type" : "smoothedLine",
+				"bullet" : "round",
+				"dashLengthField" : "dashLengthLine",
+				"lineThickness" : 3,
+				"bulletSize" : 7,
+				"bulletBorderAlpha" : 1,
+				"bulletColor" : "#FFFFFF",
+				"useLineColorForBulletBorder" : true,
+				"bulletBorderThickness" : 3,
 				"fillAlphas" : 0,
 				"lineAlpha" : 1,
-				"lineColor" : "#FF6600",
-				"lineThickness" : 2,
-				"bullet" : "round",
-				"bulletSize" : 3,
-				"bulletBorderThickness" : 3,
-				"bulletBorderColor" : "#FFFFFF",
-				"useLineColorForBulletBorder" : true,
-				"bulletBorderAlpha" : 1,
+				"title" : "Expenses",
 				"valueField" : "tripCount",
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
