@@ -228,8 +228,6 @@
 				"colorField" : "color",
 				"urlField" : "url",
 			}],
-			"depth3D" : 20,
-			"angle" : 30,
 			"chartCursor" : {
 				"categoryBalloonEnabled" : false,
 				"cursorAlpha" : 0,
@@ -237,8 +235,8 @@
 			},
 			"categoryField" : "orderName",
 			"categoryAxis" : {
-				"tickLength" : 0,
-				"axisAlpha" : 0
+				"gridPosition" : "start",
+				"position" : "left"
 			}
 		});
 	};
