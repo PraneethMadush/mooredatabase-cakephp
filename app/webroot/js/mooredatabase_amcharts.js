@@ -34,10 +34,10 @@
 				"valueField" : "speciesCount",
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
-				"balloonText" : "Species: [[value]]",
+				"balloonText" : "<b>Year: [[category]]</b><br />Species: [[value]]",
 				"fillAlphas" : 1,
 				"lineAlpha" : 1,
-				"type" : "column",
+				"type" : "column"
 			}, {
 				"bullet" : "round",
 				"dashLengthField" : "dashLengthLine",
@@ -53,7 +53,7 @@
 				"valueField" : "tripCount",
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
-				"balloonText" : "Trips: [[value]]"
+				"balloonText" : "<b>Year: [[category]]</b><br />Trips: [[value]]"
 			}]
 		});
 	};
@@ -71,7 +71,7 @@
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "bottom-right",
 			"graphs" : [{
-				"balloonText" : "Species:[[value]]",
+				"balloonText" : "<b>County: [[category]]</b><br />Species:[[value]]",
 				"fillColors" : "#a500ff",
 				"lineColors" : "#a500ff",
 				"fillAlphas" : 0.8,
@@ -80,7 +80,7 @@
 				"type" : "column",
 				"valueField" : "speciesCount"
 			}, {
-				"balloonText" : "Trips:[[value]]",
+				"balloonText" : "<b>County: [[category]]</b><br />Trips:[[value]]",
 				"fillColors" : "#00e238",
 				"lineColor" : "#00e238",
 				"fillAlphas" : 0.8,
@@ -149,7 +149,7 @@
 				"valueField" : "speciesCount",
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
-				"balloonText" : "Species: [[value]]",
+				"balloonText" : "<b>Month: [[monthName]]</b><br />Species: [[value]]",
 				"urlField" : "url"
 			}, {
 				"type" : "smoothedLine",
@@ -162,7 +162,7 @@
 				"valueField" : "tripCount",
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
-				"balloonText" : "Trips: [[value]]",
+				"balloonText" : "<b>Month: [[monthName]]</b><br />Trips: [[value]]",
 				"urlField" : "url"
 			}]
 		});
@@ -194,7 +194,7 @@
 			"graphs" : [{
 				"labelPosition" : "top",
 				"labelText" : "[[value]]",
-				"balloonText" : "<b>Sightings: [[value]]</b>",
+				"balloonText" : "<b>Month: [[monthName]]</b><br />Sightings: [[value]]",
 				"colorField" : "color",
 				"lineColor" : "color",
 				"fillAlphas" : 0.9,
@@ -219,7 +219,7 @@
 			}],
 			"startDuration" : 1,
 			"graphs" : [{
-				"balloonText" : "<b>[[category]]: [[value]]</b>",
+				"balloonText" : "<b>Order: [[category]]</b><br />Species: [[value]]",
 				"fillAlphas" : 0.9,
 				"lineAlpha" : 0.2,
 				"type" : "column",

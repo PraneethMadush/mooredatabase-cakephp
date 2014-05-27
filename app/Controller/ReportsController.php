@@ -36,7 +36,7 @@ class ReportsController extends AppController {
 		$results = array();
 		$row = array();
 		for ($i = 0; $i < 12; $i++) {
-			$row = array('monthLetter' => $monthArray[$i], 'sightingCount' => 0, 'color' => $colorArray[$i], 'common_name' => $monthSet[0][0]['common_name']);
+			$row = array('monthLetter' => $monthArray[$i], 'sightingCount' => 0, 'color' => $colorArray[$i], 'common_name' => $monthSet[0][0]['common_name'], 'monthName' => date("F", mktime(0, 0, 0, $i + 1, 10)));
 			array_push($results, $row);
 		}
 
