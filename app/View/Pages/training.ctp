@@ -98,6 +98,12 @@
 			</ul>
 		</div>
 		<div data-role="collapsible">
+			<h3>Internet of Things</h3>
+			<ul>
+				<li>Up and Running with Arduino, Lynda.com</li>
+			</ul>
+		</div>				
+		<div data-role="collapsible">
 			<h3>Cloud Computing</h3>
 			<ul>
 				<li>Cloud Computing First Look, Lynda.com</li>
