@@ -11,6 +11,8 @@
 			<div id="clientInfo" class="ui-grid-a">
 				<div class="ui-block-a"><strong>User Agent</strong></div>
 				<div class="ui-block-b"><?php echo $userAgent; ?></div>
+				<div class="ui-block-a"><strong>Server Name</strong></div>
+				<div class="ui-block-b"><?php echo $_SERVER['SERVER_NAME']; ?></div>
 			</div>			
 		</div>
 		<div data-role="collapsible">
