@@ -23,7 +23,7 @@
  */
  
 // set environment variable
-define('IS_PROD',(isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] == 'mobile.moore-database.com') ? true : false);
+define('IS_PROD',(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'mobile.moore-database.com') ? true : false);
 
 // Setup a 'default' cache configuration for use in the application.
 // Cache::config('default', array('engine' => 'File'));
