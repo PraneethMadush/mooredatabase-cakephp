@@ -112,40 +112,13 @@
 			</ul>
 		</div>		
 		<div data-role="collapsible">
-			<h3>Adobe</h3>
+			<h3>Data Science</h3>
 			<ul>
-				<li>Dreamweaver I &amp; II, MCTC</li>
-				<li>Dreamweaver CS4 with CSS Essential Training, Lynda.com</li>
-				<li>Photoshop I, II &amp; III, MCTC</li>
-				<li>Photoshop CS4 One-on-One: Fundamentals, Lynda.com</li>
-				<li>Creating Graphics for the Web Using Photoshop, MCTC</li>
-				<li>Flash I &amp; II, MCTC</li>
-				<li>Flash CS4 Professional Getting Started, Lynda.com</li>
-			</ul>
-		</div>
-		<div data-role="collapsible">
-			<h3>Microsoft</h3>
-			<ul>
-				<li>Microsoft Visual Studio Class Designer, VTC.com</li>
-				<li>ASP.NET 3.5 Essential Training, Lynda.com</li>
-				<li>Introduction to Microsoft C# 2008, VTC.com</li>
-				<li>Programming with VB.NET 2005, MCTC</li>
-				<li>ADO.NET Using Visual Basic 2005, MCTC</li>
-				<li>ASP.NET Using Visual Basic 2005, MCTC</li>
-				<li>.NET Developers&rsquo; Tour, Microsoft Corporation</li>
-				<li>.NET Development Seminars, Rainier Technology</li>
-			</ul>
-		</div>
-		<div data-role="collapsible">
-			<h3>Database &amp; Analytics</h3>
-			<ul>
-				<li>MySQL Essential Training, Lynda.com</li>
-				<li>MySQL 5 Administration, VTC.com</li>
-				<li>MySQL 5 Development Parts 1 &amp; 2, VTC.com</li>
-				<li>Up and Running with NoSQL Databases, Lynda.com</li>
 				<li>Statistics One, Princeton University/Coursera</li>
 				<li>Computing for Data Analysis, Johns Hopkins University/Coursera</li>
 				<li>Data Analysis &amp; Statistical Inference, Duke University/Coursera</li>
+				<li>The Data Scientist's Toolbox, Johns Hopkins University/Coursera</li>
+				<li>R Programming, Johns Hopkins University/Coursera</li>
 				<li>Try R, codeschool.com</li>
 				<li>Up and Running with R, Lynda.com</li>
 				<li>R Statistics Essential Training, Lynda.com</li>
@@ -156,6 +129,15 @@
 				<li>Excel 2010: Advanced Formulas and Functions, Lynda.com</li>
 				<li>Excel 2007: Business Statistics, Lynda.com</li>
 				<li>Wayne Winston on Analytics, Lynda.com</li>							
+			</ul>
+		</div>		
+		<div data-role="collapsible">
+			<h3>Database</h3>
+			<ul>
+				<li>MySQL Essential Training, Lynda.com</li>
+				<li>MySQL 5 Administration, VTC.com</li>
+				<li>MySQL 5 Development Parts 1 &amp; 2, VTC.com</li>
+				<li>Up and Running with NoSQL Databases, Lynda.com</li>
 				<li>SQL Server 2008 Essential Training, Lynda.com</li>
 				<li>OLAP Boot Camp / SQL Server 2000 Analysis Services, Microsoft Corporation</li>
 				<li>SQL Server 7.0 for Application Developers, Alto Consulting &amp; Training</li>
@@ -187,6 +169,31 @@
 				<li>Using Secure Shell (SSH), VTC.com</li>
 				<li>SCO UNIX System Administration, Computer Classroom</li>
 				<li>UNIX, Hennepin Technical College</li>
+			</ul>
+		</div>
+		<div data-role="collapsible">
+			<h3>Adobe</h3>
+			<ul>
+				<li>Dreamweaver I &amp; II, MCTC</li>
+				<li>Dreamweaver CS4 with CSS Essential Training, Lynda.com</li>
+				<li>Photoshop I, II &amp; III, MCTC</li>
+				<li>Photoshop CS4 One-on-One: Fundamentals, Lynda.com</li>
+				<li>Creating Graphics for the Web Using Photoshop, MCTC</li>
+				<li>Flash I &amp; II, MCTC</li>
+				<li>Flash CS4 Professional Getting Started, Lynda.com</li>
+			</ul>
+		</div>		
+		<div data-role="collapsible">
+			<h3>Microsoft</h3>
+			<ul>
+				<li>Microsoft Visual Studio Class Designer, VTC.com</li>
+				<li>ASP.NET 3.5 Essential Training, Lynda.com</li>
+				<li>Introduction to Microsoft C# 2008, VTC.com</li>
+				<li>Programming with VB.NET 2005, MCTC</li>
+				<li>ADO.NET Using Visual Basic 2005, MCTC</li>
+				<li>ASP.NET Using Visual Basic 2005, MCTC</li>
+				<li>.NET Developers&rsquo; Tour, Microsoft Corporation</li>
+				<li>.NET Development Seminars, Rainier Technology</li>
 			</ul>
 		</div>
 		<div data-role="collapsible">
