@@ -1,8 +1,8 @@
 <?php
 
 // JS includes
-echo $this->Html->script('//code.jquery.com/jquery-1.9.1.min.js')."\n";
-echo $this->Html->script('//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js')."\n";
+echo $this->Html->script('//code.jquery.com/jquery-1.11.1.min.js')."\n";
+echo $this->Html->script('//code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js')."\n";
 echo $this->Html->script('mooredatabase.min')."\n";
 
 // JS includes that must follow the includes above
