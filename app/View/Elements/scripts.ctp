@@ -1,7 +1,7 @@
 <?php
 
 // JS includes
-echo $this->Html->script('//code.jquery.com/jquery-1.11.1.min.js')."\n";
+echo $this->Html->script('//code.jquery.com/jquery-2.1.1.min.js')."\n";
 echo $this->Html->script('//code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js')."\n";
 echo $this->Html->script('mooredatabase.min')."\n";
 
