@@ -119,6 +119,8 @@
 				<li>Data Analysis &amp; Statistical Inference, Duke University/Coursera</li>
 				<li>The Data Scientist's Toolbox, Johns Hopkins University/Coursera</li>
 				<li>R Programming, Johns Hopkins University/Coursera</li>
+				<li>Exploratory Data Analysis, Johns Hopkins University/Coursera</li>
+				<li>Getting and Cleaning Data, Johns Hopkins University/Coursera</li>
 				<li>Try R, codeschool.com</li>
 				<li>Up and Running with R, Lynda.com</li>
 				<li>R Statistics Essential Training, Lynda.com</li>
