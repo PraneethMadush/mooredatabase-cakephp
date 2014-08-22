@@ -63,6 +63,17 @@ $(document).on "pageshow", "#speciesByMonth", ->
       mooredatabase.drawChartSpeciesByMonth(data)
       return
   return
+  
+# draw chart when Species By Month page loads
+$(document).on "pageshow", "#twoSpeciesByMonth", ->
+  $.ajax
+    type : 'GET'
+    url : '/reports/two_species_by_month_json'
+    dataType : 'json'
+    success : (data) ->
+      mooredatabase.drawChartTwoSpeciesByMonth(data)
+      return
+  return  
   		  
 # draw chart when Sightings By Month page loads
 $(document).on "pageshow", "#speciesDialog", ->

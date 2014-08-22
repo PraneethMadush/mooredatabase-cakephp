@@ -86,6 +86,30 @@ class ReportsController extends AppController {
 		$this -> set(compact('results'));
 	}
 
+	public function two_species_by_month() {
+		// no work to do; just render a view
+	}
+
+	public function two_species_by_month_json() {
+
+		// disable layout
+		$this -> layout = null;
+
+		// perform the search
+		$monthSet = $this -> Report -> listTwoSpeciesByMonth();
+
+		// Retrieve and store in array the results of the query
+		// CakePHP nests each row in an object [], so we need to
+		// extract into a format that translates to JSON correctly
+		$results = array();
+		foreach ($monthSet as $month) {
+			foreach ($month as $data) {
+				array_push($results, $data);
+			}
+		}
+		$this -> set(compact('results'));
+	}
+
 	public function species_by_year_json() {
 
 		// disable layout

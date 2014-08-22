@@ -255,6 +255,37 @@ class Report extends Model {
 	}
 
 	/**
+	 * Query for list of species by month.
+	 *
+	 * @return array of results
+	 */
+	public function listTwoSpeciesByMonth() {
+		$key = __METHOD__;
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
+					    MONTH(t.trip_date) AS monthNumber,
+					    MONTHNAME(t.trip_date) AS monthName,
+					    LEFT(MONTHNAME(t.trip_date), 1) AS monthLetter,
+					    COUNT(DISTINCT(CASE WHEN l.order = 'Anseriformes' THEN l.id ELSE NULL END)) AS speciesCountAnseriformes,
+						COUNT(DISTINCT(CASE WHEN l.order = 'Passeriformes' THEN l.id ELSE NULL END)) AS speciesCountPasseriformes
+					FROM
+					    aou_list l
+					        INNER JOIN
+					    sighting s ON l.id = s.aou_list_id
+					        INNER JOIN
+					    trip t ON s.trip_id = t.id
+					WHERE
+						l.order IN ('Anseriformes','Passeriformes')
+					GROUP BY MONTH(t.trip_date)
+					ORDER BY 1;";
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
+
+	/**
 	 * Query for list of species by year.
 	 *
 	 * @return array of results

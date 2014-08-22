@@ -1,5 +1,5 @@
 (function() {
-	var drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth, drawChartSpeciesByYear;
+	var drawChartTwoSpeciesByMonth, drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth, drawChartSpeciesByYear;
 	drawChartSpeciesByYear = function(chartData) {
 		var chart;
 		chart = AmCharts.makeChart("chartdivYears", {
@@ -168,6 +168,64 @@
 		});
 	};
 	mooredatabase.drawChartSpeciesByMonth = drawChartSpeciesByMonth;
+	
+	drawChartTwoSpeciesByMonth = function(chartData) {
+		var chart;
+		chart = AmCharts.makeChart("chartdivMonths", {
+			"type" : "serial",
+			"dataProvider" : chartData,
+			"categoryField" : "monthLetter",
+			"categoryAxis" : {
+				"gridPosition" : "start",
+				"axisAlpha" : 0,
+				"tickLength" : 0
+			},
+			"valueAxes" : [{
+				"position" : "left",
+				"axisAlpha" : 0,
+				"tickLength" : 0
+			}],
+			"fontFamily" : "Helvetica, Arial, sans serif",
+			"creditsPosition" : "top-right",
+			"startDuration" : 0,
+			"legend" : {
+				"data" : [{
+					"title" : "Anseriformes",
+					"color" : "#45D4FF"
+				}, {
+					"title" : "Passeriformes",
+					"color" : "#FF6600"
+				}],
+				"align" : "center",
+			},
+			"graphs" : [{
+				"type" : "smoothedLine",
+				"lineAlpha" : 1,
+				"lineColor" : "#45D4FF",
+				"lineThickness" : 1,
+				"bullet" : "round",
+				"bulletBorderThickness" : 1,
+				"bulletBorderColor" : "#FFFFFF",
+				"valueField" : "speciesCountAnseriformes",
+				"labelPosition" : "top",
+				"labelText" : "[[value]]",
+				"balloonText" : "<b>Month: [[monthName]]</b><br />Species: [[value]]"
+			}, {
+				"type" : "smoothedLine",
+				"lineAlpha" : 1,
+				"lineColor" : "#FF6600",
+				"lineThickness" : 1,
+				"bullet" : "diamond",
+				"bulletBorderThickness" : 1,
+				"bulletBorderColor" : "#FFFFFF",
+				"valueField" : "speciesCountPasseriformes",
+				"labelPosition" : "top",
+				"labelText" : "[[value]]",
+				"balloonText" : "<b>Month: [[monthName]]</b><br />Species: [[value]]"
+			}]
+		});
+	};
+	mooredatabase.drawChartTwoSpeciesByMonth = drawChartTwoSpeciesByMonth;	
 
 	drawChartSpeciesSightingsByMonth = function(chartData) {
 		var chart;
