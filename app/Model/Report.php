@@ -57,7 +57,7 @@ class Report extends Model {
 	}
 
 	/**
-	 * Query for All Species page.
+	 * Query for Top Twent page.
 	 *
 	 * @return array of results
 	 */
@@ -65,6 +65,7 @@ class Report extends Model {
 		$key = __METHOD__;
 		$result = Cache::read($key);
 		if ($result == FALSE) {
+			// note:  join to trip is to filter out sightings for deleted trips
 			$sql = "SELECT
 			          aou_list.id,
 					  aou_list.common_name,
@@ -73,6 +74,8 @@ class Report extends Model {
 					  sighting
 					  INNER JOIN aou_list
 					  	ON sighting.aou_list_id = aou_list.id
+					  INNER JOIN trip
+					  	ON sighting.trip_id = trip.id
 					  GROUP BY
 					  aou_list.id				  
 					  ORDER BY sightings DESC, aou_list.common_name ASC
