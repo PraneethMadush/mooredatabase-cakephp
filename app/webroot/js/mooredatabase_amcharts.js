@@ -18,7 +18,7 @@
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
-			"startDuration" : 0,
+			"startDuration" : 1,
 			"legend" : {
 				"data" : [{
 					"title" : "Species",
@@ -127,7 +127,7 @@
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
-			"startDuration" : 0,
+			"startDuration" : 1,
 			"legend" : {
 				"data" : [{
 					"title" : "Species",
@@ -187,7 +187,7 @@
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
-			"startDuration" : 0,
+			"startDuration" : 1,
 			"legend" : {
 				"data" : [{
 					"title" : "Anseriformes",

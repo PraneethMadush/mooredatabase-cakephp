@@ -11,6 +11,13 @@ class ReportsController extends AppController {
 		$sighting_set = $this -> Report -> listSpeciesAll();
 		$this -> set(compact('sighting_set'));
 	}
+	
+	public function top_twenty() {
+
+		// top twenty species by sightings
+		$sighting_set = $this -> Report -> listTopTwenty();
+		$this -> set(compact('sighting_set'));
+	}	
 
 	public function species_dialog($id) {
 		$id = ( int )$id;

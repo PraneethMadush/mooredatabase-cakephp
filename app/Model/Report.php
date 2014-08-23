@@ -57,6 +57,33 @@ class Report extends Model {
 	}
 
 	/**
+	 * Query for All Species page.
+	 *
+	 * @return array of results
+	 */
+	public function listTopTwenty() {
+		$key = __METHOD__;
+		$result = Cache::read($key);
+		if ($result == FALSE) {
+			$sql = "SELECT
+			          aou_list.id,
+					  aou_list.common_name,
+					  COUNT(*) AS sightings
+					  FROM
+					  sighting
+					  INNER JOIN aou_list
+					  	ON sighting.aou_list_id = aou_list.id
+					  GROUP BY
+					  aou_list.id				  
+					  ORDER BY sightings DESC, aou_list.common_name ASC
+					  LIMIT 20;";
+			$result = $this -> getDataSource() -> fetchAll($sql);
+			Cache::write($key, $result);
+		}
+		return $result;
+	}
+	
+	/**
 	 * Query for species dialog / detail page.
 	 *
 	 * @param int $id
