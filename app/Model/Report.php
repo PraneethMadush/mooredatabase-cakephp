@@ -127,7 +127,7 @@ class Report extends Model {
                       aou_list.order,
                       aou_list.family,
                       aou_list.subfamily";
-			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
+			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => (int)$id));
 			Cache::write($key, $result);
 		}
 		return array_pop($result);
@@ -159,7 +159,7 @@ class Report extends Model {
 			        GROUP BY
 			        MONTH(t.trip_date)
 			        ORDER BY 1";
-			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
+			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => (int)$id));
 			Cache::write($key, $result);
 		}
 		return $result;
@@ -207,7 +207,7 @@ class Report extends Model {
 		$result = Cache::read($key);
 		if ($result == FALSE) {
 			$sql = "SELECT * FROM location WHERE id = :id;";
-			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
+			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => (int)$id));
 			Cache::write($key, $result);
 		}
 		return array_pop($result);
@@ -247,7 +247,7 @@ class Report extends Model {
                       aou_list.family,
                       aou_list.subfamily                  
                       ORDER BY aou_list.common_name ASC";
-			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
+			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => (int)$id));
 			Cache::write($key, $result);
 		}
 		return $result;
@@ -425,7 +425,7 @@ class Report extends Model {
                       aou_list.family,
                       aou_list.subfamily    
                       ORDER BY aou_list.common_name ASC";
-			$result = $this -> getDataSource() -> fetchAll($sql, array('monthNumber' => $monthNumber));
+			$result = $this -> getDataSource() -> fetchAll($sql, array('monthNumber' => (int)$monthNumber));
 			Cache::write($key, $result);
 		}
 		return $result;
@@ -513,7 +513,7 @@ class Report extends Model {
                       aou_list.family,
                       aou_list.subfamily                  
                       ORDER BY aou_order.order_name ASC, aou_list.common_name ASC";
-			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => $id));
+			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => (int)$id));
 			Cache::write($key, $result);
 		}
 		return $result;
