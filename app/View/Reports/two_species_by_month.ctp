@@ -1,6 +1,6 @@
 <?php
 $this -> set('pageId', 'twoSpeciesByMonth');
-$this -> set('title_for_layout', 'Months - Two Orders');
+$this -> set('title_for_layout', 'Ducks and Warblers');
 ?>
 <div id="chartTwoSpeciesByMonth_container">
 	<ul data-role="listview" data-divider-theme="a">
@@ -14,15 +14,15 @@ $this -> set('title_for_layout', 'Months - Two Orders');
 </div>
 <div data-role="content">
 	<p>
-		This graph illustrates the different migration patterns for order Anseriformes (ducks, geese and swans) and
-		Passeriformes (perching birds or "song birds"):
+		This graph illustrates the different migration patterns for ducks (family Anatidae of order Anseriformes) and
+		warblers (family Parulidae of order Passeriformes):
 		<ul>
 			<li>
-				Anseriformes arrive early to Minnesota and depart late; the diversity
-				of Anseriformes peaks in April and November.
+				Ducks arrive early to Minnesota and depart late; the diversity
+				of ducks peaks in April and November.
 			</li>
 			<li>
-				Passeriformes arrive later and depart earlier; the diversity of Passeriformes
+				Warblers arrive later and depart earlier; the diversity of warblers
 				peaks in May and September.
 			</li>
 		</ul>

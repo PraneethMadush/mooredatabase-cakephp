@@ -190,10 +190,10 @@
 			"startDuration" : 1,
 			"legend" : {
 				"data" : [{
-					"title" : "Anseriformes",
+					"title" : "Ducks",
 					"color" : "#45D4FF"
 				}, {
-					"title" : "Passeriformes",
+					"title" : "Warblers",
 					"color" : "#FF6600"
 				}],
 				"align" : "center",

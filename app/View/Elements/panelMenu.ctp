@@ -22,7 +22,7 @@
 					<li><a href="/reports/top_twenty">Top Twenty Species</a></li>
 					<li><a href="/reports/birding_locations">Birding Locations</a></li>
 					<li><a href="/reports/species_all">All Species</a></li>
-					<li><a href="/reports/two_species_by_month">Two Orders By Month</a></li>
+					<li><a href="/reports/two_species_by_month">Ducks and Warblers</a></li>
 				</ul>
 			</div>
 			<div data-role="collapsible">
