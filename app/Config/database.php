@@ -14,7 +14,7 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'mooredatabase.cd02yxrr7fxm.us-east-1.rds.amazonaws.com',
-		'login' => 'birding_readonly',
+		'login' => 'smoore',
 		'password' => 'gsnyder56',
 		'database' => 'birding',
 	);
