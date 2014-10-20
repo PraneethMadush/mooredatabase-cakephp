@@ -6,16 +6,16 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'mooredatabase.cd02yxrr7fxm.us-east-1.rds.amazonaws.com',
-		'login' => 'smoore',
-		'password' => 'gsnyder56',
+		'login' => 'birding_readonly',
+		'password' => 'dY78vNqP37sS94U',
 		'database' => 'birding',
 	);
 	public $default_prod = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'mooredatabase.cd02yxrr7fxm.us-east-1.rds.amazonaws.com',
-		'login' => 'smoore',
-		'password' => 'gsnyder56',
+		'login' => 'birding_readonly',
+		'password' => 'dY78vNqP37sS94U',
 		'database' => 'birding',
 	);
 	public $default_dev = array(
