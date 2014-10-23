@@ -132,6 +132,7 @@
 				<li>Excel 2007: Business Statistics, Lynda.com</li>
 				<li>Excel Data Analysis: Forecasting, Lynda.com</li>
 				<li>Up and Running with Excel Cluster Analysis, Lynda.com</li>
+				<li>Up and Running with Excel What-If Analysis, Lynda.com</li>
 				<li>Techniques and Concepts of Big Data, Lynda.com</li>
 				<li>Wayne Winston on Analytics, Lynda.com</li>							
 			</ul>
