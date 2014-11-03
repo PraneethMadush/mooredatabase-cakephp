@@ -17,7 +17,7 @@
 				"tickLength" : 0
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
-			"creditsPosition" : "top-right",
+			"creditsPosition" : "top-left",
 			"startDuration" : 1,
 			"legend" : {
 				"data" : [{

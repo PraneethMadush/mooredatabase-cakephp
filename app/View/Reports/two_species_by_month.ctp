@@ -22,7 +22,7 @@ $this -> set('title_for_layout', 'Ducks and Warblers');
 				of ducks peaks in April and November.
 			</li>
 			<li>
-				Warblers arrive later and depart earlier; the diversity of warblers
+				Warblers arrive later and depart earlier than ducks; the diversity of warblers
 				peaks in May and September.
 			</li>
 		</ul>

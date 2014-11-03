@@ -19,6 +19,7 @@
 		<div data-role="collapsible">
 			<h3>What's New</h3>
 			<ul>
+				<li>Continuing work on data science specialization at Coursera / Johns Hopkins</li>
 				<li>Completed Statistics, Excel and R programming courses offered by Coursera and Lynda.com</li>
 				<li>Migrated mobile site to CakePHP, Nginx and Ubuntu Server 14.04 LTS</li>
 				<li>Implemented caching with memcached</li>
@@ -47,7 +48,6 @@
 			<h3>Contact Me</h3>
 			<address>
 				Stephen Moore<br />
-				Tel: <a href="tel:+16127894275">(612) 789-4275</a><br />
 				E-mail: <a href="mailto:stephenmoore56@msn.com?subject=Message%20from%20a%20visitor%20to%20your%20mobile%20site" class="content_a" rel="author">stephenmoore56@msn.com</a>
 			</address>
 		</div>
