@@ -121,6 +121,8 @@
 				<li>R Programming, Johns Hopkins University/Coursera</li>
 				<li>Exploratory Data Analysis, Johns Hopkins University/Coursera</li>
 				<li>Getting and Cleaning Data, Johns Hopkins University/Coursera</li>
+				<li>Reproducible Research, Johns Hopkins University/Coursera</li>
+				<li>Statistical Inference, Johns Hopkins University/Coursera</li>
 				<li>Try R, codeschool.com</li>
 				<li>Up and Running with R, Lynda.com</li>
 				<li>R Statistics Essential Training, Lynda.com</li>
@@ -128,6 +130,8 @@
 				<li>Excel for Mac 2011 Essential Training, Lynda.com</li>
 				<li>Managing and Analyzing Data in Excel, Lynda.com</li>
 				<li>Excel 2010: Charts in Depth, Lynda.com</li>
+				<li>Excel 2013: Charts in Depth, Lynda.com</li>
+				<li>Excel 2013: Managing and Analyzing Data, Lynda.com</li>
 				<li>Excel 2010: Advanced Formulas and Functions, Lynda.com</li>
 				<li>Excel 2007: Business Statistics, Lynda.com</li>
 				<li>Excel Data Analysis: Forecasting, Lynda.com</li>
