@@ -191,17 +191,17 @@
 			"legend" : {
 				"data" : [{
 					"title" : "Ducks",
-					"color" : "#45D4FF"
+					"color" : "purple"
 				}, {
 					"title" : "Warblers",
-					"color" : "#FF6600"
+					"color" : "green"
 				}],
 				"align" : "center",
 			},
 			"graphs" : [{
 				"type" : "smoothedLine",
 				"lineAlpha" : 1,
-				"lineColor" : "#45D4FF",
+				"lineColor" : "purple",
 				"lineThickness" : 1,
 				"bullet" : "round",
 				"bulletBorderThickness" : 1,
@@ -213,7 +213,7 @@
 			}, {
 				"type" : "smoothedLine",
 				"lineAlpha" : 1,
-				"lineColor" : "#FF6600",
+				"lineColor" : "green",
 				"lineThickness" : 1,
 				"bullet" : "diamond",
 				"bulletBorderThickness" : 1,
