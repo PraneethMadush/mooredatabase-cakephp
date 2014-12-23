@@ -42,12 +42,6 @@
 			</ul>
 		</div>
 		<div data-role="collapsible">
-			<h3>Web Design</h3>
-			<ul>
-				<li class="content_li">Certificate, Web Design Professional Series, MCTC</li>
-			</ul>
-		</div>		
-		<div data-role="collapsible">
 			<h3>Military Experience</h3>
 			<p>
 				<strong>Defense Language Institute, Monterey, CA</strong> <br /> Basic Russian Course, 1976 <br /> Honor Graduate
