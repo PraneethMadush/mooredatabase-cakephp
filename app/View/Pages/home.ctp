@@ -10,7 +10,7 @@
 			<ul>
 				<li>Skilled full-stack web / database developer</li>
 				<li>Experienced data architect / database administrator</li>
-				<li>Strong analysis &amp; design background</li>
+				<li>Strong analysis &amp; reporting background</li>
 				<li>MCSD and MCITP, with 7 certifications in SQL Server development / administration</li>
 				<li>Birding Enthusiast</li>
 			</ul>
@@ -23,9 +23,8 @@
 				<li>Completed Statistics, Excel and R programming courses offered by Coursera and Lynda.com</li>
 				<li>Migrated mobile site to CakePHP, Nginx and Ubuntu Server 14.04 LTS</li>
 				<li>Implemented caching with memcached</li>
-				<li>Upgraded mobile site front end to jQuery Mobile 1.4.2</li>
 				<li>Upgraded charting components to amCharts JavaScript Charts</li>
-				<li>Upgraded RDS instance to MySQL 5.6.14</li>
+				<li>Upgraded RDS instance to MySQL 5.6</li>
 			</ul>
 			<?php echo $this->Html->image('cakephp_logo_125_trans.png', array('alt' => 'CakePHP Logo','class' => 'logo75',)); ?>			
 		</div>

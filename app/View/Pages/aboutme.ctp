@@ -13,9 +13,7 @@
 			<ul>
 				<li>Birdwatching</li>
 				<li>Camping</li>
-				<li>Classical &amp; Alternative Music</li>
-				<li>Guitar</li>
-				<li>Fishing</li>
+				<li>Music</li>
 				<li>Reading</li>
 			</ul>
 		</div>

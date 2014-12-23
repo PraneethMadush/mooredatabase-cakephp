@@ -7,36 +7,32 @@
 		<div data-role="collapsible">
 			<h3>Web</h3>
             <ul>
-            	<li>Amazon EC2 / RDS / S3 / Data Pipeline / Redshift</li>
-				<li>Eclipse / Aptana Studio</li>
+            	<li>Amazon EC2 / RDS / Elasticache</li>
+				<li>Eclipse / Aptana Studio / Zend Studio</li>
 				<li>Sublime Text</li>
 				<li>Git / GitHub / Sourcetree</li>
 				<li>Subversion / TortoiseSVN / CommitMonitor</li>
 				<li>HTML5, CSS3</li>
 				<li>Compass / SASS</li>
-				<li>SimpLESS / LESS</li>
 				<li>Javascript, jQuery, jQuery Mobile, AJAX</li>
 				<li>Coffeescript</li>
 				<li>Uglifyjs</li>
 				<li>Bootstrap</li>
 				<li>AngularJS</li>
 				<li>Node.js / Heroku</li>
-				<li>Apache, Nginx</li>
-				<li>PHP / Zend Framework / Zend Studio</li>
-				<li>CakePHP</li>
-				<li>Smarty 3 templates</li>
+				<li>Apache / Nginx</li>
+				<li>PHP / Zend Framework / CakePHP</li>
+				<li>Smarty</li>
 				<li>Ubuntu Linux</li>
 				<li>Nagios</li>
 				<li>Ruby / Ruby on Rails 3</li>
 				<li>XML / XSLT</li>
-				<li>Adobe CS4 (Dreamweaver, Photoshop, Bridge)</li>
 				<li>Google Maps Javascript API</li>
 				<li>Google Chart Tools API</li>
 				<li>Google Gears API</li>
 				<li>Google Web Fonts</li>
 				<li>amCharts JavaScript Charts</li>
 				<li>Raphael Javascript Library</li>
-				<li>jqPlot Plotting Plugin</li>
 				<li>Flickr API</li>
             </ul>
 		</div>

@@ -29,10 +29,6 @@
 				<h2>Miscellaneous</h2>
 				<ul data-role="listview">
 					<li><a href="/pages/settings">Settings</a></li>
-					<li><a href="/pages/canvas">Canvas</a></li>
-					<li><a href="/pages/slideshow1">Slideshow</a></li>		
-					<li><a href="/pages/flickrsets">Flickr</a></li>
-					<li><a href="/pages/youtube">YouTube</a></li>						
 					<li><a href="/pages/geolocation">Geolocation</a></li>					
 				</ul>
 			</div>
@@ -41,7 +37,6 @@
 				<ul data-role="listview">
 					<li data-icon="gear"><a href="http://www.moore-database.com/">Desktop Site</a></li>
 					<li data-icon="cloud"><a href="http://node.moore-database.com/">Node Site</a></li>
-					<li data-icon="edit"><a href="http://www.moore-database.com/wordpress/">Blog</a></li>
 				</ul>
 			</div>							
 		</div>

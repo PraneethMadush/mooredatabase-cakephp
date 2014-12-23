@@ -12,9 +12,7 @@
 				<li>SASS / Compass</li>
 				<li>jQuery / AJAX / CoffeeScript</li>
 				<li>amCharts</li>
-				<li>Modernizr</li>
-				<li>Flickr and YouTube API's</li>
-				<li>Photoswipe jQuery plugin</li>				
+				<li>Modernizr</li>		
 				<li>Google Maps API</li>
 			</ul>
 			<?php echo $this->Html->image('jquery-mobile-logo.png', array('alt' => 'jQuery Mobile Logo','class' => 'logo', 'style' => "height:100px;")); ?>
