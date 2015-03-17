@@ -47,6 +47,7 @@
 				<li>Redis</li>
 				<li>Excel</li>
 				<li>R / R Studio</li>
+				<li>Python</li>
 			</ul>
 			<?php echo $this->Html->image('mcitp.png', array('alt' => 'MCITP Logo','class' => 'logo')); ?>
 		</div>

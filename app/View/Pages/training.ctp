@@ -5,6 +5,90 @@
 <div data-role="content">
 	<div data-role="collapsible-set">
 		<div data-role="collapsible">
+			<h3>Data Science</h3>
+			<ul>
+				<li>Statistics One, Princeton University/Coursera</li>
+				<li>Computing for Data Analysis, Johns Hopkins University/Coursera</li>
+				<li>Data Analysis &amp; Statistical Inference, Duke University/Coursera</li>
+				<li>The Data Scientist's Toolbox, Johns Hopkins University/Coursera</li>
+				<li>R Programming, Johns Hopkins University/Coursera</li>
+				<li>Exploratory Data Analysis, Johns Hopkins University/Coursera</li>
+				<li>Getting and Cleaning Data, Johns Hopkins University/Coursera</li>
+				<li>Reproducible Research, Johns Hopkins University/Coursera</li>
+				<li>Statistical Inference, Johns Hopkins University/Coursera</li>
+				<li>Regression Models, Johns Hopkins University/Coursera</li>
+				<li>Practical Machine Learning, Johns Hopkins University/Coursera</li>
+				<li>Developing Data Products, Johns Hopkins University/Coursera</li>
+				<li>Try R, codeschool.com</li>
+				<li>Up and Running with R, Lynda.com</li>
+				<li>R Statistics Essential Training, Lynda.com</li>
+				<li>Introduction to R, DataCamp.com</li>
+				<li>Python 3 Essential Training, Lynda.com</li>
+				<li>Python Fundamentals, Pluralsight.com</li>
+				<li>Python Developers Toolkit, Pluralsight.com</li>
+				<li>Excel for Mac 2011 Essential Training, Lynda.com</li>
+				<li>Managing and Analyzing Data in Excel, Lynda.com</li>
+				<li>Excel 2010: Charts in Depth, Lynda.com</li>
+				<li>Excel 2013: Charts in Depth, Lynda.com</li>
+				<li>Excel 2013: Managing and Analyzing Data, Lynda.com</li>
+				<li>Excel 2010: Advanced Formulas and Functions, Lynda.com</li>
+				<li>Excel 2007: Business Statistics, Lynda.com</li>
+				<li>Excel Data Analysis: Forecasting, Lynda.com</li>
+				<li>Up and Running with Excel Cluster Analysis, Lynda.com</li>
+				<li>Up and Running with Excel What-If Analysis, Lynda.com</li>
+				<li>Techniques and Concepts of Big Data, Lynda.com</li>
+				<li>Wayne Winston on Analytics, Lynda.com</li>							
+			</ul>
+		</div>		
+		<div data-role="collapsible">
+			<h3>Database</h3>
+			<ul>
+				<li>MySQL Essential Training, Lynda.com</li>
+				<li>MySQL 5 Administration, VTC.com</li>
+				<li>MySQL 5 Development Parts 1 &amp; 2, VTC.com</li>
+				<li>Up and Running with NoSQL Databases, Lynda.com</li>
+				<li>SQL Server 2008 Essential Training, Lynda.com</li>
+				<li>OLAP Boot Camp / SQL Server 2000 Analysis Services, Microsoft Corporation</li>
+				<li>SQL Server 7.0 for Application Developers, Alto Consulting &amp; Training</li>
+				<li>SQL Server 7.0 Data Warehousing, Microsoft Corporation</li>
+				<li>SQL Server 7.0 Workshop, Microsoft Corporation</li>
+				<li>SQL Server 7.0 Database Administration, ARIS Corporation</li>
+				<li>SQL Server 6.5 Database Administration, Executrain</li>
+			</ul>
+		</div>
+		<div data-role="collapsible">
+			<h3>Open Source</h3>
+			<ul>
+				<li>PHP with MySQL Beyond the Basics, Lynda.com</li>
+				<li>PHP with MySQL Essential Training, Lynda.com</li>
+				<li>PHP Programming: The Basics, VTC.com</li>
+				<li>PHP 5.5 First Look, Lynda.com</li>
+				<li>Object-Oriented Programming with PHP, Lynda.com</li>
+				<li>Zend Framework Quick Start, Zend.com</li>
+				<li>Ruby Essential Training, Lynda.com</li>
+				<li>Ruby on Rails 3 Essential Training, Lynda.com</li>
+				<li>Ruby Koans, rubykoans.com</li>
+                <li>Ruby Bits, codeschool.com</li>
+                <li>Ruby Bits Part 2, codeschool.com</li>
+                <li>Try Ruby, codeschool.com</li>
+                <li>Rails for Zombies Redux, codeschool.com</li>
+                <li>Rails for Zombies 2, codeschool.com</li>
+                <li>Up and Running with Python, Lynda.com</li>				
+				<li>Java 2 Certified Programmer, VTC.com</li>
+				<li>WordPress 3 Essential Training, Lynda.com</li>
+				<li>Fundamentals of Software Version Control, Lynda.com</li>
+				<li>Git Essential Training, Lynda.com</li>
+				<li>Try Git, codeschool.com</li>
+				<li>Git Real, codeschool.com</li>
+				<li>Design Patterns, VTC.com</li>
+				<li>Foundations of Programming: Object-Oriented Design, Lynda.com</li>
+				<li>Foundations of Programming: Refactoring Code, Lynda.com</li>
+				<li>Foundations of Programming: Test-Driven Development, Lynda.com</li>
+				<li>Introduction to Apache Web Server, VTC.com</li>
+				<li>Up and Running with Sublime Text 2, Lynda.com</li>
+			</ul>
+		</div>
+		<div data-role="collapsible">
 			<h3>Mobile / Responsive</h3>
 			<ul>
                 <li>jQuery Mobile Essential Training, Lynda.com</li>
@@ -65,39 +149,6 @@
             </ul>
 		</div>
 		<div data-role="collapsible">
-			<h3>Open Source</h3>
-			<ul>
-				<li>PHP with MySQL Beyond the Basics, Lynda.com</li>
-				<li>PHP with MySQL Essential Training, Lynda.com</li>
-				<li>PHP Programming: The Basics, VTC.com</li>
-				<li>PHP 5.5 First Look, Lynda.com</li>
-				<li>Object-Oriented Programming with PHP, Lynda.com</li>
-				<li>Zend Framework Quick Start, Zend.com</li>
-				<li>Ruby Essential Training, Lynda.com</li>
-				<li>Ruby on Rails 3 Essential Training, Lynda.com</li>
-				<li>Ruby Koans, rubykoans.com</li>
-                <li>Ruby Bits, codeschool.com</li>
-                <li>Ruby Bits Part 2, codeschool.com</li>
-                <li>Try Ruby, codeschool.com</li>
-                <li>Rails for Zombies Redux, codeschool.com</li>
-                <li>Rails for Zombies 2, codeschool.com</li>
-                <li>Up and Running with Python, Lynda.com</li>				
-				<li>Python 3 Essential Training, Lynda.com</li>
-				<li>Java 2 Certified Programmer, VTC.com</li>
-				<li>WordPress 3 Essential Training, Lynda.com</li>
-				<li>Fundamentals of Software Version Control, Lynda.com</li>
-				<li>Git Essential Training, Lynda.com</li>
-				<li>Try Git, codeschool.com</li>
-				<li>Git Real, codeschool.com</li>
-				<li>Design Patterns, VTC.com</li>
-				<li>Foundations of Programming: Object-Oriented Design, Lynda.com</li>
-				<li>Foundations of Programming: Refactoring Code, Lynda.com</li>
-				<li>Foundations of Programming: Test-Driven Development, Lynda.com</li>
-				<li>Introduction to Apache Web Server, VTC.com</li>
-				<li>Up and Running with Sublime Text 2, Lynda.com</li>
-			</ul>
-		</div>
-		<div data-role="collapsible">
 			<h3>Internet of Things</h3>
 			<ul>
 				<li>Up and Running with Arduino, Lynda.com</li>
@@ -111,52 +162,6 @@
 				<li>Up and Running with Amazon Web Services, Lynda.com</li>
 			</ul>
 		</div>		
-		<div data-role="collapsible">
-			<h3>Data Science</h3>
-			<ul>
-				<li>Statistics One, Princeton University/Coursera</li>
-				<li>Computing for Data Analysis, Johns Hopkins University/Coursera</li>
-				<li>Data Analysis &amp; Statistical Inference, Duke University/Coursera</li>
-				<li>The Data Scientist's Toolbox, Johns Hopkins University/Coursera</li>
-				<li>R Programming, Johns Hopkins University/Coursera</li>
-				<li>Exploratory Data Analysis, Johns Hopkins University/Coursera</li>
-				<li>Getting and Cleaning Data, Johns Hopkins University/Coursera</li>
-				<li>Reproducible Research, Johns Hopkins University/Coursera</li>
-				<li>Statistical Inference, Johns Hopkins University/Coursera</li>
-				<li>Try R, codeschool.com</li>
-				<li>Up and Running with R, Lynda.com</li>
-				<li>R Statistics Essential Training, Lynda.com</li>
-				<li>Introduction to R, DataCamp.com</li>
-				<li>Excel for Mac 2011 Essential Training, Lynda.com</li>
-				<li>Managing and Analyzing Data in Excel, Lynda.com</li>
-				<li>Excel 2010: Charts in Depth, Lynda.com</li>
-				<li>Excel 2013: Charts in Depth, Lynda.com</li>
-				<li>Excel 2013: Managing and Analyzing Data, Lynda.com</li>
-				<li>Excel 2010: Advanced Formulas and Functions, Lynda.com</li>
-				<li>Excel 2007: Business Statistics, Lynda.com</li>
-				<li>Excel Data Analysis: Forecasting, Lynda.com</li>
-				<li>Up and Running with Excel Cluster Analysis, Lynda.com</li>
-				<li>Up and Running with Excel What-If Analysis, Lynda.com</li>
-				<li>Techniques and Concepts of Big Data, Lynda.com</li>
-				<li>Wayne Winston on Analytics, Lynda.com</li>							
-			</ul>
-		</div>		
-		<div data-role="collapsible">
-			<h3>Database</h3>
-			<ul>
-				<li>MySQL Essential Training, Lynda.com</li>
-				<li>MySQL 5 Administration, VTC.com</li>
-				<li>MySQL 5 Development Parts 1 &amp; 2, VTC.com</li>
-				<li>Up and Running with NoSQL Databases, Lynda.com</li>
-				<li>SQL Server 2008 Essential Training, Lynda.com</li>
-				<li>OLAP Boot Camp / SQL Server 2000 Analysis Services, Microsoft Corporation</li>
-				<li>SQL Server 7.0 for Application Developers, Alto Consulting &amp; Training</li>
-				<li>SQL Server 7.0 Data Warehousing, Microsoft Corporation</li>
-				<li>SQL Server 7.0 Workshop, Microsoft Corporation</li>
-				<li>SQL Server 7.0 Database Administration, ARIS Corporation</li>
-				<li>SQL Server 6.5 Database Administration, Executrain</li>
-			</ul>
-		</div>
 		<div data-role="collapsible">
 			<h3>SDLC</h3>
 			<ul>
