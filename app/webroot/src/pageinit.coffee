@@ -1,21 +1,3 @@
-$(document).on "pageshow", "#youtube", ->
-	$.getJSON 'http://gdata.youtube.com/feeds/users/893TheCurrent/uploads?alt=json-in-script&amp;max-results=30&callback=?',(data) ->
-		mooredatabase.listVideos(data)
-		return
-	return
-		
-# run Canvas animation when graphics demo page loads, remove it when
-# page is not showing to conserve CPU, etc.
-$(document).on "pageshow", "#graphicsDemo", ->
-	if Modernizr.canvas
-		mooredatabase.initAnimation()
-	return
-		
-$(document).on "pagehide", "#graphicsDemo", ->
-	if Modernizr.canvas
-		mooredatabase.stopAnimation()
-	return
-		
 $(document).on "pageshow", "#geolocationDemo", ->
 	# use geolocation and show location on map
 	mooredatabase.geolocation_initialize_map()
@@ -35,7 +17,7 @@ $(document).on "pageshow", "#settings", ->
 $(document).on "pageshow", "#index", ->
   $.ajax
     type : 'GET'
-    url : '/reports/species_by_year_json'
+    url : '/api/species_by_year'
     dataType : 'json'
     success : (data) ->
       mooredatabase.drawChartSpeciesByYear(data)
@@ -46,7 +28,7 @@ $(document).on "pageshow", "#index", ->
 $(document).on "pageshow", "#birdingLocations", ->
   $.ajax
     type : 'GET'
-    url : '/reports/species_by_county_json'
+    url : '/api/species_by_county'
     dataType : 'json'
     success : (data) ->
       mooredatabase.drawChartSpeciesByCounty(data)
@@ -57,7 +39,7 @@ $(document).on "pageshow", "#birdingLocations", ->
 $(document).on "pageshow", "#speciesByMonth", ->
   $.ajax
     type : 'GET'
-    url : '/reports/species_by_month_json'
+    url : '/api/species_by_month'
     dataType : 'json'
     success : (data) ->
       mooredatabase.drawChartSpeciesByMonth(data)
@@ -68,7 +50,7 @@ $(document).on "pageshow", "#speciesByMonth", ->
 $(document).on "pageshow", "#twoSpeciesByMonth", ->
   $.ajax
     type : 'GET'
-    url : '/reports/two_species_by_month_json'
+    url : '/api/two_species_by_month'
     dataType : 'json'
     success : (data) ->
       mooredatabase.drawChartTwoSpeciesByMonth(data)
@@ -80,7 +62,7 @@ $(document).on "pageshow", "#speciesDialog", ->
   speciesId = $('#speciesId').val()
   $.ajax
     type : 'GET'
-    url : '/reports/sightings_by_month/' + speciesId
+    url : '/api/sightings_by_month/' + speciesId
     dataType : 'json'
     success : (data) ->
       mooredatabase.drawChartSpeciesSightingsByMonth(data)
@@ -92,22 +74,9 @@ $(document).on "pageshow", "#speciesDialog", ->
 $(document).on "pageshow", "#speciesByOrder", ->
   $.ajax
     type : 'GET'
-    url : '/reports/species_by_order_json'
+    url : '/api/species_by_order'
     dataType : 'json'
     success : (data) ->
       mooredatabase.drawChartSpeciesByOrder(data)
       return
   return
-      				
-$(document).on 'pageshow', '#slideshow1', (e) ->
-	currentPage = $(e.target)
-	options = {}
-	photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options, currentPage.attr('id'))
-	return
-  
-$(document).on 'pagehide', '#slideshow1', (e) ->
-	currentPage = $(e.target)
-	photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'))
-	if photoSwipeInstance?
-		PhotoSwipe.detatch(photoSwipeInstance)
-	return

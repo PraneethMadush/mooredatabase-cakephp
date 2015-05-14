@@ -20,7 +20,7 @@
 			<h3>What's New</h3>
 			<ul>
 				<li>Continuing work on data science specialization at Coursera / Johns Hopkins</li>
-				<li>Statistics, Python, Excel and R programming courses at Coursera, Pluralsight.com and Lynda.com</li>
+				<li>Statistics, Python, Excel and R programming courses at Coursera, Udacity, Pluralsight.com and Lynda.com</li>
 				<li>Migrated mobile site to CakePHP, Nginx and Ubuntu Server 14.04 LTS</li>
 				<li>Implemented caching with memcached</li>
 				<li>Upgraded charting components to amCharts JavaScript Charts</li>
