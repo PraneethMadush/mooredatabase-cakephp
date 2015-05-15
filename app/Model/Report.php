@@ -16,40 +16,7 @@ class Report extends Model {
 		$key = __METHOD__;
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-			          aou_list.id,
-					  aou_order.order_name,
-					  aou_order.notes AS order_notes,		
-					  aou_list.common_name,
-					  aou_list.scientific_name,
-					  aou_list.family,
-					  aou_list.subfamily,
-					  (	SELECT COUNT(DISTINCT aou_list2.id)
-					  	FROM
-					  	sighting sighting2
-					  	INNER JOIN aou_list aou_list2
-					  		ON sighting2.aou_list_id = aou_list2.id
-					    INNER JOIN aou_order ao2
-					  		ON aou_list2.order = ao2.order_name
-					  	WHERE
-					  	aou_order.order_name = ao2.order_name) order_species_count,
-					  COUNT(*) AS sightings,
-					  MAX(trip.trip_date) AS last_seen
-					  FROM
-					  trip
-					  INNER JOIN sighting
-					  	ON trip.id = sighting.trip_id
-					  INNER JOIN aou_list
-					  	ON sighting.aou_list_id = aou_list.id
-					  INNER JOIN aou_order
-					  	ON aou_list.order = aou_order.order_name
-					  GROUP BY
-					  aou_list.common_name,
-					  aou_list.scientific_name,
-					  aou_list.order,
-					  aou_list.family,
-					  aou_list.subfamily				  
-					  ORDER BY aou_order.order_name ASC, aou_list.common_name ASC;";
+			$sql = "CALL proc_listSpeciesAll();";
 			$result = $this -> getDataSource() -> fetchAll($sql);
 			Cache::write($key, $result);
 		}
@@ -57,7 +24,7 @@ class Report extends Model {
 	}
 
 	/**
-	 * Query for Top Twent page.
+	 * Query for Top Twenty page.
 	 *
 	 * @return array of results
 	 */
@@ -65,27 +32,13 @@ class Report extends Model {
 		$key = __METHOD__;
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			// note:  join to trip is to filter out sightings for deleted trips
-			$sql = "SELECT
-			          aou_list.id,
-					  aou_list.common_name,
-					  COUNT(*) AS sightings
-					  FROM
-					  sighting
-					  INNER JOIN aou_list
-					  	ON sighting.aou_list_id = aou_list.id
-					  INNER JOIN trip
-					  	ON sighting.trip_id = trip.id
-					  GROUP BY
-					  aou_list.id				  
-					  ORDER BY sightings DESC, aou_list.common_name ASC
-					  LIMIT 20;";
+			$sql = "CALL proc_listTopTwenty();";
 			$result = $this -> getDataSource() -> fetchAll($sql);
 			Cache::write($key, $result);
 		}
 		return $result;
 	}
-	
+
 	/**
 	 * Query for species dialog / detail page.
 	 *
@@ -96,37 +49,7 @@ class Report extends Model {
 		$key = __METHOD__ . strval($id);
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-            		  aou_list.id,
-                      aou_order.order_name,
-                      aou_order.notes AS order_notes,       
-                      aou_list.common_name,
-                      aou_list.scientific_name,
-                      aou_list.family,
-                      aou_list.subfamily,
-                      COUNT(*) AS sightings,
-    				  MAX(trip.trip_date) AS last_seen,
-    				  MIN(RIGHT(MAKEDATE(YEAR(trip.trip_date),DAYOFYEAR(trip.trip_date)),5)) AS earliestSighting,
-    				  MAX(RIGHT(MAKEDATE(YEAR(trip.trip_date),DAYOFYEAR(trip.trip_date)),5)) AS latestSighting
-                      FROM
-                      sighting
-                      INNER JOIN trip
-                      	ON sighting.trip_id = trip.id
-                      INNER JOIN aou_list
-                        ON sighting.aou_list_id = aou_list.id
-                      INNER JOIN aou_order
-                        ON aou_list.order = aou_order.order_name
-                      WHERE
-                      aou_list.id = :id                
-                      GROUP BY
-                      aou_list.id,
-                      aou_order.order_name,
-                      aou_order.notes,                      
-                      aou_list.common_name,
-                      aou_list.scientific_name,
-                      aou_list.order,
-                      aou_list.family,
-                      aou_list.subfamily";
+			$sql = "CALL proc_getSpecies(:id);";
 			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => (int)$id));
 			Cache::write($key, $result);
 		}
@@ -143,22 +66,7 @@ class Report extends Model {
 		$key = __METHOD__ . strval($id);
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-					MIN(l.common_name) AS common_name,
-			        MONTH(t.trip_date) AS monthNumber,
-			        MONTHNAME(t.trip_date) AS monthName,
-			        COUNT(DISTINCT s.id) AS sightingCount
-			        FROM
-			        sighting s
-			        INNER JOIN trip t
-			            ON s.trip_id = t.id
-			        INNER JOIN aou_list l
-			        	ON s.aou_list_id = l.id
-			        WHERE
-			        s.aou_list_id = :id
-			        GROUP BY
-			        MONTH(t.trip_date)
-			        ORDER BY 1";
+			$sql = "CALL proc_listMonthsForSpecies(:id);";
 			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => (int)$id));
 			Cache::write($key, $result);
 		}
@@ -174,22 +82,7 @@ class Report extends Model {
 		$key = __METHOD__;
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-                location.* ,
-				(SELECT COUNT(*) 
-				 FROM trip
-				 WHERE trip.location_id = location.id) AS trip_count,
-				(SELECT COUNT(DISTINCT sighting.aou_list_id) 
-				 FROM
-				 trip
-				 INNER JOIN sighting
-				 	ON trip.id = sighting.trip_id
-				 INNER JOIN aou_list
-				 	ON sighting.aou_list_id = aou_list.id
-				 WHERE
-				 trip.location_id = location.id) AS species_count
-				FROM location
-				ORDER BY location_name ASC";
+			$sql = "CALL proc_listLocations();";
 			$result = $this -> getDataSource() -> fetchAll($sql);
 			Cache::write($key, $result);
 		}
@@ -206,7 +99,7 @@ class Report extends Model {
 		$key = __METHOD__ . strval($id);
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT * FROM location WHERE id = :id;";
+			$sql = "CALL proc_getLocation(:id);";
 			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => (int)$id));
 			Cache::write($key, $result);
 		}
@@ -223,30 +116,7 @@ class Report extends Model {
 		$key = __METHOD__ . strval($id);
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-                      aou_list.id,
-                      aou_list.common_name,
-                      aou_list.scientific_name,
-                      aou_list.order,
-                      aou_list.family,
-                      aou_list.subfamily,
-                      COUNT(DISTINCT sighting.id) AS sightings,
-                      MAX(trip.trip_date) AS last_seen
-                      FROM
-                      trip
-                      INNER JOIN sighting
-                        ON trip.id = sighting.trip_id
-                      INNER JOIN aou_list
-                        ON sighting.aou_list_id = aou_list.id
-                      WHERE
-                      trip.location_id = :id
-                      GROUP BY
-                      aou_list.common_name,
-                      aou_list.scientific_name,
-                      aou_list.order,
-                      aou_list.family,
-                      aou_list.subfamily                  
-                      ORDER BY aou_list.common_name ASC";
+			$sql = "CALL proc_listSightingsForLocation(:id);";
 			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => (int)$id));
 			Cache::write($key, $result);
 		}
@@ -262,22 +132,7 @@ class Report extends Model {
 		$key = __METHOD__;
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-					MONTH(t.trip_date) AS monthNumber,
-					CONCAT('/reports/species_by_month_list/',MONTH(t.trip_date)) AS url,
-					MONTHNAME(t.trip_date) AS monthName,
-					LEFT(MONTHNAME(t.trip_date),1) AS monthLetter,
-					COUNT(DISTINCT l.id) AS speciesCount,
-					COUNT(DISTINCT t.id) AS tripCount
-					FROM
-					aou_list l
-					INNER JOIN sighting s
-						ON l.id = s.aou_list_id
-					INNER JOIN trip t
-						ON s.trip_id = t.id
-					GROUP BY
-					MONTH(t.trip_date)
-					ORDER BY 1";
+			$sql = "CALL proc_listSpeciesByMonth();";
 			$result = $this -> getDataSource() -> fetchAll($sql);
 			Cache::write($key, $result);
 		}
@@ -293,23 +148,7 @@ class Report extends Model {
 		$key = __METHOD__;
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-					    MONTH(t.trip_date) AS monthNumber,
-					    MONTHNAME(t.trip_date) AS monthName,
-					    LEFT(MONTHNAME(t.trip_date), 1) AS monthLetter,
-					    COUNT(DISTINCT(CASE WHEN l.family = 'Anatidae' THEN l.id ELSE NULL END)) AS speciesCountAnseriformes,
-						COUNT(DISTINCT(CASE WHEN l.family = 'Parulidae' THEN l.id ELSE NULL END)) AS speciesCountPasseriformes
-					FROM
-					    aou_list l
-					        INNER JOIN
-					    sighting s ON l.id = s.aou_list_id
-					        INNER JOIN
-					    trip t ON s.trip_id = t.id
-					WHERE
-						(l.order = 'Anseriformes' AND l.family = 'Anatidae') OR
-						(l.order = 'Passeriformes' AND l.family = 'Parulidae')						
-					GROUP BY MONTH(t.trip_date)
-					ORDER BY 1;";
+			$sql = "CALL proc_listTwoSpeciesByMonth();";
 			$result = $this -> getDataSource() -> fetchAll($sql);
 			Cache::write($key, $result);
 		}
@@ -325,21 +164,7 @@ class Report extends Model {
 		$key = __METHOD__;
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-					YEAR(t.trip_date) AS yearNumber,
-					COUNT(DISTINCT l.id) AS speciesCount,
-					COUNT(DISTINCT t.id) AS tripCount
-					FROM
-					aou_list l
-					INNER JOIN sighting s
-						ON l.id = s.aou_list_id
-					INNER JOIN trip t
-						ON s.trip_id = t.id
-					WHERE
-					YEAR(t.trip_date) >= 2010
-					GROUP BY
-					YEAR(t.trip_date)
-					ORDER BY 1";
+			$sql = "CALL proc_listSpeciesByYear();";
 			$result = $this -> getDataSource() -> fetchAll($sql);
 			Cache::write($key, $result);
 		}
@@ -355,21 +180,7 @@ class Report extends Model {
 		$key = __METHOD__;
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-					  MIN(location.county_name) AS countyName,
-					  COUNT(DISTINCT aou_list.id) AS speciesCount,
-					  COUNT(DISTINCT trip.id) AS tripCount
-					  FROM
-					  trip
-					  INNER JOIN location
-					  	ON trip.location_id = location.id				  
-					  INNER JOIN sighting
-					  	ON trip.id = sighting.trip_id
-					  INNER JOIN aou_list
-					  	ON sighting.aou_list_id = aou_list.id
-					  GROUP BY
-					  location.county_name				  
-					  ORDER BY 2 DESC";
+			$sql = "CALL proc_listSpeciesByCounty();";
 			$result = $this -> getDataSource() -> fetchAll($sql);
 			Cache::write($key, $result);
 		}
@@ -386,46 +197,7 @@ class Report extends Model {
 		$key = __METHOD__ . strval($monthNumber);
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-                      aou_list.id,
-                      aou_order.order_name,
-                      aou_order.notes AS order_notes,       
-                      aou_list.common_name,
-                      aou_list.scientific_name,
-                      aou_list.family,
-                      aou_list.subfamily,
-                      ( SELECT COUNT(DISTINCT aou_list.id)
-                        FROM
-                        trip
-                        INNER JOIN sighting
-                            ON trip.id = sighting.trip_id
-                        INNER JOIN aou_list
-                            ON sighting.aou_list_id = aou_list.id
-                        INNER JOIN aou_order ao2
-                            ON aou_list.order = ao2.order_name
-                        WHERE
-                        aou_order.order_name = ao2.order_name AND
-                        MONTH(trip.trip_date) = {$monthNumber}) AS order_species_count,
-                      COUNT(*) AS sightings,
-                      MAX(trip.trip_date) AS last_seen,
-                      MONTHNAME(trip.trip_date) AS monthName
-                      FROM
-                      trip
-                      INNER JOIN sighting
-                        ON trip.id = sighting.trip_id
-                      INNER JOIN aou_list
-                        ON sighting.aou_list_id = aou_list.id
-                      INNER JOIN aou_order
-                        ON aou_list.order = aou_order.order_name
-                      WHERE
-                      MONTH(trip.trip_date) = :monthNumber                  
-                      GROUP BY
-                      aou_list.common_name,
-                      aou_list.scientific_name,
-                      aou_list.order,
-                      aou_list.family,
-                      aou_list.subfamily    
-                      ORDER BY aou_list.common_name ASC";
+			$sql = "CALL proc_listSpeciesForMonth(:monthNumber);";
 			$result = $this -> getDataSource() -> fetchAll($sql, array('monthNumber' => (int)$monthNumber));
 			Cache::write($key, $result);
 		}
@@ -441,26 +213,7 @@ class Report extends Model {
 		$key = __METHOD__;
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-					  aou_order.id,
-					  aou_order.order_name,
-					  aou_order.notes AS order_notes,
-					  ( SELECT COUNT(*)
-	                    FROM
-	                    aou_list aol2
-	                    WHERE
-	                    aol2.order = aou_order.order_name) AS order_species_count_all,		
-					  COUNT(DISTINCT aou_list.id) AS speciesCount
-					  FROM
-					  sighting
-					  INNER JOIN aou_list
-					  	ON sighting.aou_list_id = aou_list.id
-					  INNER JOIN aou_order
-					  	ON aou_list.order = aou_order.order_name
-					  GROUP BY
-					  aou_order.order_name,
-					  aou_order.notes				  
-					  ORDER BY COUNT(DISTINCT aou_list.id) DESC";
+			$sql = "CALL proc_listSpeciesByOrder();";
 			$result = $this -> getDataSource() -> fetchAll($sql);
 			Cache::write($key, $result);
 		}
@@ -477,43 +230,7 @@ class Report extends Model {
 		$key = __METHOD__ . strval($id);
 		$result = Cache::read($key);
 		if ($result == FALSE) {
-			$sql = "SELECT
-                      aou_list.id,
-                      aou_order.order_name,
-                      aou_order.notes AS order_notes,       
-                      aou_list.common_name,
-                      aou_list.scientific_name,
-                      aou_list.family,
-                      aou_list.subfamily,
-                      ( SELECT COUNT(DISTINCT aou_list.id)
-                        FROM
-                        sighting
-                        INNER JOIN aou_list
-                            ON sighting.aou_list_id = aou_list.id
-                        INNER JOIN aou_order ao2
-                            ON aou_list.order = ao2.order_name
-                        WHERE
-                        aou_order.order_name = ao2.order_name) AS order_species_count,
-                      COUNT(*) AS sightings,
-                      MAX(trip.trip_date) AS last_seen
-                      FROM
-                      trip
-                      INNER JOIN sighting
-                        ON trip.id = sighting.trip_id
-                      INNER JOIN aou_list
-                        ON sighting.aou_list_id = aou_list.id
-                      INNER JOIN aou_order
-                        ON aou_list.order = aou_order.order_name
-                      WHERE
-                      aou_order.id = :id                    
-                      GROUP BY
-                      aou_list.id,
-                      aou_list.common_name,
-                      aou_list.scientific_name,
-                      aou_list.order,
-                      aou_list.family,
-                      aou_list.subfamily                  
-                      ORDER BY aou_order.order_name ASC, aou_list.common_name ASC";
+			$sql = "CALL proc_listSpeciesForOrder(:id);";
 			$result = $this -> getDataSource() -> fetchAll($sql, array('id' => (int)$id));
 			Cache::write($key, $result);
 		}
