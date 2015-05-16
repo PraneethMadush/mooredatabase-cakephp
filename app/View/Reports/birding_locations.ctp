@@ -7,7 +7,7 @@
 		<li data-role="list-divider">Species and Trips By County</li>
 	</ul>
 	<figure>				
-		<div id="chartdivCounties" class="chartdiv" style="height: 400px;" ng-controller="CountiesController">
+		<div id="chartdivCounties" class="chartdiv" style="height: 400px;" ng-controller="BirdingLocationsController">
 		</div>
 	</figure>
 </div>
