@@ -111,6 +111,34 @@ class ApiController extends AppController {
 		$this -> response -> body($json);
 
 	}
+	
+	public function birding_locations() {
+
+		// disable layout
+		$this -> layout = null;
+
+		// perform the search
+		$countySet = $this -> Report -> listLocations();
+
+		// Retrieve and store in array the results of the query
+		// CakePHP nests each row in an object [], so we need to
+		// extract into a format that translates to JSON correctly
+		$results = array();
+		foreach ($countySet as $county) {
+			foreach ($county as $data) {
+				array_push($results, $data);
+			}
+		}
+		$this -> set(compact('results'));
+
+		// no view to render
+		$this -> autoRender = false;
+		$this -> response -> type('json');
+		$json = json_encode($results);
+		$this -> response -> body($json);
+
+	}
+	
 
 	public function species_by_order() {
 
@@ -179,5 +207,7 @@ class ApiController extends AppController {
 		$json = json_encode($results);
 		$this -> response -> body($json);
 	}
+
+
 
 }

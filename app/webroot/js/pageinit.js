@@ -28,28 +28,6 @@
     });
   });
 
-  $(document).on("pageshow", "#birdingLocations", function() {
-    $.ajax({
-      type: 'GET',
-      url: '/api/species_by_county',
-      dataType: 'json',
-      success: function(data) {
-        mooredatabase.drawChartSpeciesByCounty(data);
-      }
-    });
-  });
-
-  $(document).on("pageshow", "#speciesByMonth", function() {
-    $.ajax({
-      type: 'GET',
-      url: '/api/species_by_month',
-      dataType: 'json',
-      success: function(data) {
-        mooredatabase.drawChartSpeciesByMonth(data);
-      }
-    });
-  });
-
   $(document).on("pageshow", "#twoSpeciesByMonth", function() {
     $.ajax({
       type: 'GET',

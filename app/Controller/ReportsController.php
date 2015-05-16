@@ -26,8 +26,7 @@ class ReportsController extends AppController {
 	}
 
 	public function birding_locations() {
-		$location_set = $this -> Report -> listLocations();
-		$this -> set(compact('location_set'));
+		// empt action; everything is done with AngularJS and AJAX
 	}
 
 	public function location_detail($location_id) {
