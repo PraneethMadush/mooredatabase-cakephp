@@ -5,6 +5,7 @@ echo $this->Html->script('//code.jquery.com/jquery-2.1.1.min.js')."\n";
 echo $this->Html->script('//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')."\n";
 echo $this->Html->script('mooredatabase.min')."\n";
 echo $this->Html->script('//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js')."\n";
+echo $this->Html->script('//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular-route.min.js')."\n";
 
 // JS includes that must follow the includes above
 echo $this->Html->script('//maps.google.com/maps/api/js?sensor=false')."\n";

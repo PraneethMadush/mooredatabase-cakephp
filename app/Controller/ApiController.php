@@ -6,9 +6,6 @@ class ApiController extends AppController {
 
 	public function species_by_month() {
 
-		// disable layout
-		$this -> layout = null;
-
 		// perform the search
 		$monthSet = $this -> Report -> listSpeciesByMonth();
 
@@ -21,7 +18,6 @@ class ApiController extends AppController {
 				array_push($results, $data);
 			}
 		}
-		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -32,9 +28,6 @@ class ApiController extends AppController {
 	}
 
 	public function two_species_by_month() {
-
-		// disable layout
-		$this -> layout = null;
 
 		// perform the search
 		$monthSet = $this -> Report -> listTwoSpeciesByMonth();
@@ -48,7 +41,6 @@ class ApiController extends AppController {
 				array_push($results, $data);
 			}
 		}
-		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -59,9 +51,6 @@ class ApiController extends AppController {
 	}
 
 	public function species_by_year() {
-
-		// disable layout
-		$this -> layout = null;
 
 		// perform the search
 		$yearSet = $this -> Report -> listSpeciesByYear();
@@ -75,7 +64,6 @@ class ApiController extends AppController {
 				array_push($results, $data);
 			}
 		}
-		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -86,9 +74,6 @@ class ApiController extends AppController {
 	}
 
 	public function species_by_county() {
-
-		// disable layout
-		$this -> layout = null;
 
 		// perform the search
 		$countySet = $this -> Report -> listSpeciesByCounty();
@@ -102,7 +87,6 @@ class ApiController extends AppController {
 				array_push($results, $data);
 			}
 		}
-		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -113,8 +97,6 @@ class ApiController extends AppController {
 	}
 
 	public function birding_locations() {
-		// disable layout
-		$this -> layout = null;
 
 		// perform the search
 		$countySet = $this -> Report -> listLocations();
@@ -128,7 +110,6 @@ class ApiController extends AppController {
 				array_push($results, $data);
 			}
 		}
-		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -139,9 +120,6 @@ class ApiController extends AppController {
 	}
 
 	public function species_by_order_detail() {
-
-		// disable layout
-		$this -> layout = null;
 
 		// perform the search
 		$orders = $this -> Report -> listSpeciesByOrder();
@@ -155,7 +133,6 @@ class ApiController extends AppController {
 				array_push($results, $data);
 			}
 		}
-		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -166,9 +143,6 @@ class ApiController extends AppController {
 	}
 
 	public function location_detail($location_id) {
-
-		// disable layout
-		$this -> layout = null;
 
 		// perform the search
 		$id = ( int )$location_id;
@@ -182,7 +156,6 @@ class ApiController extends AppController {
 		foreach ($locations as $location) {
 			array_push($results, $location);
 		}
-		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -193,9 +166,6 @@ class ApiController extends AppController {
 	}
 
 	public function species_by_order() {
-
-		// disable layout
-		$this -> layout = null;
 
 		// perform the search
 		$orderSet = $this -> Report -> listSpeciesByOrder();
@@ -217,7 +187,6 @@ class ApiController extends AppController {
 			}
 			$i++;
 		}
-		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -228,9 +197,6 @@ class ApiController extends AppController {
 	}
 
 	public function sightings_by_month($id) {
-
-		// disable layout
-		$this -> layout = null;
 
 		// perform the search
 		$species_id = ( int )$id;
@@ -254,14 +220,78 @@ class ApiController extends AppController {
 			$results[$month[0]['monthNumber'] - 1]['sightingCount'] = $month[0]['sightingCount'];
 		}
 
-		// pass data to view
-		$this -> set(compact('results'));
+		// no view to render
+		$this -> autoRender = false;
+		$this -> response -> type('json');
+		$json = json_encode($results);
+		$this -> response -> body($json);
+	}
+
+	public function top_twenty() {
+
+		// top twenty species by sightings
+		$sighting_set = $this -> Report -> listTopTwenty();
+
+		// Retrieve and store in array the results of the query
+		// CakePHP nests each row in an object [], so we need to
+		// extract into a format that translates to JSON correctly
+		$results = array();
+		foreach ($sighting_set as $sighting) {
+			foreach ($sighting as $data) {
+				array_push($results, $data);
+			}
+		}
 
 		// no view to render
 		$this -> autoRender = false;
 		$this -> response -> type('json');
 		$json = json_encode($results);
 		$this -> response -> body($json);
+
+	}
+
+	public function species_all() {
+
+		// top twenty species by sightings
+		$sighting_set = $this -> Report -> listSpeciesAll();
+
+		// Retrieve and store in array the results of the query
+		// CakePHP nests each row in an object [], so we need to
+		// extract into a format that translates to JSON correctly
+		$results = array();
+		foreach ($sighting_set as $sighting) {
+			foreach ($sighting as $data) {
+				array_push($results, $data);
+			}
+		}
+
+		// no view to render
+		$this -> autoRender = false;
+		$this -> response -> type('json');
+		$json = json_encode($results);
+		$this -> response -> body($json);
+
+	}
+
+	public function species_dialog($id) {
+
+		$id = ( int )$id;
+		$bird = $this -> Report -> getSpecies($id);
+
+		// Retrieve and store in array the results of the query
+		// CakePHP nests each row in an object [], so we need to
+		// extract into a format that translates to JSON correctly
+		$results = array();
+		foreach ($bird as $data) {
+			array_push($results, $data);
+		}
+
+		// no view to render
+		$this -> autoRender = false;
+		$this -> response -> type('json');
+		$json = json_encode($results);
+		$this -> response -> body($json);
+
 	}
 
 }

@@ -19,9 +19,9 @@
 				<ul data-role="listview">
 					<li><a href="/reports/species_by_order" data-ajax="false">Species By Order</a></li>	
 					<li><a href="/reports/species_by_month" data-ajax="false">Species By Month</a></li>
-					<li><a href="/reports/top_twenty">Top Twenty Species</a></li>
+					<li><a href="/reports/top_twenty" data-ajax="false">Top Twenty Species</a></li>
 					<li><a href="/reports/birding_locations" data-ajax="false">Birding Locations</a></li>
-					<li><a href="/reports/species_all">All Species</a></li>
+					<li><a href="/reports/species_all" data-ajax="false">All Species</a></li>
 					<li><a href="/reports/two_species_by_month" data-ajax="false">Ducks and Warblers</a></li>
 				</ul>
 			</div>

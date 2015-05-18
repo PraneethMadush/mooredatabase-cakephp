@@ -35,4 +35,25 @@ birdingApp.controller('DucksAndWarblersController', function DucksAndWarblersCon
 	$http.get('/api/two_species_by_month').success(function(data) {
 		mooredatabase.drawChartTwoSpeciesByMonth(data);
 	});
-}); 
+});
+birdingApp.controller('TopTwentyController', function TopTwentyController($http, $scope) {
+	$http.get('/api/top_twenty').success(function(data) {
+		$scope.birds = data;
+	});
+});
+birdingApp.controller('AllSpeciesController', function AllSpeciesController($http, $scope) {
+	$http.get('/api/species_all').success(function(data) {
+		$scope.birds = data;
+	});
+});
+birdingApp.controller('SpeciesDialogController', function SpeciesDialogController($http, $scope, $routeParams) {
+	$scope.id = $routeParams.id;
+	alert($routeParams.id);
+	$http.get('/api/sightings_by_month/', {
+		params : {
+			"id" : $routeParams.id
+		}
+	}).success(function(data) {
+		$scope.bird = data;
+	});
+});

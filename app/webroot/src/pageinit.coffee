@@ -23,4 +23,4 @@ $(document).on "pageshow", "#speciesDialog", ->
     success : (data) ->
       mooredatabase.drawChartSpeciesSightingsByMonth(data)
       return
-  return
+  return 
