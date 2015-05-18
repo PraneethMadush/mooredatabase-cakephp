@@ -17,12 +17,12 @@
 			<div data-role="collapsible">
 				<h2>Birding Database</h2>
 				<ul data-role="listview">
-					<li><a href="/reports/species_by_order">Species By Order</a></li>	
+					<li><a href="/reports/species_by_order" data-ajax="false">Species By Order</a></li>	
 					<li><a href="/reports/species_by_month" data-ajax="false">Species By Month</a></li>
 					<li><a href="/reports/top_twenty">Top Twenty Species</a></li>
 					<li><a href="/reports/birding_locations" data-ajax="false">Birding Locations</a></li>
 					<li><a href="/reports/species_all">All Species</a></li>
-					<li><a href="/reports/two_species_by_month">Ducks and Warblers</a></li>
+					<li><a href="/reports/two_species_by_month" data-ajax="false">Ducks and Warblers</a></li>
 				</ul>
 			</div>
 			<div data-role="collapsible">
@@ -46,7 +46,7 @@
 			Close
 		</a>
 		<?php if ($pageId != 'index'): ?>
-			<a href="/" class="ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-icon-home ui-corner-all">Home</a>
+			<a href="/" data-ajax="false" class="ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-icon-home ui-corner-all">Home</a>
 		<?php endif; ?>		
 	</div>
 </div><!-- /default panel -->

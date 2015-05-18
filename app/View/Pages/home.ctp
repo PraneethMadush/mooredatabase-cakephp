@@ -58,7 +58,7 @@
 		<li data-role="list-divider">Bird Species and Birding Trips By Year</li>
 	</ul>
 	<figure>				
-		<div id="chartdivYears" class="chartdiv" style="height: 300px;">
+		<div id="chartdivYears" class="chartdiv" style="height: 300px;" ng-controller="SpeciesByYearChartController">
 		</div>
 	</figure>
 </div>

@@ -9,7 +9,7 @@ $this -> set('title_for_layout', 'Ducks and Warblers');
 		</li>
 	</ul>
 	<figure>
-		<div id="chartdivMonths" class="chartdiv" style="height: 300px;"></div>
+		<div id="chartdivMonths" class="chartdiv" style="height: 300px;" ng-controller="DucksAndWarblersController"></div>
 	</figure>
 </div>
 <div data-role="content">
