@@ -46,14 +46,9 @@ birdingApp.controller('AllSpeciesController', function AllSpeciesController($htt
 		$scope.birds = data;
 	});
 });
-birdingApp.controller('SpeciesDialogController', function SpeciesDialogController($http, $scope, $routeParams) {
-	$scope.id = $routeParams.id;
-	alert($routeParams.id);
-	$http.get('/api/sightings_by_month/', {
-		params : {
-			"id" : $routeParams.id
-		}
-	}).success(function(data) {
-		$scope.bird = data;
+birdingApp.controller('SpeciesDialogController', function SpeciesDialogController($http, $scope) {
+	$scope.id = window.location.href.split("/").pop();
+	$http.get('/api/sightings_by_month/'+$scope.id).success(function(data) {
+		mooredatabase.drawChartSpeciesSightingsByMonth(data);
 	});
 });

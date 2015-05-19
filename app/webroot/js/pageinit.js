@@ -25,7 +25,7 @@
       url: '/api/sightings_by_month/' + speciesId,
       dataType: 'json',
       success: function(data) {
-        mooredatabase.drawChartSpeciesSightingsByMonth(data);
+        // mooredatabase.drawChartSpeciesSightingsByMonth(data);
       }
     });
   });
