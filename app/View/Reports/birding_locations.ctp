@@ -7,20 +7,22 @@
 		<li data-role="list-divider">Species and Trips By County</li>
 	</ul>
 	<figure>				
-		<div id="chartdivCounties" class="chartdiv" style="height: 400px;" ng-controller="CountiesController">
+		<div id="chartdivCounties" class="chartdiv" style="height: 400px;">
 		</div>
 	</figure>
 </div>
-<div data-role="content" ng-controller="BirdingLocationsController">
+<div data-role="content">
 	<ul data-role="listview" data-count-theme="a">
 		<li data-role="list-divider">Location Lists</li>
-		<li data-ng-repeat="location in locations">
-			<a href="/reports/location_detail/{{location.id}}">
-				<p><strong>{{location.location_name}}</strong></p>
-				<p>{{location.county_name}} County, {{location.state_code}}</p>
-				<p>Coordinates: {{location.latitude}} {{location.longitude}}</p>
-				<span class="ui-li-count">{{location.species_count}} Species</span>
+	<?php foreach($location_set as $location): ?>
+		<li>
+			<a href="/reports/location_detail/<?php echo $location['location']['id']; ?>">
+				<p><strong><?php echo $location['location']['location_name']; ?></strong></p>
+				<p><?php echo $location['location']['county_name'].' County, '.$location['location']['state_code']; ?></p>
+				<p>Coordinates: <?php echo $location['location']['latitude'].' '.$location['location']['longitude']; ?></p>
+				<span class="ui-li-count"><?php echo $location[0]['species_count'].' Species'; ?></span>
 			</a>
 		</li>
+	<?php endforeach; ?>
 	</ul>
 </div>

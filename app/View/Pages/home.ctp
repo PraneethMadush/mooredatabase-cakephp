@@ -24,8 +24,7 @@
 				<li>Migrated mobile site to CakePHP, Nginx and Ubuntu Server 14.04 LTS</li>
 				<li>Implemented caching with memcached</li>
 				<li>Upgraded charting components to amCharts JavaScript Charts</li>
-				<li>Implemented a JSON API. Converting front end to AngularJS.</li>
-				<li>Upgraded RDS instance to MySQL 5.6. Move query logic to stored procedures.</li>
+				<li>Upgraded RDS instance to MySQL 5.6</li>
 			</ul>
 			<?php echo $this->Html->image('cakephp_logo_125_trans.png', array('alt' => 'CakePHP Logo','class' => 'logo75',)); ?>			
 		</div>
@@ -58,7 +57,7 @@
 		<li data-role="list-divider">Bird Species and Birding Trips By Year</li>
 	</ul>
 	<figure>				
-		<div id="chartdivYears" class="chartdiv" style="height: 300px;" ng-controller="SpeciesByYearChartController">
+		<div id="chartdivYears" class="chartdiv" style="height: 300px;">
 		</div>
 	</figure>
 </div>

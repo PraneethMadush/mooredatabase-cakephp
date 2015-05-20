@@ -2,7 +2,7 @@
 	$this->set('pageId', 'speciesDialog');
 	$this->set('title_for_layout', 'Species Detail');
 ?>
-<div data-role="content"  ng-controller="SpeciesDialogController">
+<div data-role="content">
 	<ul data-role="listview" data-divider-theme="a">
 		<li data-role="list-divider"><?php echo $bird['aou_list']['common_name']; ?></li>
 	</ul>

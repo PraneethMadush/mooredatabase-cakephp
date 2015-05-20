@@ -7,20 +7,22 @@
 		<li data-role="list-divider">Species By Order</li>
 	</ul>
 	<figure>				
-		<div id="chartdivOrders" class="chartdiv" style="height: 500px;" ng-controller="SpeciesByOrderChartController">
+		<div id="chartdivOrders" class="chartdiv" style="height: 500px;">
 		</div>
 	</figure>
 </div>
-<div data-role="content" ng-controller="SpeciesByOrderController">	
+<div data-role="content">	
 	<ul data-role="listview" data-count-theme="a">
 		<li data-role="list-divider">Orders</li>
-		<li data-ng-repeat="order in orders">
-			<a href="species_by_order_list/{{order.id}}">
-				<p><strong>{{order.order_name}}</strong></p>
-				<p>{{order.order_notes}}</p>
-				<p>{{order.order_species_count_all}} species in N. America</p>
-				<span class="ui-li-count">{{order.species_count}} Species</span>
+	<?php foreach($order_set as $order): ?>
+		<li>
+			<a href="species_by_order_list/<?php echo $order['aou_order']['id']; ?>">
+				<p><strong><?php echo $order['aou_order']['order_name']; ?></strong></p>
+				<p><?php echo $order['aou_order']['order_notes']; ?></p>
+				<p><?php echo $order[0]['order_species_count_all']; ?> species in N. America</p>
+				<span class="ui-li-count"><?php echo $order[0]['speciesCount']; ?> Species</span>
 			</a>
 		</li>
+	<?php endforeach; ?>
 	</ul>
 </div>

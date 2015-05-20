@@ -6,11 +6,17 @@ class ReportsController extends AppController {
 	}
 
 	public function species_all() {
-		// empty action; everything is done with AngularJS and AJAX
+
+		// default action for the reports controller
+		$sighting_set = $this -> Report -> listSpeciesAll();
+		$this -> set(compact('sighting_set'));
 	}
 
 	public function top_twenty() {
-		// empty action; everything is done with AngularJS and AJAX
+
+		// top twenty species by sightings
+		$sighting_set = $this -> Report -> listTopTwenty();
+		$this -> set(compact('sighting_set'));
 	}
 
 	public function species_dialog($id) {
@@ -20,7 +26,8 @@ class ReportsController extends AppController {
 	}
 
 	public function birding_locations() {
-		// empty action; everything is done with AngularJS and AJAX
+		$location_set = $this -> Report -> listLocations();
+		$this -> set(compact('location_set'));
 	}
 
 	public function location_detail($location_id) {
@@ -31,7 +38,8 @@ class ReportsController extends AppController {
 	}
 
 	public function species_by_month() {
-		// empty action; everything is done with AngularJS and AJAX
+		$month_set = $this -> Report -> listSpeciesByMonth();
+		$this -> set(compact('month_set'));
 	}
 
 	public function two_species_by_month() {
@@ -39,7 +47,8 @@ class ReportsController extends AppController {
 	}
 
 	public function species_by_order() {
-		// empty action; everything is done with AngularJS and AJAX
+		$order_set = $this -> Report -> listSpeciesByOrder();
+		$this -> set(compact('order_set'));
 	}
 
 	public function species_by_order_list($order_id) {

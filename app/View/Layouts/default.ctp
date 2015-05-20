@@ -24,7 +24,7 @@
 <?php echo $this->element('stylesheets', array(), array('cache' => true)); ?>
 <?php echo $this->element('scripts', array(), array('cache' => true)); ?>
 </head>
-<body class="ui-body-a" ng-app="birdingApp">
+<body class="ui-body-a">
 <div id="<?php echo $pageId; ?>" data-role="page" data-theme="a" data-content-theme="a">
 	<div id="container">
         <?php echo $this->element('header')."\n"; ?>
