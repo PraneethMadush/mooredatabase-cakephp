@@ -14,11 +14,11 @@
 <div data-role="content">	
 	<ul data-role="listview" data-count-theme="a">
 		<li data-role="list-divider">Month Lists</li>
-	<?php foreach($month_set as $month): ?>
+	<?php foreach($results as $month): ?>
 		<li>
-			<a href="species_by_month_list/<?php echo $month[0]['monthNumber']; ?>">
-				<?php echo $month[0]['monthName']; ?>
-				<span class="ui-li-count"><?php echo $month[0]['speciesCount']; ?> Species / <?php echo $month[0]['tripCount']; ?> Trips</span>
+			<a href="species_by_month_list/<?php echo $month['monthNumber']; ?>">
+				<?php echo $month['monthName']; ?>
+				<span class="ui-li-count"><?php echo $month['speciesCount']; ?> Species / <?php echo $month['tripCount']; ?> Trips</span>
 			</a>
 		</li>
 	<?php endforeach; ?>

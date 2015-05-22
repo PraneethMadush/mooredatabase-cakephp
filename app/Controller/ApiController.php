@@ -119,6 +119,12 @@ class ApiController extends AppController {
 
 		// perform the search
 		$orderSet = $this -> Report -> listSpeciesByOrder();
+		$orders = array();
+		foreach ($orderSet as $order) {
+			foreach ($order as $data) {
+				array_push($orders, $data);
+			}
+		}
 
 		// color array
 		$colorArray = array("#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74", "#754DEB", "#DDDDDD", "#999999", "#333333", "#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74", "#754DEB", "#DDDDDD", "#999999", "#333333");
@@ -128,12 +134,11 @@ class ApiController extends AppController {
 		$results = array();
 		$row = array();
 		$i = 0;
-		foreach ($orderSet as $order) {
-			$row = array('orderName' => $order['aou_order']['order_name'], 'speciesCount' => $order[0]['speciesCount'], 'color' => $colorArray[$i], 'url' => '/reports/species_by_order_list/' . $order['aou_order']['id']);
+		foreach ($orders as $order) {
+			$row = array('orderName' => $order['order_name'], 'speciesCount' => $order['speciesCount'], 'color' => $colorArray[$i], 'url' => '/reports/species_by_order_list/' . $order['id']);
 			array_push($results, $row);
 			$i++;
 		}
-		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;

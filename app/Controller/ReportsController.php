@@ -9,14 +9,27 @@ class ReportsController extends AppController {
 
 		// default action for the reports controller
 		$sighting_set = $this -> Report -> listSpeciesAll();
-		$this -> set(compact('sighting_set'));
+		$results = array();
+		foreach ($sighting_set as $bird) {
+			foreach ($bird as $data) {
+				array_push($results, $data);
+			}
+		}
+		$this -> set(compact('results'));
 	}
 
 	public function top_twenty() {
 
 		// top twenty species by sightings
 		$sighting_set = $this -> Report -> listTopTwenty();
-		$this -> set(compact('sighting_set'));
+		$results = array();
+		foreach ($sighting_set as $bird) {
+			foreach ($bird as $data) {
+				array_push($results, $data);
+			}
+		}
+		$this -> set(compact('results'));
+
 	}
 
 	public function species_dialog($id) {
@@ -26,8 +39,16 @@ class ReportsController extends AppController {
 	}
 
 	public function birding_locations() {
+
 		$location_set = $this -> Report -> listLocations();
-		$this -> set(compact('location_set'));
+		$results = array();
+		foreach ($location_set as $location) {
+			foreach ($location as $data) {
+				array_push($results, $data);
+			}
+		}
+		$this -> set(compact('results'));
+
 	}
 
 	public function location_detail($location_id) {
@@ -38,8 +59,16 @@ class ReportsController extends AppController {
 	}
 
 	public function species_by_month() {
+
 		$month_set = $this -> Report -> listSpeciesByMonth();
-		$this -> set(compact('month_set'));
+		$results = array();
+		foreach ($month_set as $month) {
+			foreach ($month as $data) {
+				array_push($results, $data);
+			}
+		}
+		$this -> set(compact('results'));
+
 	}
 
 	public function two_species_by_month() {
@@ -47,8 +76,16 @@ class ReportsController extends AppController {
 	}
 
 	public function species_by_order() {
+
 		$order_set = $this -> Report -> listSpeciesByOrder();
-		$this -> set(compact('order_set'));
+		$results = array();
+		foreach ($order_set as $order) {
+			foreach ($order as $data) {
+				array_push($results, $data);
+			}
+		}
+		$this -> set(compact('results'));
+
 	}
 
 	public function species_by_order_list($order_id) {
