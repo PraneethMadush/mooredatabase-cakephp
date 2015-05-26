@@ -39,17 +39,40 @@
     });
   });
 
-  $(document).on("pageshow", "#speciesByMonth", function() {
+  // demo of mustache.js
+  $(document).on("pageinit", "#speciesByMonth", function() {
     $.ajax({
       type: 'GET',
       url: '/api/species_by_month',
       dataType: 'json',
       success: function(data) {
         mooredatabase.drawChartSpeciesByMonth(data);
-      }
+        var speciesByMonthView = {species: data};
+        var template = $('#speciesByMonthTemplate').html();
+  		Mustache.parse(template);
+  		var rendered = Mustache.render(template, speciesByMonthView);
+  		$('#speciesByMonthContent').html(rendered);
+		$('#speciesByMonthListView').listview().listview('refresh');   
+       }
     });
   });
-
+  
+  $(document).on("pageinit", "#topTwenty", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/api/top_twenty',
+      dataType: 'json',
+      success: function(data) {
+        var topTwentyView = {species: data};
+        var template = $('#topTwentyTemplate').html();
+  		Mustache.parse(template);
+  		var rendered = Mustache.render(template, topTwentyView);
+  		$('#topTwentyContent').html(rendered);
+		$('#topTwentyListView').listview().listview('refresh'); 
+       }
+    });
+  });  
+  
   $(document).on("pageshow", "#twoSpeciesByMonth", function() {
     $.ajax({
       type: 'GET',

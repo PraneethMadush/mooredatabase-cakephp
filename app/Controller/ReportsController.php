@@ -19,17 +19,11 @@ class ReportsController extends AppController {
 	}
 
 	public function top_twenty() {
+		// nothing to do; populated with api call
+	}
 
-		// top twenty species by sightings
-		$sighting_set = $this -> Report -> listTopTwenty();
-		$results = array();
-		foreach ($sighting_set as $bird) {
-			foreach ($bird as $data) {
-				array_push($results, $data);
-			}
-		}
-		$this -> set(compact('results'));
-
+	public function species_by_month() {
+		// nothing to do; populated with api call
 	}
 
 	public function species_dialog($id) {
@@ -56,19 +50,6 @@ class ReportsController extends AppController {
 		$location = $this -> Report -> getLocation($id);
 		$sighting_set = $this -> Report -> listSightingsForLocation($id);
 		$this -> set(compact('location', 'sighting_set'));
-	}
-
-	public function species_by_month() {
-
-		$month_set = $this -> Report -> listSpeciesByMonth();
-		$results = array();
-		foreach ($month_set as $month) {
-			foreach ($month as $data) {
-				array_push($results, $data);
-			}
-		}
-		$this -> set(compact('results'));
-
 	}
 
 	public function two_species_by_month() {
