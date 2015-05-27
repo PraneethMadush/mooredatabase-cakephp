@@ -43,8 +43,29 @@ $(document).on "pageshow", "#speciesByMonth", ->
     dataType : 'json'
     success : (data) ->
       mooredatabase.drawChartSpeciesByMonth(data)
+      speciesByMonthView = {species: data}
+      template = $('#speciesByMonthTemplate').html()
+      Mustache.parse(template)
+      rendered = Mustache.render(template, speciesByMonthView)
+      $('#speciesByMonthContent').html(rendered)
+      $('#speciesByMonthListView').listview().listview('refresh') 
       return
   return
+  
+$(document).on "pageshow", "#topTwenty", ->
+  $.ajax
+    type : 'GET'
+    url : '/api/top_twenty'
+    dataType : 'json'
+    success : (data) ->
+      topTwentyView = {species: data}
+      template = $('#topTwentyTemplate').html()
+      Mustache.parse(template)
+      rendered = Mustache.render(template, topTwentyView)
+      $('#topTwentyContent').html(rendered)
+      $('#topTwentyListView').listview().listview('refresh') 
+      return
+  return  
   
 # draw chart when Species By Month page loads
 $(document).on "pageshow", "#twoSpeciesByMonth", ->
