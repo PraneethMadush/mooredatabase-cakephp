@@ -78,6 +78,27 @@
     });
   });
 
+  $(document).on("pageshow", "#speciesAll", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/api/species_all',
+      dataType: 'json',
+      success: function(data) {
+        var rendered, speciesAllView, template;
+        speciesAllView = {
+          species: data,
+          count: data.length
+        };
+        template = $('#speciesAllTemplate').html();
+        Mustache.parse(template);
+        rendered = Mustache.render(template, speciesAllView);
+        $('#speciesAllContent').html(rendered);
+        $('#speciesAllListView').listview().listview('refresh');
+        $('#speciesAllCountListView').listview().listview('refresh');
+      }
+    });
+  });
+
   $(document).on("pageshow", "#twoSpeciesByMonth", function() {
     $.ajax({
       type: 'GET',

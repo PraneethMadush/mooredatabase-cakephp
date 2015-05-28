@@ -67,6 +67,22 @@ $(document).on "pageshow", "#topTwenty", ->
       return
   return  
   
+ $(document).on "pageshow", "#speciesAll", ->
+  $.ajax
+    type : 'GET'
+    url : '/api/species_all'
+    dataType : 'json'
+    success : (data) ->
+      speciesAllView = {species: data, count: data.length}
+      template = $('#speciesAllTemplate').html()
+      Mustache.parse(template)
+      rendered = Mustache.render(template, speciesAllView)
+      $('#speciesAllContent').html(rendered)
+      $('#speciesAllListView').listview().listview('refresh')
+      $('#speciesAllCountListView').listview().listview('refresh')
+      return
+  return 
+  
 # draw chart when Species By Month page loads
 $(document).on "pageshow", "#twoSpeciesByMonth", ->
   $.ajax

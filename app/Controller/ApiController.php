@@ -27,6 +27,37 @@ class ApiController extends AppController {
 
 	}
 
+	public function species_all() {
+
+		// default action for the reports controller
+		$sighting_set = $this -> Report -> listSpeciesAll();
+		$results = array();
+		foreach ($sighting_set as $bird) {
+			foreach ($bird as $data) {
+				array_push($results, $data);
+			}
+		}
+
+		$prev_order = '';
+		foreach ($results as &$result) {
+			if ($result['order_name'] != $prev_order) {
+				// to indicate first species in order; show group header
+				// for order above this species
+				$result['displayGroupHeader'] = 'always';
+				$prev_order = $result['order_name'];
+			} else {
+				$result['displayGroupHeader'] = 'none';
+			}
+		}
+
+		// no view to render
+		$this -> autoRender = false;
+		$this -> response -> type('json');
+		$json = json_encode($results);
+		$this -> response -> body($json);
+
+	}
+
 	public function top_twenty() {
 
 		// top twenty species by sightings

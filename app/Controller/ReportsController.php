@@ -6,16 +6,7 @@ class ReportsController extends AppController {
 	}
 
 	public function species_all() {
-
-		// default action for the reports controller
-		$sighting_set = $this -> Report -> listSpeciesAll();
-		$results = array();
-		foreach ($sighting_set as $bird) {
-			foreach ($bird as $data) {
-				array_push($results, $data);
-			}
-		}
-		$this -> set(compact('results'));
+		// nothing to do; populated with api call
 	}
 
 	public function top_twenty() {
