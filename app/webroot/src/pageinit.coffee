@@ -78,8 +78,8 @@ $(document).on "pageshow", "#topTwenty", ->
       Mustache.parse(template)
       rendered = Mustache.render(template, speciesAllView)
       $('#speciesAllContent').html(rendered)
+      $('#speciesAllCountListView').listview().listview('refresh')      
       $('#speciesAllListView').listview().listview('refresh')
-      $('#speciesAllCountListView').listview().listview('refresh')
       return
   return 
   

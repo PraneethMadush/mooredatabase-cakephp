@@ -93,8 +93,8 @@
         Mustache.parse(template);
         rendered = Mustache.render(template, speciesAllView);
         $('#speciesAllContent').html(rendered);
-        $('#speciesAllListView').listview().listview('refresh');
         $('#speciesAllCountListView').listview().listview('refresh');
+        $('#speciesAllListView').listview().listview('refresh');
       }
     });
   });
