@@ -13,7 +13,6 @@ echo $this->Html->script('amcharts/amcharts')."\n";
 echo $this->Html->script('amcharts/themes/dark')."\n";
 echo $this->Html->script('amcharts/serial')."\n";	
 echo $this->Html->script('mooredatabase_amcharts.min')."\n";
-echo $this->Html->script('mustache.min')."\n";
 
 // load page init last so that we can assume all CSS and JS is loaded
 echo $this->Html->script('pageinit')."\n";		

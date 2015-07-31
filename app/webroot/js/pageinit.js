@@ -45,56 +45,7 @@
       url: '/api/species_by_month',
       dataType: 'json',
       success: function(data) {
-        var rendered, speciesByMonthView, template;
         mooredatabase.drawChartSpeciesByMonth(data);
-        speciesByMonthView = {
-          species: data
-        };
-        template = $('#speciesByMonthTemplate').html();
-        Mustache.parse(template);
-        rendered = Mustache.render(template, speciesByMonthView);
-        $('#speciesByMonthContent').html(rendered);
-        $('#speciesByMonthListView').listview().listview('refresh');
-      }
-    });
-  });
-
-  $(document).on("pageshow", "#topTwenty", function() {
-    $.ajax({
-      type: 'GET',
-      url: '/api/top_twenty',
-      dataType: 'json',
-      success: function(data) {
-        var rendered, template, topTwentyView;
-        topTwentyView = {
-          species: data
-        };
-        template = $('#topTwentyTemplate').html();
-        Mustache.parse(template);
-        rendered = Mustache.render(template, topTwentyView);
-        $('#topTwentyContent').html(rendered);
-        $('#topTwentyListView').listview().listview('refresh');
-      }
-    });
-  });
-
-  $(document).on("pageshow", "#speciesAll", function() {
-    $.ajax({
-      type: 'GET',
-      url: '/api/species_all',
-      dataType: 'json',
-      success: function(data) {
-        var rendered, speciesAllView, template;
-        speciesAllView = {
-          species: data,
-          count: data.length
-        };
-        template = $('#speciesAllTemplate').html();
-        Mustache.parse(template);
-        rendered = Mustache.render(template, speciesAllView);
-        $('#speciesAllContent').html(rendered);
-        $('#speciesAllCountListView').listview().listview('refresh');
-        $('#speciesAllListView').listview().listview('refresh');
       }
     });
   });

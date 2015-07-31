@@ -6,6 +6,9 @@ class ApiController extends AppController {
 
 	public function species_by_month() {
 
+		// disable layout
+		$this -> layout = null;
+
 		// perform the search
 		$monthSet = $this -> Report -> listSpeciesByMonth();
 
@@ -18,56 +21,7 @@ class ApiController extends AppController {
 				array_push($results, $data);
 			}
 		}
-
-		// no view to render
-		$this -> autoRender = false;
-		$this -> response -> type('json');
-		$json = json_encode($results);
-		$this -> response -> body($json);
-
-	}
-
-	public function species_all() {
-
-		// default action for the reports controller
-		$sighting_set = $this -> Report -> listSpeciesAll();
-		$results = array();
-		foreach ($sighting_set as $bird) {
-			foreach ($bird as $data) {
-				array_push($results, $data);
-			}
-		}
-
-		$prev_order = '';
-		foreach ($results as &$result) {
-			if ($result['order_name'] != $prev_order) {
-				// to indicate first species in order; show group header
-				// for order above this species
-				$result['displayGroupHeader'] = 'always';
-				$prev_order = $result['order_name'];
-			} else {
-				$result['displayGroupHeader'] = 'none';
-			}
-		}
-
-		// no view to render
-		$this -> autoRender = false;
-		$this -> response -> type('json');
-		$json = json_encode($results);
-		$this -> response -> body($json);
-
-	}
-
-	public function top_twenty() {
-
-		// top twenty species by sightings
-		$sighting_set = $this -> Report -> listTopTwenty();
-		$results = array();
-		foreach ($sighting_set as $bird) {
-			foreach ($bird as $data) {
-				array_push($results, $data);
-			}
-		}
+		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -78,6 +32,9 @@ class ApiController extends AppController {
 	}
 
 	public function two_species_by_month() {
+
+		// disable layout
+		$this -> layout = null;
 
 		// perform the search
 		$monthSet = $this -> Report -> listTwoSpeciesByMonth();
@@ -91,6 +48,7 @@ class ApiController extends AppController {
 				array_push($results, $data);
 			}
 		}
+		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -101,6 +59,9 @@ class ApiController extends AppController {
 	}
 
 	public function species_by_year() {
+
+		// disable layout
+		$this -> layout = null;
 
 		// perform the search
 		$yearSet = $this -> Report -> listSpeciesByYear();
@@ -114,6 +75,7 @@ class ApiController extends AppController {
 				array_push($results, $data);
 			}
 		}
+		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -124,6 +86,9 @@ class ApiController extends AppController {
 	}
 
 	public function species_by_county() {
+
+		// disable layout
+		$this -> layout = null;
 
 		// perform the search
 		$countySet = $this -> Report -> listSpeciesByCounty();
@@ -137,6 +102,7 @@ class ApiController extends AppController {
 				array_push($results, $data);
 			}
 		}
+		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;
@@ -147,6 +113,9 @@ class ApiController extends AppController {
 	}
 
 	public function species_by_order() {
+
+		// disable layout
+		$this -> layout = null;
 
 		// perform the search
 		$orderSet = $this -> Report -> listSpeciesByOrder();
@@ -181,6 +150,9 @@ class ApiController extends AppController {
 
 	public function sightings_by_month($id) {
 
+		// disable layout
+		$this -> layout = null;
+
 		// perform the search
 		$species_id = ( int )$id;
 		$monthSet = $this -> Report -> listMonthsForSpecies($species_id);
@@ -202,6 +174,9 @@ class ApiController extends AppController {
 		foreach ($monthSet as $month) {
 			$results[$month[0]['monthNumber'] - 1]['sightingCount'] = $month[0]['sightingCount'];
 		}
+
+		// pass data to view
+		$this -> set(compact('results'));
 
 		// no view to render
 		$this -> autoRender = false;

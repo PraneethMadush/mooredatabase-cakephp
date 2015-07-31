@@ -18,7 +18,7 @@
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-left",
-			"startDuration" : .5,
+			"startDuration" : 1,
 			"legend" : {
 				"data" : [{
 					"title" : "Species",
@@ -56,8 +56,6 @@
 				"balloonText" : "<b>Year: [[category]]</b><br />Trips: [[value]]"
 			}]
 		});
-		// resize to refresh
-		chart.invalidateSize();
 	};
 	mooredatabase.drawChartSpeciesByYear = drawChartSpeciesByYear;
 
@@ -69,7 +67,7 @@
 			"columnWidth:" : 0.6,
 			"columnSpacing" : 5,
 			"dataProvider" : chartData,
-			"startDuration" : .5,
+			"startDuration" : 1,
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "bottom-right",
 			"graphs" : [{
@@ -108,8 +106,6 @@
 				"position" : "left"
 			}
 		});
-		// resize to refresh
-		chart.invalidateSize();
 	};
 	mooredatabase.drawChartSpeciesByCounty = drawChartSpeciesByCounty;
 
@@ -131,7 +127,7 @@
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
-			"startDuration" : .5,
+			"startDuration" : 1,
 			"legend" : {
 				"data" : [{
 					"title" : "Species",
@@ -170,8 +166,6 @@
 				"urlField" : "url"
 			}]
 		});
-		// resize to refresh
-		chart.invalidateSize();
 	};
 	mooredatabase.drawChartSpeciesByMonth = drawChartSpeciesByMonth;
 	
@@ -193,7 +187,7 @@
 			}],
 			"fontFamily" : "Helvetica, Arial, sans serif",
 			"creditsPosition" : "top-right",
-			"startDuration" : .5,
+			"startDuration" : 1,
 			"legend" : {
 				"data" : [{
 					"title" : "Ducks",
@@ -230,8 +224,6 @@
 				"balloonText" : "<b>Month: [[monthName]]</b><br />Species: [[value]]"
 			}]
 		});
-		// resize to refresh
-		chart.invalidateSize();		
 	};
 	mooredatabase.drawChartTwoSpeciesByMonth = drawChartTwoSpeciesByMonth;	
 
@@ -239,7 +231,7 @@
 		var chart;
 		chart = AmCharts.makeChart("chartdivSpecies", {
 			"type" : "serial",
-			"startDuration" : .5,
+			"startDuration" : 1,
 			"dataProvider" : chartData,
 			"titles" : [{
 				"text" : chartData[0].common_name
@@ -269,8 +261,6 @@
 				"valueField" : "sightingCount"
 			}]
 		});
-		// resize to refresh
-		chart.invalidateSize();		
 	};
 	mooredatabase.drawChartSpeciesSightingsByMonth = drawChartSpeciesSightingsByMonth;
 
@@ -285,7 +275,7 @@
 			"valueAxes" : [{
 				"position" : "left"
 			}],
-			"startDuration" : .5,
+			"startDuration" : 1,
 			"graphs" : [{
 				"balloonText" : "<b>Order: [[category]]</b><br />Species: [[value]]",
 				"fillAlphas" : 0.9,
@@ -307,8 +297,6 @@
 				"position" : "left"
 			}
 		});
-		// resize to refresh
-		chart.invalidateSize();		
 	};
 	mooredatabase.drawChartSpeciesByOrder = drawChartSpeciesByOrder;
 
