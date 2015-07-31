@@ -1,3 +1,4 @@
+'use strict'
 initialize_map = (latitude, longitude, zoomLevel, mapElement, mapType) ->
   map = new google.maps.Map document.getElementById(mapElement),
     zoom : zoomLevel

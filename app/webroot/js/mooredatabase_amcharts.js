@@ -1,5 +1,6 @@
 (function() {
-	var drawChartTwoSpeciesByMonth, drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth, drawChartSpeciesByYear;
+	'use strict';
+	var drawChartTwoSpeciesByMonth, drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth, drawChartSpeciesByYear,drawChartSpeciesByCounty,drawChartSpeciesByCounty;
 	drawChartSpeciesByYear = function(chartData) {
 		var chart;
 		chart = AmCharts.makeChart("chartdivYears", {
@@ -36,8 +37,7 @@
 				"labelText" : "[[value]]",
 				"balloonText" : "<b>Year: [[category]]</b><br />Species: [[value]]",
 				"fillAlphas" : 1,
-				"lineAlpha" : 1,
-				"type" : "column"
+				"lineAlpha" : 1
 			}, {
 				"bullet" : "round",
 				"dashLengthField" : "dashLengthLine",
@@ -60,7 +60,7 @@
 	mooredatabase.drawChartSpeciesByYear = drawChartSpeciesByYear;
 
 	drawChartSpeciesByCounty = function(chartData) {
-		var Chart;
+		var chart;
 		chart = AmCharts.makeChart("chartdivCounties", {
 			"type" : "serial",
 			"theme" : "none",

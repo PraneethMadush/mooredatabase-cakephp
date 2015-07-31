@@ -1,4 +1,5 @@
 (function() {
+  'use strict';
   var initialize_map;
 
   initialize_map = function(latitude, longitude, zoomLevel, mapElement, mapType) {

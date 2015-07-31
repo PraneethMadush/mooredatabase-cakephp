@@ -1,4 +1,5 @@
 (function() {
+  'use strict';
   var geolocation_initialize, geolocation_initialize_map, geolocation_show_position;
 
   window.mooredatabase = {};

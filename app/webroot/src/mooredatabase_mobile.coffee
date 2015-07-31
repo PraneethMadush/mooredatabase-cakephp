@@ -1,3 +1,5 @@
+'use strict'
+
 window.mooredatabase = {}
 
 # make this map variable visible to entire namespace
