@@ -19,10 +19,13 @@
 				<li>Regression Models, Johns Hopkins University/Coursera</li>
 				<li>Practical Machine Learning, Johns Hopkins University/Coursera</li>
 				<li>Developing Data Products, Johns Hopkins University/Coursera</li>
+				<li>Machine Learning, Stanford University/Coursera</li>
+				<li>Up and Running with Octave, Lynda.com</li>
 				<li>Try R, codeschool.com</li>
 				<li>Up and Running with R, Lynda.com</li>
 				<li>R Statistics Essential Training, Lynda.com</li>
 				<li>Introduction to R, DataCamp.com</li>
+				<li>Data Manipulation in R with dplyr, DataCamp.com</li>
 				<li>Python 3 Essential Training, Lynda.com</li>
 				<li>Python Fundamentals, Pluralsight.com</li>
 				<li>Python Developers Toolkit, Pluralsight.com</li>

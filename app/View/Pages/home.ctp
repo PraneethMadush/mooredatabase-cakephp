@@ -20,7 +20,7 @@
 			<h3>What's New</h3>
 			<ul>
 				<li>Continuing work on data science specialization at Coursera / Johns Hopkins</li>
-				<li>Statistics, Python, Excel and R programming courses at Coursera, Udacity, Pluralsight.com and Lynda.com</li>
+				<li>Completed Machine Learning, Statistics, Python, Excel, R and Octave programming courses at Coursera, Udacity, Pluralsight.com and Lynda.com</li>
 				<li>Migrated mobile site to CakePHP, Nginx and Ubuntu Server 14.04 LTS</li>
 				<li>Implemented caching with memcached</li>
 				<li>Upgraded charting components to amCharts JavaScript Charts</li>
@@ -30,7 +30,7 @@
 		</div>
 		<div data-role="collapsible">
 			<h3>Project Experience</h3>
-			<p>Twenty years experience developing software for use in</p>
+			<p>Over twenty years experience developing software for use in</p>
 			<ul>
 				<li>Education</li>
 				<li>Data Center Operations</li>
@@ -47,7 +47,8 @@
 			<h3>Contact Me</h3>
 			<address>
 				Stephen Moore<br />
-				E-mail: <a href="mailto:stephenmoore56@msn.com?subject=Message%20from%20a%20visitor%20to%20your%20mobile%20site" class="content_a" rel="author">stephenmoore56@msn.com</a>
+				E-mail: <a href="mailto:stephenmoore56@msn.com?subject=Message%20from%20a%20visitor%20to%20your%20mobile%20site" class="content_a" rel="author">stephenmoore56@msn.com</a><br />
+				LinkedIn: <a href="https://www.linkedin.com/in/mooredatabase" class="content_a" rel="author">https://www.linkedin.com/in/mooredatabase</a>
 			</address>
 		</div>
 	</div>

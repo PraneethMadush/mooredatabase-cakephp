@@ -48,6 +48,7 @@
 				<li>Excel</li>
 				<li>R / R Studio</li>
 				<li>Python</li>
+				<li>Octave</li>
 			</ul>
 			<?php echo $this->Html->image('mcitp.png', array('alt' => 'MCITP Logo','class' => 'logo')); ?>
 		</div>
