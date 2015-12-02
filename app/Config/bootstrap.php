@@ -21,7 +21,7 @@
  * @since         CakePHP(tm) v 0.10.8.2117
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
- 
+
 // set environment variable
 define('IS_PROD',(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'mobile.moore-database.com') ? true : false);
 
