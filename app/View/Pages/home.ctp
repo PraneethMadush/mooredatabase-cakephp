@@ -8,7 +8,7 @@
 			<h3>Welcome</h3>
 			<p>Welcome to Steve Moore's mobile-optimized site in the Amazon cloud. I live and work in the Minneapolis area.</p>
 			<ul>
-				<li>Skilled full-stack web / database developer</li>
+				<li>Skilled full-stack web / database developer currently focused on open source tools</li>
 				<li>Experienced data architect / database administrator</li>
 				<li>Strong analysis &amp; reporting background</li>
 				<li>MCSD and MCITP, with 7 certifications in SQL Server development / administration</li>

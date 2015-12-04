@@ -1,3 +1,5 @@
+'use strict'
+
 $(document).on "pageshow", "#geolocationDemo", ->
 	# use geolocation and show location on map
 	mooredatabase.geolocation_initialize_map()
