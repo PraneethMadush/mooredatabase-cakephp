@@ -44,6 +44,13 @@
 	},
 	"file_history":
 	[
+		"/var/www/mooredatabase-cakephp/app/webroot/js/geo-min.js",
+		"/var/www/mooredatabase-cakephp/app/webroot/js/pageinit.js",
+		"/var/www/mooredatabase-cakephp/app/webroot/js/mooredatabase_mobile.js",
+		"/var/www/mooredatabase-cakephp/app/webroot/js/mooredatabase_googlemaps.js",
+		"/var/www/mooredatabase-cakephp/app/webroot/src/mooredatabase_mobile.coffee",
+		"/var/www/mooredatabase-cakephp/app/webroot/src/pageinit.coffee",
+		"/var/www/mooredatabase-cakephp/app/webroot/js/mooredatabase_amcharts.js",
 		"/var/www/mooredatabase-cakephp/app/View/Pages/home.ctp",
 		"/var/www/mooredatabase-cakephp/app/View/Reports/birding_locations.ctp",
 		"/var/www/mooredatabase-cakephp/app/Controller/ReportsController.php",
