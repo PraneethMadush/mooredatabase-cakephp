@@ -42,6 +42,22 @@
 			</ul>
 		</div>
 		<div data-role="collapsible">
+			<h3>Coursera Certificates</h3>
+			<ul class="content_list">
+				<li class="content_li">Data Analysis and Statistical Inference, Duke University</li>
+				<li class="content_li">The Data Scientist’s Toolbox, Johns Hopkins University</li>
+				<li class="content_li">R Programming, Johns Hopkins University</li>
+				<li class="content_li">Getting and Cleaning Data, Johns Hopkins University</li>
+				<li class="content_li">Exploratory Data Analysis, Johns Hopkins University</li>
+				<li class="content_li">Reproducible Research, Johns Hopkins University</li>
+				<li class="content_li">Statistical Inference, Johns Hopkins University</li>
+				<li class="content_li">Regression Models, Johns Hopkins University</li>
+				<li class="content_li">Practical Machine Learning, Johns Hopkins University</li>
+				<li class="content_li">Developing Data Products, Johns Hopkins University</li>
+				<li class="content_li">Machine Learning, Stanford University</li>
+			</ul>
+		</div>
+		<div data-role="collapsible">
 			<h3>Military Experience</h3>
 			<p>
 				<strong>Defense Language Institute, Monterey, CA</strong> <br /> Basic Russian Course, 1976 <br /> Honor Graduate
