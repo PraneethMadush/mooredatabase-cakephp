@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var drawChartTwoSpeciesByMonth, drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth, drawChartSpeciesByYear, drawChartSpeciesByCounty, drawChartSpeciesByCounty;
+    var drawChartTwoSpeciesByMonth, drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth, drawChartSpeciesByYear, drawChartSpeciesByCounty, drawChartSpeciesByCounty, drawChartTempsByMonth;
     drawChartSpeciesByYear = function(chartData) {
         var chart;
         chart = AmCharts.makeChart("chartdivYears", {
@@ -223,6 +223,63 @@
         });
     };
     mooredatabase.drawChartTwoSpeciesByMonth = drawChartTwoSpeciesByMonth;
+    drawChartTempsByMonth = function(chartData) {
+        var chart;
+        chart = AmCharts.makeChart("chartdivTemps", {
+            "type": "serial",
+            "dataProvider": chartData,
+            "categoryField": "month_letter",
+            "categoryAxis": {
+                "gridPosition": "start",
+                "axisAlpha": 0,
+                "tickLength": 0
+            },
+            "valueAxes": [{
+                "position": "left",
+                "axisAlpha": 0,
+                "tickLength": 0
+            }],
+            "fontFamily": "Helvetica, Arial, sans serif",
+            "creditsPosition": "top-right",
+            "startDuration": 1,
+            "legend": {
+                "data": [{
+                    "title": "Avg High Temp",
+                    "color": "red"
+                }, {
+                    "title": "Avg Low Temp",
+                    "color": "blue"
+                }],
+                "align": "center",
+            },
+            "graphs": [{
+                "type": "smoothedLine",
+                "lineAlpha": 1,
+                "lineColor": "red",
+                "lineThickness": 1,
+                "bullet": "round",
+                "bulletBorderThickness": 1,
+                "bulletBorderColor": "#FFFFFF",
+                "valueField": "avg_high_temp",
+                "labelPosition": "top",
+                "labelText": "[[value]]",
+                "balloonText": "<b>Month: [[month_name]]</b><br />Avg High Temp: [[value]]"
+            }, {
+                "type": "smoothedLine",
+                "lineAlpha": 1,
+                "lineColor": "blue",
+                "lineThickness": 1,
+                "bullet": "diamond",
+                "bulletBorderThickness": 1,
+                "bulletBorderColor": "#FFFFFF",
+                "valueField": "avg_low_temp",
+                "labelPosition": "top",
+                "labelText": "[[value]]",
+                "balloonText": "<b>Month: [[month_name]]</b><br />Avg Low Temp: [[value]]"
+            }]
+        });
+    };
+    mooredatabase.drawChartTempsByMonth = drawChartTempsByMonth;
     drawChartSpeciesSightingsByMonth = function(chartData) {
         var chart;
         chart = AmCharts.makeChart("chartdivSpecies", {

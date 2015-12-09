@@ -84,6 +84,23 @@ class ApiController extends AppController
         $this->format_json_response($results);
     }
     
+    public function monthly_averages() {
+        
+        // perform the search
+        $countySet = $this->Report->listMonthlyAverages();
+        
+        // Retrieve and store in array the results of the query
+        // CakePHP nests each row in an object [], so we need to
+        // extract into a format that translates to JSON correctly
+        $results = array();
+        foreach ($countySet as $county) {
+            foreach ($county as $data) {
+                array_push($results, $data);
+            }
+        }
+        $this->format_json_response($results);
+    }
+    
     public function species_by_order() {
         
         // perform the search

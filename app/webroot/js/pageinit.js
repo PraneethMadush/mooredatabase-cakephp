@@ -61,6 +61,14 @@
         mooredatabase.drawChartTwoSpeciesByMonth(data);
       }
     });
+    $.ajax({
+      type: 'GET',
+      url: '/api/monthly_averages',
+      dataType: 'json',
+      success: function(data) {
+        mooredatabase.drawChartTempsByMonth(data);
+      }
+    });
   });
 
   $(document).on("pageshow", "#speciesDialog", function() {
