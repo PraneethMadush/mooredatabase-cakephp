@@ -15,7 +15,7 @@ $this -> set('title_for_layout', 'Ducks and Warblers');
 <div id="chartTempsByMonth_container">
     <ul data-role="listview" data-divider-theme="a">
         <li data-role="list-divider">
-            Temperatures By Month
+            Temperatures By Month, Minneapolis, MN
         </li>
     </ul>
     <figure>

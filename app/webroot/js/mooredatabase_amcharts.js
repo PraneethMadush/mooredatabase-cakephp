@@ -244,15 +244,28 @@
             "startDuration": 1,
             "legend": {
                 "data": [{
-                    "title": "Avg High Temp",
+                    "title": "Avg/Record High Temp",
                     "color": "red"
                 }, {
-                    "title": "Avg Low Temp",
+                    "title": "Avg/Record Low Temp",
                     "color": "blue"
                 }],
                 "align": "center",
             },
             "graphs": [{
+                "type": "smoothedLine",
+                "dashLength": 3,
+                "lineAlpha": 1,
+                "lineColor": "red",
+                "lineThickness": 1,
+                "bullet": "round",
+                "bulletBorderThickness": 1,
+                "bulletBorderColor": "#FFFFFF",
+                "valueField": "record_high_temp",
+                "labelPosition": "top",
+                "labelText": "[[value]]",
+                "balloonText": "<b>Month: [[month_name]]</b><br />Record High Temp: [[value]]"
+            }, {
                 "type": "smoothedLine",
                 "lineAlpha": 1,
                 "lineColor": "red",
@@ -276,6 +289,19 @@
                 "labelPosition": "top",
                 "labelText": "[[value]]",
                 "balloonText": "<b>Month: [[month_name]]</b><br />Avg Low Temp: [[value]]"
+            }, {
+                "type": "smoothedLine",
+                "dashLength": 3,
+                "lineAlpha": 1,
+                "lineColor": "blue",
+                "lineThickness": 1,
+                "bullet": "diamond",
+                "bulletBorderThickness": 1,
+                "bulletBorderColor": "#FFFFFF",
+                "valueField": "record_low_temp",
+                "labelPosition": "top",
+                "labelText": "[[value]]",
+                "balloonText": "<b>Month: [[month_name]]</b><br />Record Low Temp: [[value]]"
             }]
         });
     };
