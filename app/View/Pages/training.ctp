@@ -25,10 +25,12 @@
 				<li>Up and Running with R, Lynda.com</li>
 				<li>R Statistics Essential Training, Lynda.com</li>
 				<li>Introduction to R, DataCamp.com</li>
+				<li>Time Series Analysis and Forecasting in R, Udemy.com</li>
 				<li>Data Manipulation in R with dplyr, DataCamp.com</li>
 				<li>Python 3 Essential Training, Lynda.com</li>
 				<li>Python Fundamentals, Pluralsight.com</li>
 				<li>Python Developers Toolkit, Pluralsight.com</li>
+				<li>Complete Python Bootcamp, Udemy.com</li>
 				<li>Excel for Mac 2011 Essential Training, Lynda.com</li>
 				<li>Managing and Analyzing Data in Excel, Lynda.com</li>
 				<li>Excel 2010: Charts in Depth, Lynda.com</li>
@@ -68,6 +70,7 @@
 				<li>PHP 5.5 First Look, Lynda.com</li>
 				<li>Object-Oriented Programming with PHP, Lynda.com</li>
 				<li>Zend Framework Quick Start, Zend.com</li>
+				<li>Up and Running with Laravel, Lynda.com</li>
 				<li>Ruby Essential Training, Lynda.com</li>
 				<li>Ruby on Rails 3 Essential Training, Lynda.com</li>
 				<li>Ruby Koans, rubykoans.com</li>

@@ -29,11 +29,13 @@ $this -> set('title_for_layout', 'Ducks and Warblers');
     <ul>
         <li>
             Ducks arrive early to Minnesota and depart late; the diversity
-            of ducks peaks in April and November.
+            of ducks peaks in April and November.  Spring and fall duck migrations are triggered
+            by ice-out and ice-in, respectively.
         </li>
         <li>
             Warblers arrive later and depart earlier than ducks; the diversity of warblers
-            peaks in May and September.
+            peaks in May and September.  Spring and fall warbler migrations are triggered largely by the
+            availability of insects for food, which is in turn a function of temperature.
         </li>
     </ul>
     </p>
