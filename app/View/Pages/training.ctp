@@ -27,6 +27,7 @@
 				<li>Introduction to R, DataCamp.com</li>
 				<li>Time Series Analysis and Forecasting in R, Udemy.com</li>
 				<li>Data Manipulation in R with dplyr, DataCamp.com</li>
+				<li>Up and Running with Python, Lynda.com</li>
 				<li>Python 3 Essential Training, Lynda.com</li>
 				<li>Python Fundamentals, Pluralsight.com</li>
 				<li>Python Developers Toolkit, Pluralsight.com</li>
@@ -52,6 +53,7 @@
 				<li>MySQL 5 Administration, VTC.com</li>
 				<li>MySQL 5 Development Parts 1 &amp; 2, VTC.com</li>
 				<li>Up and Running with NoSQL Databases, Lynda.com</li>
+				<li>Mongodb Essentials, Udemy.com</li>
 				<li>SQL Server 2008 Essential Training, Lynda.com</li>
 				<li>OLAP Boot Camp / SQL Server 2000 Analysis Services, Microsoft Corporation</li>
 				<li>SQL Server 7.0 for Application Developers, Alto Consulting &amp; Training</li>
@@ -71,6 +73,7 @@
 				<li>Object-Oriented Programming with PHP, Lynda.com</li>
 				<li>Zend Framework Quick Start, Zend.com</li>
 				<li>Up and Running with Laravel, Lynda.com</li>
+				<li>Laravel 4 Essential Training, Lynda.com</li>
 				<li>Ruby Essential Training, Lynda.com</li>
 				<li>Ruby on Rails 3 Essential Training, Lynda.com</li>
 				<li>Ruby Koans, rubykoans.com</li>
@@ -78,8 +81,7 @@
                 <li>Ruby Bits Part 2, codeschool.com</li>
                 <li>Try Ruby, codeschool.com</li>
                 <li>Rails for Zombies Redux, codeschool.com</li>
-                <li>Rails for Zombies 2, codeschool.com</li>
-                <li>Up and Running with Python, Lynda.com</li>				
+                <li>Rails for Zombies 2, codeschool.com</li>				
 				<li>Java 2 Certified Programmer, VTC.com</li>
 				<li>WordPress 3 Essential Training, Lynda.com</li>
 				<li>Fundamentals of Software Version Control, Lynda.com</li>
