@@ -7,6 +7,17 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "Package Control Messages\n========================\n\nCodeFormatter\n-------------\n\n  Sublime CodeFormatter 3.0.0 Changelog:\n  \n  Please report me any bugs and proposals at akalongman@gmail.com or GitHub (https://github.com/akalongman/sublimetext-codeformatter/issues)\n  \n  Improvements\n  ------------\n  - PHP beautifier replaced with phpfmt (https://github.com/phpfmt/fmt)\n  - You can list all available PHP transformations from Command Palette: CodeFormatter: Show PHP Transformations\n  - PHP executable option included in php options and new name is php_path\n  - WARNING: To use php formatter, you must upgrade your php version to 5.6 or above (https://github.com/phpfmt/fmt#requirements)\n  - Added format_on_save option for each language\n  - Updated jsbeautfier to version 1.5.10\n",
+			"settings":
+			{
+				"buffer_size": 780,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -44,8 +55,9 @@
 	},
 	"file_history":
 	[
-		"/var/www/mooredatabase-cakephp/app/webroot/js/mooredatabase_amcharts.js",
 		"/var/www/mooredatabase-cakephp/app/View/Reports/two_species_by_month.ctp",
+		"/var/www/mooredatabase-cakephp/app/View/Pages/training.ctp",
+		"/var/www/mooredatabase-cakephp/app/webroot/js/mooredatabase_amcharts.js",
 		"/var/www/mooredatabase-cakephp/app/Model/Report.php",
 		"/var/www/mooredatabase-cakephp/app/Controller/ApiController.php",
 		"/var/www/mooredatabase-cakephp/app/webroot/src/mooredatabase_mobile.coffee",
@@ -105,8 +117,38 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"settings":
+					{
+						"buffer_size": 780,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								780,
+								780
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -160,11 +202,11 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"show_minimap": true,
 	"show_open_files": false,
