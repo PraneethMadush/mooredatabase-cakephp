@@ -5,7 +5,7 @@ class DATABASE_CONFIG {
 	public $test_prod = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'mooredatabase.cd02yxrr7fxm.us-east-1.rds.amazonaws.com',
+		'host' => 'mysql57test.cd02yxrr7fxm.us-east-1.rds.amazonaws.com',
 		'login' => 'birding_readonly',
 		'password' => 'dY78vNqP37sS94U',
 		'database' => 'birding',
@@ -13,7 +13,7 @@ class DATABASE_CONFIG {
 	public $default_prod = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'mooredatabase.cd02yxrr7fxm.us-east-1.rds.amazonaws.com',
+		'host' => 'mysql57test.cd02yxrr7fxm.us-east-1.rds.amazonaws.com',
 		'login' => 'birding_readonly',
 		'password' => 'dY78vNqP37sS94U',
 		'database' => 'birding',
