@@ -154,6 +154,13 @@
                 <li>Node Tuts, nodetuts.com</li>
                 <li>Up and Running with AngularJS, Lynda.com</li>
                 <li>AngularJS - Parts 1 &amp; 2, codeschool.com</li>
+                <li>JavaScript Road Trip Parts 1-2-3, codeschool.com</li>
+				<li>JavaScript Best Practices, codeschool.com</li>
+				<li>ES2015: The Shape of JavaScript to Come, codeschool.com</li>
+				<li>Try jQuery, codeschool.com</li>
+				<li>Shaping Up with AngularJS, codeschool.com</li>
+				<li>Staying Sharp with AngularJS, codeschool.com</li>
+				<li>Building Blocks of Express.js, codeschool.com</li>
             </ul>
 		</div>
 		<div data-role="collapsible">
