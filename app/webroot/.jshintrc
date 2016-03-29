@@ -94,6 +94,7 @@
         "angular" : true,
         "DatePicker" : true,
         "mooredatabase" : true,
-        "AmCharts" : true
+        "AmCharts" : true,
+        "geo_position_js": true
     }
 }

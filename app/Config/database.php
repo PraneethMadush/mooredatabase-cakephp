@@ -21,7 +21,7 @@ class DATABASE_CONFIG {
 	public $default_dev = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
+		'host' => '127.0.0.1',
 		'login' => 'root',
 		'password' => 'gsnyder56',
 		'database' => 'birding',
@@ -29,7 +29,7 @@ class DATABASE_CONFIG {
 	public $test_dev = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
+		'host' => '127.0.0.1',
 		'login' => 'root',
 		'password' => 'gsnyder56',
 		'database' => 'birding' ,

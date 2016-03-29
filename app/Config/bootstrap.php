@@ -26,18 +26,18 @@
 define('IS_PROD',(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'mobile.moore-database.com') ? true : false);
 
 // Setup a 'default' cache configuration for use in the application.
-// Cache::config('default', array('engine' => 'File'));
+Cache::config('default', array('engine' => 'File'));
 // Cache::config('default', array('engine' => 'Apc'));
-Cache::config('default', array(
-	'engine' => 'Memcache', //[required]
-	'duration' => 3600000, //[optional]
-	'probability' => 100, //[optional]
-	'servers' => array(
-	'127.0.0.1:11211' // localhost, default port 11211
-	), //[optional]
-	'persistent' => true, // [optional] set this to false for non-persistent connections
-	'compress' => false, // [optional] compress data in Memcache (slower, but uses less memory)
-));
+// Cache::config('default', array(
+// 	'engine' => 'Memcache', //[required]
+// 	'duration' => 3600000, //[optional]
+// 	'probability' => 100, //[optional]
+// 	'servers' => array(
+// 	'127.0.0.1:11211' // localhost, default port 11211
+// 	), //[optional]
+// 	'persistent' => true, // [optional] set this to false for non-persistent connections
+// 	'compress' => false, // [optional] compress data in Memcache (slower, but uses less memory)
+// ));
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
  *
