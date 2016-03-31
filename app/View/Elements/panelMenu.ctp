@@ -12,6 +12,7 @@
 					<li><a href="/pages/tools">Tools</a></li>
 					<li><a href="/pages/architecture">Mobile Architecture</a></li>
 					<li><a href="/pages/aboutme">About Me</a></li>
+					<li><a href="/pages/geolocation">Geolocation</a></li>
 				</ul>
 			</div>
 			<div data-role="collapsible">
@@ -23,13 +24,6 @@
 					<li><a href="/reports/birding_locations">Birding Locations</a></li>
 					<li><a href="/reports/species_all">All Species</a></li>
 					<li><a href="/reports/two_species_by_month">Ducks and Warblers</a></li>
-				</ul>
-			</div>
-			<div data-role="collapsible">
-				<h2>Miscellaneous</h2>
-				<ul data-role="listview">
-					<li><a href="/pages/settings">Settings</a></li>
-					<li><a href="/pages/geolocation">Geolocation</a></li>					
 				</ul>
 			</div>
 			<div data-role="collapsible">

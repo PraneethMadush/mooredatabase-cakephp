@@ -4,17 +4,6 @@
         mooredatabase.geolocation_initialize_map();
         mooredatabase.geolocation_initialize();
     });
-    $(document).on("pageshow", "#settings", function() {
-        return $('.featureMethod').each(function(index) {
-            var featureSupported;
-            featureSupported = eval("Modernizr." + $(this).attr('id'));
-            if (featureSupported) {
-                $(this).html('<img src="/img/Green-Circle-32.png" alt="Feature supported" height="20px" style="vertical-align:middle" />&nbsp;' + $(this).text());
-            } else {
-                $(this).html('<img src="/img/Red-Circle-32.png" alt="Feature not supported" height="20px" style="vertical-align:middle" />&nbsp;' + $(this).text());
-            }
-        });
-    });
     $(document).on("pageshow", "#index", function() {
         $.ajax({
             type: 'GET',
