@@ -20,12 +20,11 @@ $this->set('title_for_layout', 'Home');
         <div data-role="collapsible">
             <h3>What's New</h3>
             <ul>
-                <li>Continuing work on data science specialization at Coursera / Johns Hopkins</li>
-                <li>Completed Machine Learning, Statistics, Python, Excel, R and Octave programming courses at Coursera, Udacity, Data School, Pluralsight.com and Lynda.com</li>
-                <li>Migrated this mobile site to CakePHP, Nginx and Ubuntu Server 14.04 LTS</li>
+                <li>Completed Machine Learning, Statistics, Python, Excel, R and Octave programming courses at Stanford, Coursera, Udacity, Data School, Pluralsight.com and Lynda.com</li>
+                <li>Migrated this mobile site to CakePHP and Ubuntu Server 14.04 LTS</li>
                 <li>Implemented caching with memcached</li>
                 <li>Upgraded charting components to amCharts JavaScript Charts</li>
-                <li>Upgraded RDS instance to MySQL 5.6</li>
+                <li>Upgraded RDS instance to MySQL 5.7</li>
             </ul>
             <?php echo $this->Html->image('cakephp_logo_125_trans.png', array('alt' => 'CakePHP Logo','class' => 'logo75',)); ?>
         </div>
