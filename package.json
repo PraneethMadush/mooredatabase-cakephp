@@ -17,6 +17,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-print": "^2.0.1",
     "gulp-util": "^3.0.7",
+    "run-sequence": "^1.1.5",
     "yargs": "^4.3.2"
   },
   "scripts": {

@@ -4,6 +4,7 @@
     let args = require('yargs').argv;
     let del = require('del');
     let config = require('./gulp.config')();
+    let runSequence = require('run-sequence');
 
     // lazy loading plugins
     //now we can use $. and name of plugin without gulp-
@@ -11,7 +12,7 @@
         lazy: true
     });
 
-    gulp.task('style', function() {
+    gulp.task('jshint', function() {
         log('Analyzing code and code style...');
         return gulp
             .src(config.alljs)
@@ -23,8 +24,13 @@
             .pipe($.jscs());
     });
 
+    // build CSS
+    gulp.task('css', function(cb) {
+        runSequence('clean-css', 'compass', 'clean-sass-cache', cb);
+    });
+
     // compile and minify SASS to CSS with compass
-    gulp.task('compass', ['clean-css'], function() {
+    gulp.task('compass', function() {
         log('Compiling and minifying SASS to CSS...');
         return gulp
             .src(config.sassfiles)
@@ -39,16 +45,22 @@
     });
 
     // remove existing CSS files
-    gulp.task('clean-css', function () {
+    gulp.task('clean-css', function() {
         var files = config.cssfiles;
         return clean(files);
     });
 
+    // remove SASS cache directory
+    gulp.task('clean-sass-cache', function() {
+        var files = config.sasscache;
+        return clean(files);
+    });
+
     // watcher task for CSS
-    gulp.task('compass-watch', function () {
+    gulp.task('compass-watch', function() {
         gulp.watch(config.sassfiles, ['compass']);
     });
-    
+
     // logging utility
     function log(msg) {
         if (typeof(msg) === 'object') {

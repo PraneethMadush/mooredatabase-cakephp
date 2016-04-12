@@ -12,11 +12,13 @@
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.Controller
- * @since         CakePHP(tm) v 0.2.9
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ *
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @since         CakePHP(tm) v 0.2.9
  */
 App::uses('Controller', 'Controller');
 
@@ -27,10 +29,14 @@ App::uses('Controller', 'Controller');
  * will inherit them.
  *
  * @package app.Controller
+ *
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
 
-	// added by SRM; so all controllers have access to these helpers
-	public $helpers = array('Html');
+    // added by SRM; so all controllers have access to these helpers
+    /**
+     * @var array
+     */
+    public $helpers = ['Html'];
 }
