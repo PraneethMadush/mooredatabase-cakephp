@@ -7,22 +7,23 @@
 		<div data-role="collapsible">
 			<h3>Web</h3>
             <ul>
-            	<li>Amazon EC2 / RDS / Elasticache</li>
+            	<li>Amazon EC2 / RDS / S3 / Elasticache</li>
 				<li>Eclipse / Aptana Studio / Zend Studio</li>
-				<li>Sublime Text</li>
+				<li>Sublime Text / PHPStorm</li>
 				<li>Git / GitHub / Sourcetree</li>
 				<li>Subversion / TortoiseSVN / CommitMonitor</li>
 				<li>HTML5, CSS3</li>
 				<li>Compass / SASS</li>
 				<li>Javascript, jQuery, jQuery Mobile, AJAX</li>
 				<li>Coffeescript</li>
-				<li>Uglifyjs</li>
+				<li>Gulp, Uglifyjs</li>
 				<li>Bootstrap</li>
 				<li>AngularJS</li>
-				<li>Node.js / Heroku</li>
+				<li>Node.js / Express.js / Heroku</li>
 				<li>Apache / Nginx</li>
-				<li>PHP / Zend Framework / CakePHP</li>
-				<li>Smarty</li>
+				<li>PHP / PHPUnit</li>
+				<li>Laravel / Zend Framework / CakePHP</li>
+				<li>Smarty Templates</li>
 				<li>Ubuntu Linux</li>
 				<li>Nagios</li>
 				<li>Ruby / Ruby on Rails 3</li>
@@ -32,7 +33,7 @@
 				<li>Google Gears API</li>
 				<li>Google Web Fonts</li>
 				<li>amCharts JavaScript Charts</li>
-				<li>Raphael Javascript Library</li>
+				<li>Plotly.js</li>
 				<li>Flickr API</li>
             </ul>
 		</div>

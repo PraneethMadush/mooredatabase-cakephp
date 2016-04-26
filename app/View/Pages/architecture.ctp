@@ -21,9 +21,9 @@
 			<h3>Back End</h3>
 			<ul>	
 				<li>Amazon EC2 (Ubuntu Server 14.04 LTS)</li>
-				<li>Amazon RDS (MySQL 5.6)</li>
-				<li>Nginx / PHP-FPM</li>
-				<li>CakePHP 2.4.6 / PHP 5.5</li>
+				<li>Amazon RDS (MySQL 5.7)</li>
+				<li>Apache</li>
+				<li>CakePHP 2.4.6 / PHP 5.5.9</li>
 				<li>Memcached / APC</li>
 			</ul>
 			<?php echo $this->Html->image('Powered-by-Amazon-Web-Services.jpg', array('alt' => 'AWS Logo','class' => 'logo')); ?>
@@ -31,13 +31,13 @@
 	    <div data-role="collapsible">
 			<h3>Development</h3>
 			<ul>
-				<li>Aptana Studio</li>
+				<li>PHPStorm</li>
 				<li>Sublime Text</li>
 				<li>Ubuntu Linux</li>
 				<li>Mac OS X</li>
 				<li>Virtual Box</li>
 				<li>git / GitHub</li>
-				<li>Testing on iPad, iPod Touch and Android</li>
+				<li>MySQL Workbench</li>
 			</ul>
 			<?php echo $this->Html->image('ubuntu-logo.png', array('alt' => 'Ubuntu Logo','class' => 'logo', 'style' => "height:100px;")); ?>
 	    </div> 	    

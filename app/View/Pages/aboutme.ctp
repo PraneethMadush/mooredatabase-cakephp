@@ -15,6 +15,7 @@
 				<li>Camping</li>
 				<li>Music</li>
 				<li>Reading</li>
+				<li>New Technology</li>
 			</ul>
 		</div>
 	</div>
