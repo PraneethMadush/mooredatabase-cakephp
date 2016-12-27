@@ -87,8 +87,9 @@
   "yui"           : false,    // Yahoo User Interface
 
   // Custom Globals
-  "globals"       : {"angular": true,
-                     "mooredatabaseReportsApp": true,
-                     "Plotly": true,
+  "globals"       : {"mooredatabase": true,
+                     "google": true,
+                     "geo_position_js": true,
+                     "AmCharts": true,
                      "$": true}        // additional predefined global variables
 }

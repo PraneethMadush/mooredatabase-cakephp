@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var drawChartTwoSpeciesByMonth, drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth, drawChartSpeciesByYear, drawChartSpeciesByCounty, drawChartSpeciesByCounty, drawChartTempsByMonth;
+    var drawChartTwoSpeciesByMonth, drawChartSpeciesSightingsByMonth, drawChartSpeciesByOrder, drawChartSpeciesByMonth, drawChartSpeciesByYear, drawChartSpeciesByCounty, drawChartTempsByMonth;
     drawChartSpeciesByYear = function(chartData) {
         var chart;
         chart = AmCharts.makeChart("chartdivYears", {
