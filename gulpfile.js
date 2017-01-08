@@ -12,7 +12,7 @@
         lazy: true
     });
 
-    gulp.task('jshint', function() {
+    gulp.task('js', function() {
         log('Analyzing code and code style...');
         return gulp
             .src(config.alljs)

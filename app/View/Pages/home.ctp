@@ -21,7 +21,7 @@ $this->set('title_for_layout', 'Home');
             <h3>What's New</h3>
             <ul>
                 <li>Completed Machine Learning, Statistics, Python, Excel, R and Octave programming courses at Stanford, Coursera, Udacity, Data School, Pluralsight.com and Lynda.com</li>
-                <li>Migrated this mobile site to CakePHP and Ubuntu Server 14.04 LTS</li>
+                <li>Migrated this mobile site to CakePHP and Ubuntu Server 16.04 LTS running Apache 2.4 and PHP 7</li>
                 <li>Implemented caching with memcached</li>
                 <li>Upgraded charting components to amCharts JavaScript Charts</li>
                 <li>Upgraded RDS instance to MySQL 5.7</li>
@@ -32,6 +32,7 @@ $this->set('title_for_layout', 'Home');
             <h3>Project Experience</h3>
             <p>Over twenty years experience developing software for use in</p>
             <ul>
+                <li>Marketing</li>
                 <li>Education</li>
                 <li>Data Center Operations</li>
                 <li>Financial Services</li>
