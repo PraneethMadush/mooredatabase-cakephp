@@ -23,21 +23,21 @@
  */
 
 // set environment variable
-define('IS_PROD',(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'mobile.moore-database.com') ? true : false);
+define('IS_PROD', (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'mobile.moore-database.com') ? true : false);
 
 // Setup a 'default' cache configuration for use in the application.
 Cache::config('default', array('engine' => 'File'));
 // Cache::config('default', array('engine' => 'Apc'));
-// Cache::config('default', array(
-// 	'engine' => 'Memcache', //[required]
-// 	'duration' => 3600000, //[optional]
-// 	'probability' => 100, //[optional]
-// 	'servers' => array(
-// 	'127.0.0.1:11211' // localhost, default port 11211
-// 	), //[optional]
-// 	'persistent' => true, // [optional] set this to false for non-persistent connections
-// 	'compress' => false, // [optional] compress data in Memcache (slower, but uses less memory)
-// ));
+//Cache::config('default', array(
+//	'engine'      => 'Memcache', //[required]
+//	'duration'    => 3600, //[optional]
+//	'probability' => 100, //[optional]
+//	'servers'     => array(
+//		'127.0.0.1:11211' // localhost, default port 11211
+//	), //[optional]
+//	'persistent'  => true, // [optional] set this to false for non-persistent connections
+//	'compress'    => false, // [optional] compress data in Memcache (slower, but uses less memory)
+//));
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
  *
@@ -92,16 +92,16 @@ Cache::config('default', array('engine' => 'File'));
  * Feel free to remove or add filters as you see fit for your application. A few examples:
  *
  * Configure::write('Dispatcher.filters', array(
- *		'MyCacheFilter', //  will use MyCacheFilter class from the Routing/Filter package in your app.
- *		'MyPlugin.MyFilter', // will use MyFilter class from the Routing/Filter package in MyPlugin plugin.
- * 		array('callable' => $aFunction, 'on' => 'before', 'priority' => 9), // A valid PHP callback type to be called on beforeDispatch
- *		array('callable' => $anotherMethod, 'on' => 'after'), // A valid PHP callback type to be called on afterDispatch
+ *        'MyCacheFilter', //  will use MyCacheFilter class from the Routing/Filter package in your app.
+ *        'MyPlugin.MyFilter', // will use MyFilter class from the Routing/Filter package in MyPlugin plugin.
+ *        array('callable' => $aFunction, 'on' => 'before', 'priority' => 9), // A valid PHP callback type to be called on beforeDispatch
+ *        array('callable' => $anotherMethod, 'on' => 'after'), // A valid PHP callback type to be called on afterDispatch
  *
  * ));
  */
 Configure::write('Dispatcher.filters', array(
 	'AssetDispatcher',
-	'CacheDispatcher'
+	'CacheDispatcher',
 ));
 
 /**
@@ -110,11 +110,11 @@ Configure::write('Dispatcher.filters', array(
 App::uses('CakeLog', 'Log');
 CakeLog::config('debug', array(
 	'engine' => 'File',
-	'types' => array('notice', 'info', 'debug'),
-	'file' => 'debug',
+	'types'  => array('notice', 'info', 'debug'),
+	'file'   => 'debug',
 ));
 CakeLog::config('error', array(
 	'engine' => 'File',
-	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
-	'file' => 'error',
+	'types'  => array('warning', 'error', 'critical', 'alert', 'emergency'),
+	'file'   => 'error',
 ));
