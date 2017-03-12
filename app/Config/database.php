@@ -7,7 +7,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'mysql57test.cd02yxrr7fxm.us-east-1.rds.amazonaws.com',
 		'login' => 'birding_readonly',
-		'password' => 'dY78vNqP37sS94U',
+		'password' => '2N64Op16LQR9fbj',
 		'database' => 'birding',
 	);
 	public $default_prod = array(
@@ -15,7 +15,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'mysql57test.cd02yxrr7fxm.us-east-1.rds.amazonaws.com',
 		'login' => 'birding_readonly',
-		'password' => 'dY78vNqP37sS94U',
+		'password' => '2N64Op16LQR9fbj',
 		'database' => 'birding',
 	);
 	public $default_dev = array(
